@@ -3,9 +3,13 @@ package javabuckets.mods.rcm.skills.combat;
 import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.skills.BaseSkill;
 import javabuckets.mods.rcm.utility.LevelUpUtil;
+import javabuckets.mods.rcm.utility.LogHelper;
 import javabuckets.mods.rcm.utility.SkillReference;
+import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
 public class CombatHandler extends BaseSkill
@@ -26,7 +30,7 @@ public class CombatHandler extends BaseSkill
 	
 	public void combat(EntityPlayer player, World world)
 	{
-		setLvlFromXPList();
+		setLvlFromXPList(player);
 		combatingChecker();
 	}
 	
@@ -84,7 +88,7 @@ public class CombatHandler extends BaseSkill
 	public boolean getIsTrainingDefenceRanging() { return isTrainingDefenceRanging; } public void setIsTrainingDefenceRanging(boolean value) { isTrainingDefenceRanging = value; }
 	
 	
-	public void setLvlFromXPList()
+	public void setLvlFromXPList(EntityPlayer player)
 	{
 		if (isCombating)
 		{	
@@ -191,120 +195,126 @@ public class CombatHandler extends BaseSkill
 			setbackXPIfTooHigh(200000000D);
 			setbackLvlIfTooHigh(99);
 			
-			if (!(LevelUpUtil.attackLvl == RCM.instance.skillHandler.getAttackLvl()))
+			if (!(LevelUpUtil.attackLvl == RCM.instance.skillHandler.getLevel(SkillReference.att)))
 			{
-				RCM.instance.skillHandler.levelUp(SkillReference.att, RCM.instance.skillHandler.getAttackLvl());
+				RCM.instance.skillHandler.levelUp(SkillReference.att, RCM.instance.skillHandler.getLevel(SkillReference.att));
 				LevelUpUtil.lvlHandling();
 			}
-			if (!(LevelUpUtil.strengthLvl == RCM.instance.skillHandler.getStrengthLvl()))
+			if (!(LevelUpUtil.strengthLvl == RCM.instance.skillHandler.getLevel(SkillReference.str)))
 			{
-				RCM.instance.skillHandler.levelUp(SkillReference.str, RCM.instance.skillHandler.getStrengthLvl());
+				RCM.instance.skillHandler.levelUp(SkillReference.str, RCM.instance.skillHandler.getLevel(SkillReference.str));
 				LevelUpUtil.lvlHandling();
 			}
-			if (!(LevelUpUtil.defenceLvl == RCM.instance.skillHandler.getDefenceLvl()))
+			if (!(LevelUpUtil.defenceLvl == RCM.instance.skillHandler.getLevel(SkillReference.def)))
 			{
-				RCM.instance.skillHandler.levelUp(SkillReference.def, RCM.instance.skillHandler.getDefenceLvl());
+				RCM.instance.skillHandler.levelUp(SkillReference.def, RCM.instance.skillHandler.getLevel(SkillReference.def));
 				LevelUpUtil.lvlHandling();
 			}
-			if (!(LevelUpUtil.magicLvl == RCM.instance.skillHandler.getMagicLvl()))
+			if (!(LevelUpUtil.magicLvl == RCM.instance.skillHandler.getLevel(SkillReference.mage)))
 			{
-				RCM.instance.skillHandler.levelUp(SkillReference.mage, RCM.instance.skillHandler.getMagicLvl());
+				RCM.instance.skillHandler.levelUp(SkillReference.mage, RCM.instance.skillHandler.getLevel(SkillReference.mage));
 				LevelUpUtil.lvlHandling();
 			}
-			if (!(LevelUpUtil.rangedLvl == RCM.instance.skillHandler.getRangedLvl()))
+			if (!(LevelUpUtil.rangedLvl == RCM.instance.skillHandler.getLevel(SkillReference.range)))
 			{
-				RCM.instance.skillHandler.levelUp(SkillReference.range, RCM.instance.skillHandler.getRangedLvl());
+				RCM.instance.skillHandler.levelUp(SkillReference.range, RCM.instance.skillHandler.getLevel(SkillReference.range));
 				LevelUpUtil.lvlHandling();
 			}
-			if (!(LevelUpUtil.constitutionLvl == RCM.instance.skillHandler.getConstitutionLvl()))
+			if (!(LevelUpUtil.constitutionLvl == RCM.instance.skillHandler.getLevel(SkillReference.cons)))
 			{
-				RCM.instance.skillHandler.levelUp(SkillReference.cons, RCM.instance.skillHandler.getConstitutionLvl());
+				RCM.instance.skillHandler.levelUp(SkillReference.cons, RCM.instance.skillHandler.getLevel(SkillReference.cons));
 				LevelUpUtil.lvlHandling();
+				
+				
+				player.removePotionEffect(Potion.field_76434_w.id);
+				double amp = RCM.instance.skillHandler.getLevel(SkillReference.cons) / 7;
+				player.addPotionEffect(new PotionEffect(Potion.field_76434_w.id, Integer.MAX_VALUE, (int)amp));
+				player.addPotionEffect(new PotionEffect(Potion.heal.id, 10, 4));
 			}
 		}
 	} 
 	
 	public void setLvlFromXP(double xp1, double xp2, int level)
 	{	
-		if (RCM.instance.skillHandler.getAttackXP() >= xp1 && RCM.instance.skillHandler.getAttackXP() < xp2)
+		if (RCM.instance.skillHandler.getExperience(SkillReference.att) >= xp1 && RCM.instance.skillHandler.getExperience(SkillReference.att) < xp2)
 		{
-			RCM.instance.skillHandler.setAttackLvl(level);
+			RCM.instance.skillHandler.setLevel(SkillReference.att, level, RCM.instance.skillHandler.getExperience(SkillReference.att));
 		}
-		if (RCM.instance.skillHandler.getStrengthXP() >= xp1 && RCM.instance.skillHandler.getStrengthXP() < xp2)
+		if (RCM.instance.skillHandler.getExperience(SkillReference.str) >= xp1 && RCM.instance.skillHandler.getExperience(SkillReference.str) < xp2)
 		{
-			RCM.instance.skillHandler.setStrengthLvl(level);
+			RCM.instance.skillHandler.setLevel(SkillReference.str, level, RCM.instance.skillHandler.getExperience(SkillReference.str));
 		}
-		if (RCM.instance.skillHandler.getDefenceXP() >= xp1 && RCM.instance.skillHandler.getDefenceXP() < xp2)
+		if (RCM.instance.skillHandler.getExperience(SkillReference.def) >= xp1 && RCM.instance.skillHandler.getExperience(SkillReference.def) < xp2)
 		{
-			RCM.instance.skillHandler.setDefenceLvl(level);
+			RCM.instance.skillHandler.setLevel(SkillReference.def, level, RCM.instance.skillHandler.getExperience(SkillReference.def));
 		}
-		if (RCM.instance.skillHandler.getMagicXP() >= xp1 && RCM.instance.skillHandler.getMagicXP() < xp2)
+		if (RCM.instance.skillHandler.getExperience(SkillReference.mage) >= xp1 && RCM.instance.skillHandler.getExperience(SkillReference.mage) < xp2)
 		{
-			RCM.instance.skillHandler.setMagicLvl(level);
+			RCM.instance.skillHandler.setLevel(SkillReference.mage, level, RCM.instance.skillHandler.getExperience(SkillReference.mage));
 		}
-		if (RCM.instance.skillHandler.getRangedXP() >= xp1 && RCM.instance.skillHandler.getRangedXP() < xp2)
+		if (RCM.instance.skillHandler.getExperience(SkillReference.range) >= xp1 && RCM.instance.skillHandler.getExperience(SkillReference.range) < xp2)
 		{
-			RCM.instance.skillHandler.setRangedLvl(level);
+			RCM.instance.skillHandler.setLevel(SkillReference.range, level, RCM.instance.skillHandler.getExperience(SkillReference.range));
 		}
-		if (RCM.instance.skillHandler.getConstitutionXP() >= xp1 && RCM.instance.skillHandler.getConstitutionXP() < xp2)
+		if (RCM.instance.skillHandler.getExperience(SkillReference.cons) >= xp1 && RCM.instance.skillHandler.getExperience(SkillReference.cons) < xp2)
 		{
-			RCM.instance.skillHandler.setConstitutionLvl(level);
+			RCM.instance.skillHandler.setLevel(SkillReference.cons, level, RCM.instance.skillHandler.getExperience(SkillReference.cons));
 		}
 	}
 	
 	public void setbackLvlIfTooHigh(int level)
 	{
-		if (RCM.instance.skillHandler.getAttackLvl() > level) 
+		if (RCM.instance.skillHandler.getLevel(SkillReference.att) > level) 
 		{
-			RCM.instance.skillHandler.setAttackLvl(level); 
+			RCM.instance.skillHandler.setLevel(SkillReference.att, level, RCM.instance.skillHandler.getExperience(SkillReference.att)); 
 		}
-		if (RCM.instance.skillHandler.getStrengthLvl() > level) 
+		if (RCM.instance.skillHandler.getLevel(SkillReference.str) > level) 
 		{
-			RCM.instance.skillHandler.setStrengthLvl(level); 
+			RCM.instance.skillHandler.setLevel(SkillReference.str, level, RCM.instance.skillHandler.getExperience(SkillReference.str)); 
 		}
-		if (RCM.instance.skillHandler.getDefenceLvl() > level) 
+		if (RCM.instance.skillHandler.getLevel(SkillReference.def) > level) 
 		{
-			RCM.instance.skillHandler.setDefenceLvl(level);
+			RCM.instance.skillHandler.setLevel(SkillReference.def, level, RCM.instance.skillHandler.getExperience(SkillReference.def)); 
 		}
-		if (RCM.instance.skillHandler.getMagicLvl() > level) 
+		if (RCM.instance.skillHandler.getLevel(SkillReference.mage) > level) 
 		{
-			RCM.instance.skillHandler.setMagicLvl(level);
+			RCM.instance.skillHandler.setLevel(SkillReference.mage, level, RCM.instance.skillHandler.getExperience(SkillReference.mage)); 
 		}
-		if (RCM.instance.skillHandler.getRangedLvl() > level) 
+		if (RCM.instance.skillHandler.getLevel(SkillReference.range) > level) 
 		{
-			RCM.instance.skillHandler.setRangedLvl(level);
+			RCM.instance.skillHandler.setLevel(SkillReference.range, level, RCM.instance.skillHandler.getExperience(SkillReference.range)); 
 		}
-		if (RCM.instance.skillHandler.getConstitutionLvl() > level) 
+		if (RCM.instance.skillHandler.getLevel(SkillReference.cons) > level) 
 		{
-			RCM.instance.skillHandler.setConstitutionLvl(level); 
+			RCM.instance.skillHandler.setLevel(SkillReference.cons, level, RCM.instance.skillHandler.getExperience(SkillReference.cons)); 
 		}
 	}
 	
 	public void setbackXPIfTooHigh(double xp)
 	{
-		if (RCM.instance.skillHandler.getAttackXP() > xp) 
+		if (RCM.instance.skillHandler.getExperience(SkillReference.att) > xp) 
 		{
-			RCM.instance.skillHandler.setAttackXP(xp); 
+			RCM.instance.skillHandler.setExperience(SkillReference.att, xp); 
 		}
-		if (RCM.instance.skillHandler.getStrengthXP() > xp) 
+		if (RCM.instance.skillHandler.getExperience(SkillReference.str) > xp) 
 		{
-			RCM.instance.skillHandler.setStrengthXP(xp); 
+			RCM.instance.skillHandler.setExperience(SkillReference.str, xp); 
 		}
-		if (RCM.instance.skillHandler.getDefenceXP() > xp) 
+		if (RCM.instance.skillHandler.getExperience(SkillReference.def) > xp) 
 		{
-			RCM.instance.skillHandler.setDefenceXP(xp);
+			RCM.instance.skillHandler.setExperience(SkillReference.def, xp); 
 		}
-		if (RCM.instance.skillHandler.getMagicXP() > xp) 
+		if (RCM.instance.skillHandler.getExperience(SkillReference.mage) > xp) 
 		{
-			RCM.instance.skillHandler.setMagicXP(xp);
+			RCM.instance.skillHandler.setExperience(SkillReference.mage, xp); 
 		}
-		if (RCM.instance.skillHandler.getRangedXP() > xp) 
+		if (RCM.instance.skillHandler.getExperience(SkillReference.range) > xp) 
 		{
-			RCM.instance.skillHandler.setRangedXP(xp);
+			RCM.instance.skillHandler.setExperience(SkillReference.range, xp); 
 		}
-		if (RCM.instance.skillHandler.getConstitutionXP() > xp) 
+		if (RCM.instance.skillHandler.getExperience(SkillReference.cons) > xp) 
 		{
-			RCM.instance.skillHandler.setConstitutionXP(xp); 
+			RCM.instance.skillHandler.setExperience(SkillReference.cons, xp); 
 		}
 	}
 }

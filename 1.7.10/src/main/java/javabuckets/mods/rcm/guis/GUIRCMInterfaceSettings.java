@@ -18,11 +18,11 @@ public class GUIRCMInterfaceSettings extends GuiScreen
 	{
 		buttonList.clear();
 		
-		buttonList.add(new GuiCustomButton(0, width / 2 - 100, 70, 200, 20, StatCollector.translateToLocal("Back to Game")));
-		buttonList.add(new GuiCustomButton(1, width / 2 - 100, 170, 200, 20, StatCollector.translateToLocal("Return to Runescape menu")));
+		buttonList.add(new GUICustomButton(0, width / 2 - 100, 70, 200, 20, StatCollector.translateToLocal("Back to Game")));
+		buttonList.add(new GUICustomButton(1, width / 2 - 100, 170, 200, 20, StatCollector.translateToLocal("Return to Runescape menu")));
 		
-		buttonList.add(new GuiCustomButton(2, width / 2 - 50, 100, 20, 20, StatCollector.translateToLocal("+")));
-		buttonList.add(new GuiCustomButton(3, width / 2 + 30, 100, 20, 20, StatCollector.translateToLocal("-")));
+		buttonList.add(new GUICustomButton(2, width / 2 - 50, 100, 20, 20, StatCollector.translateToLocal("+")));
+		buttonList.add(new GUICustomButton(3, width / 2 + 30, 100, 20, 20, StatCollector.translateToLocal("-")));
 	}
 
 	protected void actionPerformed(GuiButton button) 

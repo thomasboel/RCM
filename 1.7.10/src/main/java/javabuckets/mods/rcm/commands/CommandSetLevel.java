@@ -27,8 +27,8 @@ public class CommandSetLevel extends CommandBase
 		{
 			EntityPlayer player = (EntityPlayer)icommandsender;
 
-			if (player.capabilities.isCreativeMode)
-			{
+			/*if (player.capabilities.isCreativeMode)
+			{*/
 				if(astring.length == 0)
 				{
 					icommandsender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED + "Usage: /setlevel <skill> <level>"));
@@ -62,7 +62,7 @@ public class CommandSetLevel extends CommandBase
 				addLevelToSkill(icommandsender, astring, SkillReference.dung);
 				addLevelToSkill(icommandsender, astring, SkillReference.div);
 			}
-		}
+		//}
 	}
 
 	public void addLevelToSkill(ICommandSender icommandsender, String[] astring, String skill)

@@ -3,7 +3,6 @@ package javabuckets.mods.rcm.skills.mining;
 import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.skills.BaseSkill;
 import javabuckets.mods.rcm.utility.LevelUpUtil;
-import javabuckets.mods.rcm.utility.LogHelper;
 import javabuckets.mods.rcm.utility.SkillReference;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
@@ -140,9 +139,9 @@ public class MiningHandler extends BaseSkill
 			setbackXPIfTooHigh(200000000D);
 			setbackLvlIfTooHigh(99);
 			
-			if (!(LevelUpUtil.miningLvl == RCM.instance.skillHandler.getMiningLvl()))
+			if (!(LevelUpUtil.miningLvl == RCM.instance.skillHandler.getLevel(SkillReference.mine)))
 			{
-				RCM.instance.skillHandler.levelUp(SkillReference.mine, RCM.instance.skillHandler.getMiningLvl());
+				RCM.instance.skillHandler.levelUp(SkillReference.mine, RCM.instance.skillHandler.getLevel(SkillReference.mine));
 				LevelUpUtil.lvlHandling();
 			}
 		}
@@ -150,25 +149,25 @@ public class MiningHandler extends BaseSkill
 
 	public void setLvlFromXP(double xpMin, double xpMax, int level) 
 	{
-		if (RCM.instance.skillHandler.getMiningXP() > xpMin && RCM.instance.skillHandler.getMiningXP() < xpMax)
+		if (RCM.instance.skillHandler.getExperience(SkillReference.mine) > xpMin && RCM.instance.skillHandler.getExperience(SkillReference.mine) < xpMax)
 		{
-			RCM.instance.skillHandler.setMiningLvl(level);
+			RCM.instance.skillHandler.setLevel(SkillReference.mine, level, RCM.instance.skillHandler.getExperience(SkillReference.mine));
 		}
 	}
 
 	public void setbackLvlIfTooHigh(int level) 
 	{
-		if (RCM.instance.skillHandler.getMiningLvl() > level) 
+		if (RCM.instance.skillHandler.getLevel(SkillReference.mine) > level) 
 		{
-			RCM.instance.skillHandler.setMiningLvl(level); 
+			RCM.instance.skillHandler.setLevel(SkillReference.mine, level, RCM.instance.skillHandler.getExperience(SkillReference.mine));
 		}
 	}
 
 	public void setbackXPIfTooHigh(double xp) 
 	{
-		if (RCM.instance.skillHandler.getMiningXP() > xp)
+		if (RCM.instance.skillHandler.getExperience(SkillReference.mine) > xp)
 		{
-			RCM.instance.skillHandler.setMiningXP(xp); 
+			RCM.instance.skillHandler.setExperience(SkillReference.mine, xp);
 		}
 	}
 }

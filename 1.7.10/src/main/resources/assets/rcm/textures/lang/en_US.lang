@@ -1,0 +1,56 @@
+item.small_fishingnet.name=Small Fishing Net
+
+item.bronze_hatchet.name=Bronze Hatchet
+item.steel_hatchet.name=Steel Hatchet
+item.mithril_hatchet.name=Mithril Hatchet
+item.adamant_hatchet.name=Adamant Hatchet
+item.rune_hatchet.name=Rune Hatchet
+item.dragon_hatchet.name=Dragon Hatchet
+
+tile.oak_log.name=Oak Wood
+tile.spruce_log.name=Spruce Wood
+tile.birch_log.name=Birch Wood
+tile.jungle_log.name=Jungle Wood
+tile.acacia_log.name=Acacia Wood
+tile.dark_oak_log.name=Dark Oak Wood
+
+item.bronze_pickaxe.name=Bronze Pickaxe
+item.steel_pickaxe.name=Steel Pickaxe
+item.mithril_pickaxe.name=Mithril Pickaxe
+item.adamant_pickaxe.name=Adamant Pickaxe
+item.rune_pickaxe.name=Rune Pickaxe
+item.dragon_pickaxe.name=Dragon Pickaxe
+
+tile.copper_ore.name=Copper Ore
+tile.tin_ore.name=Tin Ore
+tile.silver_ore.name=Silver Ore
+tile.mithril_ore.name=Mithril Ore
+tile.adamantite_ore.name=Adamntite Ore
+tile.runite_ore.name=Runite Ore
+
+item.copper_ore.name=Copper Ore
+item.tin_ore.name=Tin Ore
+item.iron_ore.name=Iron Ore
+item.silver_ore.name=Silver Ore
+item.gold_ore.name=Gold Ore
+item.mithril_ore.name=Mithril Ore
+item.adamantite_ore.name=Adamntite Ore
+item.runite_ore.name=Runite Ore
+
+item.copper_tin.name=Copper and Tin Ore
+item.iron_coal.name=Iron and Coal Ore
+item.mithril_coal.name=Mithril and Coal Ore
+item.adamant_coal.name=Adamntite and Coal Ore
+item.rune_coal.name=Runite and Coal Ore
+
+item.bronze_bar.name=Bronze Bar
+item.steel_bar.name=Steel Bar
+item.silver_bar.name=Silver Bar
+item.mithril_bar.name=Mithril Bar
+item.adamant_bar.name=Adamant Bar
+item.rune_bar.name=Rune Bar
+item.dragon_bar.name=Dragon Bar
+
+item.bones.name=Bones
+item.big_bones.name=Big Bones
+item.dragon_bones.name=Dragon Bones

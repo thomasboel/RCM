@@ -15,8 +15,18 @@ public class BaseSkill
 		RCM.instance.combat.combat(player, world);
 		// Mining
 		RCM.instance.mining.mining(player, world);
+		// Smithing
+		RCM.instance.smithing.smithing(player, world);
+		// Fishing
+		RCM.instance.fishing.fishing(player, world);
+		// Thieving
+		RCM.instance.thieving.thieving(player, world);
+		// Prayer
+		RCM.instance.prayer.prayer(player, world);
 		// Woodcutting
 		RCM.instance.woodcutting.woodcutting(player, world);
+		// Slayer
+		RCM.instance.slayer.slayer(player, world);
 		
 		setLvlFromXPList();
 		

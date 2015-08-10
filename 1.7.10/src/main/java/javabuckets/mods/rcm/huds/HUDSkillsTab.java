@@ -3,6 +3,7 @@ package javabuckets.mods.rcm.huds;
 import javabuckets.mods.rcm.guis.GUIRCMInterfaceSettings;
 import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.utility.Reference;
+import javabuckets.mods.rcm.utility.SkillReference;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
@@ -98,57 +99,57 @@ public class HUDSkillsTab extends Gui
 				int yPos = 26;
 
 				// Attack 
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getAttackLvl(), xPos1, yPos, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.att), xPos1, yPos, 0xFFFFFF);
 				// Constitution
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getConstitutionLvl(), xPos2 + 35, yPos, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.cons), xPos2 + 35, yPos, 0xFFFFFF);
 				// Mining
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getMiningLvl(), xPos3 + 71, yPos, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.mine), xPos3 + 71, yPos, 0xFFFFFF);
 				// Strength
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getStrengthLvl(), xPos1, yPos + 19, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.str), xPos1, yPos + 19, 0xFFFFFF);
 				// Agility
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getAgilityLvl(), xPos2 + 35, yPos + 19, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.agi), xPos2 + 35, yPos + 19, 0xFFFFFF);
 				// Smithing
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getSmithingLvl(), xPos3 + 71, yPos + 19, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.smith), xPos3 + 71, yPos + 19, 0xFFFFFF);
 				// Defence
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getDefenceLvl(), xPos1, yPos + 38, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.def), xPos1, yPos + 38, 0xFFFFFF);
 				// Herblore
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getHerbloreLvl(), xPos2 + 35, yPos + 38, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.herb), xPos2 + 35, yPos + 38, 0xFFFFFF);
 				// Fishing
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getFishingLvl(), xPos3 + 71, yPos + 38, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.fish), xPos3 + 71, yPos + 38, 0xFFFFFF);
 				// Ranged
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getRangedLvl(), xPos1, yPos + 57, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.range), xPos1, yPos + 57, 0xFFFFFF);
 				// Thieving
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getThievingLvl(), xPos2 + 35, yPos + 57, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.thiev), xPos2 + 35, yPos + 57, 0xFFFFFF);
 				// Cooking
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getCookingLvl(), xPos3 + 71, yPos + 57, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.cook), xPos3 + 71, yPos + 57, 0xFFFFFF);
 				// Prayer
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getPrayerLvl(), xPos1, yPos + 76, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.pray), xPos1, yPos + 76, 0xFFFFFF);
 				// Crafting
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getCraftingLvl(), xPos2 + 35, yPos + 76, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.craft), xPos2 + 35, yPos + 76, 0xFFFFFF);
 				// Firemaking
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getFiremakingLvl(), xPos3 + 71, yPos + 76, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.fm), xPos3 + 71, yPos + 76, 0xFFFFFF);
 				// Magic
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getMagicLvl(), xPos1, yPos + 95, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.mage), xPos1, yPos + 95, 0xFFFFFF);
 				// Fletching
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getFletchingLvl(), xPos2 + 35, yPos + 95, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.fletch), xPos2 + 35, yPos + 95, 0xFFFFFF);
 				// Woodcutting
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getWoodcuttingLvl(), xPos3 + 71, yPos + 95, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.wc), xPos3 + 71, yPos + 95, 0xFFFFFF);
 				// Runecrafting
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getRunecraftingLvl(), xPos1, yPos + 114, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.rc), xPos1, yPos + 114, 0xFFFFFF);
 				// Slayer
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getSlayerLvl(), xPos2 + 35, yPos + 114, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.slay), xPos2 + 35, yPos + 114, 0xFFFFFF);
 				// Farming
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getFarmingLvl(), xPos3 + 71, yPos + 114, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.farm), xPos3 + 71, yPos + 114, 0xFFFFFF);
 				// Construction
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getConstructionLvl(), xPos1, yPos + 133, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.con), xPos1, yPos + 133, 0xFFFFFF);
 				// Hunter
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getHunterLvl(), xPos2 + 35, yPos + 133, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.hunt), xPos2 + 35, yPos + 133, 0xFFFFFF);
 				// Summoning
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getSummoningLvl(), xPos3 + 71, yPos + 133, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.summ), xPos3 + 71, yPos + 133, 0xFFFFFF);
 				// Dungeoneering
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getDungeoneeringLvl(), xPos1, yPos + 152, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.dung), xPos1, yPos + 152, 0xFFFFFF);
 				// Divination
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getDivinationLvl(), xPos2 + 35, yPos + 152, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.div), xPos2 + 35, yPos + 152, 0xFFFFFF);
 
 				// Total Level
 				drawString(fontrenderer, "" + RCM.instance.skillHandler.getTotalLvl(), xPos1 + 4, yPos + 187, 0xFFFFFF);
@@ -157,8 +158,8 @@ public class HUDSkillsTab extends Gui
 				drawString(fontrenderer, "" + (int)RCM.instance.skillHandler.getCombatLvl(), xPos1 + 65, yPos + 187, 0xFFFFFF);
 
 				// Goldpoints in Pouch
-				/*String gpInPouch = "gp in pouch: " + RCM.instance.gp.getEnumChatFormatting() + RCM.instance.gp.getGoldPointsDisplay() + EnumChatFormatting.RESET;
-				drawString(fontrenderer, gpInPouch, 5, 194, 0xFFFFFF);*/
+				String gpInPouch = "gp in pouch: " + RCM.instance.gpHandler.getEnumChatFormatting() + RCM.instance.gpHandler.getGoldPointsDisplay() + EnumChatFormatting.RESET;
+				drawString(fontrenderer, gpInPouch, 5, 194, 0xFFFFFF);
 				
 				GL11.glScalef(0.25F, 0.25F, 0.25F);
 				mc.renderEngine.bindTexture(Skills1);
@@ -235,57 +236,57 @@ public class HUDSkillsTab extends Gui
 				int yPos = 26;
 
 				// Attack 
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getAttackLvl(), xPos1, yPos, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.att), xPos1, yPos, 0xFFFFFF);
 				// Constitution
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getConstitutionLvl(), xPos2 + 35, yPos, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.cons), xPos2 + 35, yPos, 0xFFFFFF);
 				// Mining
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getMiningLvl(), xPos3 + 71, yPos, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.mine), xPos3 + 71, yPos, 0xFFFFFF);
 				// Strength
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getStrengthLvl(), xPos1, yPos + 19, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.str), xPos1, yPos + 19, 0xFFFFFF);
 				// Agility
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getAgilityLvl(), xPos2 + 35, yPos + 19, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.agi), xPos2 + 35, yPos + 19, 0xFFFFFF);
 				// Smithing
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getSmithingLvl(), xPos3 + 71, yPos + 19, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.smith), xPos3 + 71, yPos + 19, 0xFFFFFF);
 				// Defence
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getDefenceLvl(), xPos1, yPos + 38, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.def), xPos1, yPos + 38, 0xFFFFFF);
 				// Herblore
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getHerbloreLvl(), xPos2 + 35, yPos + 38, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.herb), xPos2 + 35, yPos + 38, 0xFFFFFF);
 				// Fishing
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getFishingLvl(), xPos3 + 71, yPos + 38, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.fish), xPos3 + 71, yPos + 38, 0xFFFFFF);
 				// Ranged
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getRangedLvl(), xPos1, yPos + 57, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.range), xPos1, yPos + 57, 0xFFFFFF);
 				// Thieving
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getThievingLvl(), xPos2 + 35, yPos + 57, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.thiev), xPos2 + 35, yPos + 57, 0xFFFFFF);
 				// Cooking
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getCookingLvl(), xPos3 + 71, yPos + 57, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.cook), xPos3 + 71, yPos + 57, 0xFFFFFF);
 				// Prayer
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getPrayerLvl(), xPos1, yPos + 76, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.pray), xPos1, yPos + 76, 0xFFFFFF);
 				// Crafting
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getCraftingLvl(), xPos2 + 35, yPos + 76, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.craft), xPos2 + 35, yPos + 76, 0xFFFFFF);
 				// Firemaking
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getFiremakingLvl(), xPos3 + 71, yPos + 76, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.fm), xPos3 + 71, yPos + 76, 0xFFFFFF);
 				// Magic
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getMagicLvl(), xPos1, yPos + 95, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.mage), xPos1, yPos + 95, 0xFFFFFF);
 				// Fletching
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getFletchingLvl(), xPos2 + 35, yPos + 95, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.fletch), xPos2 + 35, yPos + 95, 0xFFFFFF);
 				// Woodcutting
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getWoodcuttingLvl(), xPos3 + 71, yPos + 95, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.wc), xPos3 + 71, yPos + 95, 0xFFFFFF);
 				// Runecrafting
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getRunecraftingLvl(), xPos1, yPos + 114, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.rc), xPos1, yPos + 114, 0xFFFFFF);
 				// Slayer
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getSlayerLvl(), xPos2 + 35, yPos + 114, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.slay), xPos2 + 35, yPos + 114, 0xFFFFFF);
 				// Farming
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getFarmingLvl(), xPos3 + 71, yPos + 114, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.farm), xPos3 + 71, yPos + 114, 0xFFFFFF);
 				// Construction
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getConstructionLvl(), xPos1, yPos + 133, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.con), xPos1, yPos + 133, 0xFFFFFF);
 				// Hunter
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getHunterLvl(), xPos2 + 35, yPos + 133, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.hunt), xPos2 + 35, yPos + 133, 0xFFFFFF);
 				// Summoning
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getSummoningLvl(), xPos3 + 71, yPos + 133, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.summ), xPos3 + 71, yPos + 133, 0xFFFFFF);
 				// Dungeoneering
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getDungeoneeringLvl(), xPos1, yPos + 152, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.dung), xPos1, yPos + 152, 0xFFFFFF);
 				// Divination
-				drawString(fontrenderer, "" + RCM.instance.skillHandler.getDivinationLvl(), xPos2 + 35, yPos + 152, 0xFFFFFF);
+				drawString(fontrenderer, "" + RCM.instance.skillHandler.getLevel(SkillReference.div), xPos2 + 35, yPos + 152, 0xFFFFFF);
 				
 				// Total Level
 				drawString(fontrenderer, "" + RCM.instance.skillHandler.getTotalLvl(), xPos1 + 4, yPos + 187, 0xFFFFFF);
@@ -294,8 +295,8 @@ public class HUDSkillsTab extends Gui
 				drawString(fontrenderer, "" + (int)RCM.instance.skillHandler.getCombatLvl(), xPos1 + 65, yPos + 187, 0xFFFFFF);
 				
 				// Goldpoints in Pouch
-				/*String gpInPouch = "gp in pouch: " + RCM.instance.gp.getEnumChatFormatting() + RCM.instance.gp.getGoldPointsDisplay() + EnumChatFormatting.RESET;
-				drawString(fontrenderer, gpInPouch, 5, 194, 0xFFFFFF);*/
+				String gpInPouch = "gp in pouch: " + RCM.instance.gpHandler.getEnumChatFormatting() + RCM.instance.gpHandler.getGoldPointsDisplay() + EnumChatFormatting.RESET;
+				drawString(fontrenderer, gpInPouch, 5, 194, 0xFFFFFF);
 				
 				GL11.glScalef(0.25F, 0.25F, 0.25F);
 				mc.renderEngine.bindTexture(Skills1);

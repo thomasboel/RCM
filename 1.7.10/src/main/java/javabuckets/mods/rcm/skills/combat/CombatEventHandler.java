@@ -2,6 +2,7 @@ package javabuckets.mods.rcm.skills.combat;
 
 import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.utility.LogHelper;
+import javabuckets.mods.rcm.utility.SkillReference;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.boss.*;
@@ -83,7 +84,7 @@ public class CombatEventHandler
 	{
 		EntityPlayer player = (EntityPlayer)Minecraft.getMinecraft().thePlayer;
 		ItemStack heldItem = player.getHeldItem();
-		int attackLevel = RCM.instance.skillHandler.getAttackLvl();
+		int attackLevel = RCM.instance.skillHandler.getLevel(SkillReference.att);
 
 		if (event.source.getDamageType().equals("player"))
 		{

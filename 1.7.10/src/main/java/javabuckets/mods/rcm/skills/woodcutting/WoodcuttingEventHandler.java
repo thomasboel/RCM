@@ -3,6 +3,7 @@ package javabuckets.mods.rcm.skills.woodcutting;
 import javabuckets.mods.rcm.init.ModFixBlocks;
 import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.utility.LogHelper;
+import javabuckets.mods.rcm.utility.SkillReference;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
@@ -55,11 +56,11 @@ public class WoodcuttingEventHandler
 		EntityPlayer player = (EntityPlayer)event.entity;
 		ItemStack heldItem = player.getHeldItem();
 
-		if (heldItem != null && heldItem.getItem() == hatchet && RCM.instance.skillHandler.getWoodcuttingLvl() >= requiredLevel)
+		if (heldItem != null && heldItem.getItem() == hatchet && RCM.instance.skillHandler.getLevel(SkillReference.wc) >= requiredLevel)
 		{
 			return true;
 		}
-		else if (heldItem != null && heldItem.getItem() == hatchet && RCM.instance.skillHandler.getWoodcuttingLvl() < requiredLevel)
+		else if (heldItem != null && heldItem.getItem() == hatchet && RCM.instance.skillHandler.getLevel(SkillReference.wc) < requiredLevel)
 		{
 			return false;
 		}
@@ -128,11 +129,11 @@ public class WoodcuttingEventHandler
 		
 		if (canPlayerUseHatchet())
 		{
-			if (event.block == block && RCM.instance.skillHandler.getWoodcuttingLvl() >= requiredLevel)
+			if (event.block == block && RCM.instance.skillHandler.getLevel(SkillReference.wc) >= requiredLevel)
 			{
 				RCM.instance.skillHandler.addXPToSkill("woodcutting", xp);
 			}
-			else if (event.block == block && RCM.instance.skillHandler.getWoodcuttingLvl() < requiredLevel)
+			else if (event.block == block && RCM.instance.skillHandler.getLevel(SkillReference.wc) < requiredLevel)
 			{
 				event.dropChance = 0.00F;
 				Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("You need a Level of at least: " + requiredLevel + " in Woodcutting, to chop this tree!"));
@@ -142,7 +143,7 @@ public class WoodcuttingEventHandler
 		
 		else if(heldItem == null || !isPlayerWieldingHatchet())
 		{
-			if (event.block == block && RCM.instance.skillHandler.getWoodcuttingLvl() == 1)
+			if (event.block == block && RCM.instance.skillHandler.getLevel(SkillReference.wc) == 1)
 			{
 				RCM.instance.skillHandler.addXPToSkill("woodcutting", xp);
 			}
@@ -155,11 +156,11 @@ public class WoodcuttingEventHandler
 		EntityPlayer player = (EntityPlayer)Minecraft.getMinecraft().thePlayer;
 		ItemStack heldItem = player.getHeldItem();
 
-		if (heldItem != null && heldItem.getItem() == hatchet && RCM.instance.skillHandler.getWoodcuttingLvl() >= requiredLevel)
+		if (heldItem != null && heldItem.getItem() == hatchet && RCM.instance.skillHandler.getLevel(SkillReference.wc) >= requiredLevel)
 		{
 
 		}
-		else if (heldItem != null && heldItem.getItem() == hatchet && RCM.instance.skillHandler.getWoodcuttingLvl() < requiredLevel)
+		else if (heldItem != null && heldItem.getItem() == hatchet && RCM.instance.skillHandler.getLevel(SkillReference.wc) < requiredLevel)
 		{
 			event.dropChance = 0.00F;
 			Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("You need a Level of at least: " + requiredLevel + " in Woodcutting, to use this hatchet!"));
@@ -167,7 +168,7 @@ public class WoodcuttingEventHandler
 		}
 		else if (heldItem == null || !isPlayerWieldingHatchet())
 		{
-			if (RCM.instance.skillHandler.getWoodcuttingLvl() == 1)
+			if (RCM.instance.skillHandler.getLevel(SkillReference.wc) == 1)
 			{
 				
 			}

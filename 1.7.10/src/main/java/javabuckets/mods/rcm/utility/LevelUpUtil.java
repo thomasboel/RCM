@@ -4,6 +4,12 @@ import javabuckets.mods.rcm.main.RCM;
 
 public class LevelUpUtil 
 {
+	/**
+	 * Non-updated variables when it comes to lvls.
+	 * These int's are set to be the corresponding lvl at the start at the game.
+	 * When a lvl doesn't match up with the corresponding lvl, an if statement is called somewhere,
+	 * and the code recognizes this as a level up. The Non-updated version updates to the new value.
+	 */
 	public static int attackLvl;
 	public static int constitutionLvl;
 	public static int miningLvl;
@@ -33,31 +39,31 @@ public class LevelUpUtil
 	
 	public static void lvlHandling()
 	{
-		attackLvl = RCM.instance.skillHandler.getAttackLvl();
-		constitutionLvl = RCM.instance.skillHandler.getConstitutionLvl();
-		miningLvl = RCM.instance.skillHandler.getMiningLvl();
-		strengthLvl = RCM.instance.skillHandler.getStrengthLvl();
-		agilityLvl = RCM.instance.skillHandler.getAgilityLvl();
-		smithingLvl = RCM.instance.skillHandler.getSmithingLvl();
-		defenceLvl = RCM.instance.skillHandler.getDefenceLvl();
-		herbloreLvl = RCM.instance.skillHandler.getHerbloreLvl();
-		fishingLvl = RCM.instance.skillHandler.getFishingLvl();
-		rangedLvl = RCM.instance.skillHandler.getRangedLvl();
-		thievingLvl = RCM.instance.skillHandler.getThievingLvl();
-		cookingLvl = RCM.instance.skillHandler.getCookingLvl();
-		prayerLvl = RCM.instance.skillHandler.getPrayerLvl();
-		craftingLvl = RCM.instance.skillHandler.getCraftingLvl();
-		firemakingLvl = RCM.instance.skillHandler.getFiremakingLvl();
-		magicLvl = RCM.instance.skillHandler.getMagicLvl();
-		fletchingLvl = RCM.instance.skillHandler.getFletchingLvl();
-		woodcuttingLvl = RCM.instance.skillHandler.getWoodcuttingLvl();
-		runecraftingLvl = RCM.instance.skillHandler.getRunecraftingLvl();
-		slayerLvl = RCM.instance.skillHandler.getSlayerLvl();
-		farmingLvl = RCM.instance.skillHandler.getFarmingLvl();
-		constructionLvl = RCM.instance.skillHandler.getConstructionLvl();
-		hunterLvl = RCM.instance.skillHandler.getHunterLvl();
-		summoningLvl = RCM.instance.skillHandler.getSummoningLvl();
-		dungeoneeringLvl = RCM.instance.skillHandler.getDungeoneeringLvl();
-		divinationLvl = RCM.instance.skillHandler.getDivinationLvl();
+		attackLvl = RCM.instance.skillHandler.getLevel(SkillReference.att);
+		constitutionLvl = RCM.instance.skillHandler.getLevel(SkillReference.cons);
+		miningLvl = RCM.instance.skillHandler.getLevel(SkillReference.mine);
+		strengthLvl = RCM.instance.skillHandler.getLevel(SkillReference.str);
+		agilityLvl = RCM.instance.skillHandler.getLevel(SkillReference.agi);
+		smithingLvl = RCM.instance.skillHandler.getLevel(SkillReference.smith);
+		defenceLvl = RCM.instance.skillHandler.getLevel(SkillReference.def);
+		herbloreLvl = RCM.instance.skillHandler.getLevel(SkillReference.herb);
+		fishingLvl = RCM.instance.skillHandler.getLevel(SkillReference.fish);
+		rangedLvl = RCM.instance.skillHandler.getLevel(SkillReference.range);
+		thievingLvl = RCM.instance.skillHandler.getLevel(SkillReference.thiev);
+		cookingLvl = RCM.instance.skillHandler.getLevel(SkillReference.cook);
+		prayerLvl = RCM.instance.skillHandler.getLevel(SkillReference.pray);
+		craftingLvl = RCM.instance.skillHandler.getLevel(SkillReference.craft);
+		firemakingLvl = RCM.instance.skillHandler.getLevel(SkillReference.fm);
+		magicLvl = RCM.instance.skillHandler.getLevel(SkillReference.mage);
+		fletchingLvl = RCM.instance.skillHandler.getLevel(SkillReference.fletch);
+		woodcuttingLvl = RCM.instance.skillHandler.getLevel(SkillReference.wc);
+		runecraftingLvl = RCM.instance.skillHandler.getLevel(SkillReference.rc);
+		slayerLvl = RCM.instance.skillHandler.getLevel(SkillReference.slay);
+		farmingLvl = RCM.instance.skillHandler.getLevel(SkillReference.farm);
+		constructionLvl = RCM.instance.skillHandler.getLevel(SkillReference.con);
+		hunterLvl = RCM.instance.skillHandler.getLevel(SkillReference.hunt);
+		summoningLvl = RCM.instance.skillHandler.getLevel(SkillReference.summ);
+		dungeoneeringLvl = RCM.instance.skillHandler.getLevel(SkillReference.dung);
+		divinationLvl = RCM.instance.skillHandler.getLevel(SkillReference.div);
 	}
 }

@@ -1,5 +1,7 @@
 package javabuckets.mods.rcm.init;
 
+import javabuckets.mods.rcm.skills.fishing.ModFishingItems;
+import javabuckets.mods.rcm.skills.prayer.ModPrayerItems;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -35,5 +37,14 @@ public class ModFixRecipes
 		GameRegistry.addSmelting(ModFixBlocks.jungleLog, new ItemStack(Items.coal, 1, 1), 0.25F);
 		GameRegistry.addSmelting(ModFixBlocks.acaciaLog, new ItemStack(Items.coal, 1, 1), 0.25F);
 		GameRegistry.addSmelting(ModFixBlocks.darkOakLog, new ItemStack(Items.coal, 1, 1), 0.25F);
+		
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(ModPrayerItems.bones), new Object[] {
+			Items.bone, Items.bone
+		});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(ModFishingItems.fishingNet), new Object[] {
+			"S S", " S ", "S S", 'S', Items.string
+		});
 	}
 }

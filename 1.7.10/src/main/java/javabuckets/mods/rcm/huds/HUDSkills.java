@@ -3,6 +3,7 @@ package javabuckets.mods.rcm.huds;
 import org.lwjgl.opengl.GL11;
 
 import javabuckets.mods.rcm.main.RCM;
+import javabuckets.mods.rcm.utility.DateUtil;
 import javabuckets.mods.rcm.utility.LevelUpUtil;
 import javabuckets.mods.rcm.utility.Reference;
 import javabuckets.mods.rcm.utility.SkillHUDUtil;
@@ -45,6 +46,9 @@ public class HUDSkills extends Gui
 		{
 			return;
 		}
+		
+		this.drawCenteredString(mc.fontRenderer, "'" + RCM.instance.dailyGiftHandler.getDate() + "'", width / 2, 15, 0xFFFFFF);
+		this.drawCenteredString(mc.fontRenderer, "'" + DateUtil.getDate() + "'", width / 2, 25, 0xFFFFFF);
 
 		if (RCM.instance.skill.showSkillHUD)
 		{

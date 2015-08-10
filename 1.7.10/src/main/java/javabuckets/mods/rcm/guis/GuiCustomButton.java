@@ -7,14 +7,14 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class GuiCustomButton extends GuiButton
+public class GUICustomButton extends GuiButton
 {
-    public GuiCustomButton(int id, int width, int height, String text)
+    public GUICustomButton(int id, int width, int height, String text)
     {
         this(id, width, height, 200, 20, text);
     }
  
-    public GuiCustomButton(int id, int width, int height, int buttonWidth, int buttonHeight, String text)
+    public GUICustomButton(int id, int width, int height, int buttonWidth, int buttonHeight, String text)
     {
         super(id, width, height, buttonWidth, buttonHeight, text);
     }

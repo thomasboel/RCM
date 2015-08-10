@@ -139,9 +139,9 @@ public class WoodcuttingHandler extends BaseSkill
 			setbackXPIfTooHigh(200000000D);
 			setbackLvlIfTooHigh(99);
 			
-			if (!(LevelUpUtil.woodcuttingLvl == RCM.instance.skillHandler.getWoodcuttingLvl()))
+			if (!(LevelUpUtil.woodcuttingLvl == RCM.instance.skillHandler.getLevel(SkillReference.wc)))
 			{
-				RCM.instance.skillHandler.levelUp(SkillReference.wc, RCM.instance.skillHandler.getWoodcuttingLvl());
+				RCM.instance.skillHandler.levelUp(SkillReference.wc, RCM.instance.skillHandler.getLevel(SkillReference.wc));
 				LevelUpUtil.lvlHandling();
 			}
 		}
@@ -149,25 +149,25 @@ public class WoodcuttingHandler extends BaseSkill
 
 	public void setLvlFromXP(double xpMin, double xpMax, int level) 
 	{
-		if (RCM.instance.skillHandler.getWoodcuttingXP() > xpMin && RCM.instance.skillHandler.getWoodcuttingXP() < xpMax)
+		if (RCM.instance.skillHandler.getExperience(SkillReference.wc) > xpMin && RCM.instance.skillHandler.getExperience(SkillReference.wc) < xpMax)
 		{
-			RCM.instance.skillHandler.setWoodcuttingLvl(level);
+			RCM.instance.skillHandler.setLevel(SkillReference.wc, level, RCM.instance.skillHandler.getExperience(SkillReference.wc));
 		}
 	}
 
 	public void setbackLvlIfTooHigh(int level) 
 	{
-		if (RCM.instance.skillHandler.getWoodcuttingLvl() > level) 
+		if (RCM.instance.skillHandler.getLevel(SkillReference.wc) > level) 
 		{
-			RCM.instance.skillHandler.setWoodcuttingLvl(level); 
+			RCM.instance.skillHandler.setLevel(SkillReference.wc, level, RCM.instance.skillHandler.getExperience(SkillReference.wc));
 		}
 	}
 
 	public void setbackXPIfTooHigh(double xp) 
 	{
-		if (RCM.instance.skillHandler.getWoodcuttingXP() > xp)
+		if (RCM.instance.skillHandler.getExperience(SkillReference.wc) > xp)
 		{
-			RCM.instance.skillHandler.setWoodcuttingXP(xp); 
+			RCM.instance.skillHandler.setExperience(SkillReference.wc, xp); 
 		}
 	}
 }

@@ -38,7 +38,11 @@ public class ExtendedPlayer implements IExtendedEntityProperties
 	{
 		NBTTagCompound properties = new NBTTagCompound();
 		RCM.instance.skillHandler.writeToNBT(properties);
+		RCM.instance.gpHandler.writeToNBT(properties);
 		RCM.instance.combat.writeToNBT(properties);
+		RCM.instance.slayer.writeToNBT(properties);
+		
+		RCM.instance.dailyGiftHandler.writeToNBT(properties);
 
 		compound.setTag(EXT_PROP_NAME, properties);
 	}
@@ -48,7 +52,11 @@ public class ExtendedPlayer implements IExtendedEntityProperties
 	{
 		NBTTagCompound properties = (NBTTagCompound)compound.getTag(EXT_PROP_NAME);	
 		RCM.instance.skillHandler.readFromNBT(properties);
+		RCM.instance.gpHandler.readFromNBT(properties);
 		RCM.instance.combat.readFromNBT(properties);
+		RCM.instance.slayer.readFromNBT(properties);
+		
+		RCM.instance.dailyGiftHandler.readFromNBT(properties);
 	}
 
 	@Override

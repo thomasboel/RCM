@@ -22,7 +22,7 @@ public class CommandSetLvlChecker
 		RCM.instance.woodcutting.isWoodcutting = true;
 	}
 	
-	private static double getXpFromLevel(int level)
+	public static double getXpFromLevel(int level)
 	{
 		if (level == 1) { return 0D; }
 		else if (level == 2) { return 83D; }

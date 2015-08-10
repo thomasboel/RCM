@@ -24,18 +24,18 @@ public class GUICombatSelection extends GuiScreen
 	public void initGui()
 	{
 		buttonList.clear();
-		this.buttonList.add(new GuiCustomButton(0, width / 2 - 50, height - 60, 100, 20, StatCollector.translateToLocal("Close Down")));
+		this.buttonList.add(new GUICustomButton(0, width / 2 - 50, height - 60, 100, 20, StatCollector.translateToLocal("Close Down")));
 		
-		this.buttonList.add(new GuiCustomButton(1, width / 2 - 115, height - 210, 75, 20, StatCollector.translateToLocal("Attack")));
-		this.buttonList.add(new GuiCustomButton(2, width / 2 - (75 / 2), height - 210, 75, 20, StatCollector.translateToLocal("Strength")));
-		this.buttonList.add(new GuiCustomButton(3, width / 2 + (75 / 2) + 4, height - 210, 75, 20, StatCollector.translateToLocal("Defence")));
+		this.buttonList.add(new GUICustomButton(1, width / 2 - 115, height - 210, 75, 20, StatCollector.translateToLocal("Attack")));
+		this.buttonList.add(new GUICustomButton(2, width / 2 - (75 / 2), height - 210, 75, 20, StatCollector.translateToLocal("Strength")));
+		this.buttonList.add(new GUICustomButton(3, width / 2 + (75 / 2) + 4, height - 210, 75, 20, StatCollector.translateToLocal("Defence")));
 		
-		this.buttonList.add(new GuiCustomButton(4, width / 2 - 77, height - 160, 75, 20, StatCollector.translateToLocal("Magic")));
-		this.buttonList.add(new GuiCustomButton(5, width / 2 + 1, height - 160, 75, 20, StatCollector.translateToLocal("Defence")));
+		this.buttonList.add(new GUICustomButton(4, width / 2 - 77, height - 160, 75, 20, StatCollector.translateToLocal("Magic")));
+		this.buttonList.add(new GUICustomButton(5, width / 2 + 1, height - 160, 75, 20, StatCollector.translateToLocal("Defence")));
 		
-		this.buttonList.add(new GuiCustomButton(6, width / 2 - 115, height - 110, 75, 20, StatCollector.translateToLocal("Ranged")));
-		this.buttonList.add(new GuiCustomButton(7, width / 2 - (75 / 2), height - 110, 75, 20, StatCollector.translateToLocal("Strength")));
-		this.buttonList.add(new GuiCustomButton(8, width / 2 + (75 / 2) + 4, height - 110, 75, 20, StatCollector.translateToLocal("Defence")));
+		this.buttonList.add(new GUICustomButton(6, width / 2 - 115, height - 110, 75, 20, StatCollector.translateToLocal("Ranged")));
+		this.buttonList.add(new GUICustomButton(7, width / 2 - (75 / 2), height - 110, 75, 20, StatCollector.translateToLocal("Strength")));
+		this.buttonList.add(new GUICustomButton(8, width / 2 + (75 / 2) + 4, height - 110, 75, 20, StatCollector.translateToLocal("Defence")));
 	}
 	
 	protected void actionPerformed(GuiButton button) 
