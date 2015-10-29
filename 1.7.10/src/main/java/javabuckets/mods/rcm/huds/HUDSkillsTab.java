@@ -23,13 +23,10 @@ public class HUDSkillsTab extends Gui
 	private RenderItem itemRenderer;
 
 	public static final ResourceLocation RSicons = new ResourceLocation(Reference.MOD_ID, "textures/gui/runescape_icons.png");
-	public static final ResourceLocation RSgui = new ResourceLocation(Reference.MOD_ID, "textures/gui/runescape_gui.png");
-	public static final ResourceLocation SkillsGui = new ResourceLocation(Reference.MOD_ID, "textures/gui/skillshd.png");
-	public static final ResourceLocation HDSkillsGui = new ResourceLocation(Reference.MOD_ID, "textures/gui/skillsuhd.png");
-	public static final ResourceLocation RSSpells = new ResourceLocation(Reference.MOD_ID, "textures/gui/magics.png");
-	public static final ResourceLocation RSNormalSpellbook = new ResourceLocation(Reference.MOD_ID, "textures/gui/normal_spellbook.png");
-	public static final ResourceLocation Skills1 = new ResourceLocation(Reference.MOD_ID, "textures/gui/skills1.png");
-	public static final ResourceLocation Skills2 = new ResourceLocation(Reference.MOD_ID, "textures/gui/skills2.png");
+
+	public static final ResourceLocation HDSkillsGui = new ResourceLocation(Reference.MOD_ID, "textures/gui/interface/skillsuhd.png");
+	public static final ResourceLocation Skills1 = new ResourceLocation(Reference.MOD_ID, "textures/gui/interface/skills1.png");
+	public static final ResourceLocation Skills2 = new ResourceLocation(Reference.MOD_ID, "textures/gui/interface/skills2.png");
 	
 	public static boolean displaySkillTabMsg = true;
 	public static boolean displaySkillTab = true;
@@ -162,6 +159,7 @@ public class HUDSkillsTab extends Gui
 				drawString(fontrenderer, gpInPouch, 5, 194, 0xFFFFFF);
 				
 				GL11.glScalef(0.25F, 0.25F, 0.25F);
+				
 				mc.renderEngine.bindTexture(Skills1);
 				drawTexturedModalRect(xPos1, yPos + 60, 0, 0, 64, 64);
 				drawTexturedModalRect(xPos1 + 155, yPos + 60, 64, 0, 64, 64);
@@ -299,6 +297,7 @@ public class HUDSkillsTab extends Gui
 				drawString(fontrenderer, gpInPouch, 5, 194, 0xFFFFFF);
 				
 				GL11.glScalef(0.25F, 0.25F, 0.25F);
+				
 				mc.renderEngine.bindTexture(Skills1);
 				drawTexturedModalRect(xPos1, yPos + 60, 0, 0, 64, 64);
 				drawTexturedModalRect(xPos1 + 155, yPos + 60, 64, 0, 64, 64);

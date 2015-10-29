@@ -34,7 +34,7 @@ public class ThievingEventHandler
 		
 		if (RCM.instance.skillHandler.getLevel(SkillReference.thiev) >= requiredLevel)
 		{
-			if (rand < succesChance + (RCM.instance.skillHandler.getLevel(SkillReference.thiev) / 1000 * 2))
+			if (rand < succesChance + (RCM.instance.skillHandler.getLevel(SkillReference.thiev) / 450))
 			{
 				RCM.instance.skillHandler.addXPToSkill(SkillReference.thiev, xp);
 				RCM.instance.gpHandler.addGPToPouch(reward);

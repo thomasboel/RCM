@@ -27,6 +27,8 @@ public class SmithingEventHandler
 
 	public void addToolToSmithing(ItemCraftedEvent event, Item tool, int requiredLevel, double xp)
 	{
+		Minecraft mc = Minecraft.getMinecraft();
+		
 		if (!RCM.instance.smithing.running)
 		{
 			RCM.instance.smithing.running = true;
@@ -43,7 +45,7 @@ public class SmithingEventHandler
 					event.player.addChatMessage(new ChatComponentText("You need a level of at least " + requiredLevel + " in Smithing, to smith this item!"));
 					event.craftMatrix.closeInventory();
 					LogHelper.info(event.craftMatrix.getStackInSlotOnClosing(0).getDisplayName());
-					updatePlayerInventory(Minecraft.getMinecraft(), event.player);
+					updatePlayerInventory(mc, event.player);
 				}
 			}
 		}

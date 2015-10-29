@@ -1,24 +1,47 @@
 package javabuckets.mods.rcm.skills.combat;
 
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import javabuckets.mods.rcm.init.ModWeapons;
 import javabuckets.mods.rcm.main.RCM;
-import javabuckets.mods.rcm.utility.LogHelper;
+import javabuckets.mods.rcm.skills.mining.ModMiningItems;
+import javabuckets.mods.rcm.skills.woodcutting.ModWoodcuttingItems;
 import javabuckets.mods.rcm.utility.SkillReference;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.boss.*;
-import net.minecraft.entity.monster.*;
-import net.minecraft.entity.passive.*;
+import net.minecraft.entity.boss.EntityDragon;
+import net.minecraft.entity.boss.EntityWither;
+import net.minecraft.entity.monster.EntityBlaze;
+import net.minecraft.entity.monster.EntityCaveSpider;
+import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityEnderman;
+import net.minecraft.entity.monster.EntityGhast;
+import net.minecraft.entity.monster.EntityGiantZombie;
+import net.minecraft.entity.monster.EntityIronGolem;
+import net.minecraft.entity.monster.EntityMagmaCube;
+import net.minecraft.entity.monster.EntityPigZombie;
+import net.minecraft.entity.monster.EntitySilverfish;
+import net.minecraft.entity.monster.EntitySkeleton;
+import net.minecraft.entity.monster.EntitySlime;
+import net.minecraft.entity.monster.EntitySpider;
+import net.minecraft.entity.monster.EntityWitch;
+import net.minecraft.entity.monster.EntityZombie;
+import net.minecraft.entity.passive.EntityBat;
+import net.minecraft.entity.passive.EntityChicken;
+import net.minecraft.entity.passive.EntityCow;
+import net.minecraft.entity.passive.EntityHorse;
+import net.minecraft.entity.passive.EntityMooshroom;
+import net.minecraft.entity.passive.EntityOcelot;
+import net.minecraft.entity.passive.EntityPig;
+import net.minecraft.entity.passive.EntitySheep;
+import net.minecraft.entity.passive.EntitySquid;
+import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
-import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class CombatEventHandler 
 {
@@ -42,41 +65,35 @@ public class CombatEventHandler
 			addSwordFromLevel(event, Items.iron_pickaxe, 10);
 			addSwordFromLevel(event, Items.iron_shovel, 10);
 
-//			addSwordFromLevel(event, 3257, 20); //Steel
-//			addSwordFromLevel(event, 3267, 20);
-//			addSwordFromLevel(event, 4057, 20);
-//			addSwordFromLevel(event, 4067, 20);
-//
-//			addSwordFromLevel(event, 3258, 25); //Black
-//			addSwordFromLevel(event, 3268, 25);
-//			addSwordFromLevel(event, 4068, 25);
-//
-//			addSwordFromLevel(event, 3259, 25); //White
-//			addSwordFromLevel(event, 3269, 25);
+			addSwordFromLevel(event, ModWeapons.steelLongsword, 20);
+			addSwordFromLevel(event, ModWoodcuttingItems.steelHatchet, 20);
+			addSwordFromLevel(event, ModMiningItems.steelPickaxe, 20);
+
+			//addSwordFromLevel(event, ModWeapons.blackLongsword, 25);
+			//addSwordFromLevel(event, ModWoodcuttingItems.blackHatchet, 25);
+
+			//addSwordFromLevel(event, ModWeapons.whiteLongsword, 25);
 
 			addSwordFromLevel(event, Items.diamond_sword, 27);
 			addSwordFromLevel(event, Items.diamond_axe, 27);
 			addSwordFromLevel(event, Items.diamond_pickaxe, 27);
 			addSwordFromLevel(event, Items.diamond_shovel, 27);
 
-//			addSwordFromLevel(event, 3260, 30); //Mithril
-//			addSwordFromLevel(event, 3270, 30);
-//			addSwordFromLevel(event, 4058, 30);
-//			addSwordFromLevel(event, 4069, 30);
-//
-//			addSwordFromLevel(event, 3261, 40); //Adamant
-//			addSwordFromLevel(event, 3271, 40);
-//			addSwordFromLevel(event, 4059, 40);
-//			addSwordFromLevel(event, 4070, 40);
-//
-//			addSwordFromLevel(event, 3262, 50); //Rune
-//			addSwordFromLevel(event, 3272, 50);
-//			addSwordFromLevel(event, 4060, 50);
-//			addSwordFromLevel(event, 4071, 50);
-//
-//			addSwordFromLevel(event, 3273, 60); //Dragon
-//			addSwordFromLevel(event, 4061, 60);
-//			addSwordFromLevel(event, 4072, 60);
+			addSwordFromLevel(event, ModWeapons.mithrilLongsword, 30);
+			addSwordFromLevel(event, ModWoodcuttingItems.mithrilHatchet, 30);
+			addSwordFromLevel(event, ModMiningItems.mithrilPickaxe, 30);
+
+			addSwordFromLevel(event, ModWeapons.adamantiteLongsword, 40);
+			addSwordFromLevel(event, ModWoodcuttingItems.adamantHatchet, 40);
+			addSwordFromLevel(event, ModMiningItems.adamantPickaxe, 40);
+
+			addSwordFromLevel(event, ModWeapons.runiteLongsword, 50);
+			addSwordFromLevel(event, ModWoodcuttingItems.runeHatchet, 50);
+			addSwordFromLevel(event, ModMiningItems.runePickaxe, 50);
+
+			//addSwordFromLevel(event, ModWeapons.dragonLongsword, 60);
+			addSwordFromLevel(event, ModWoodcuttingItems.dragonHatchet, 60);
+			addSwordFromLevel(event, ModMiningItems.dragonPickaxe, 60);
 		}
 	}
 
@@ -106,7 +123,7 @@ public class CombatEventHandler
 
 			double xp = 0;
 
-			if (event.entity instanceof EntityBat) { xp = 10D; }
+			if (event.entity instanceof EntityBat || event.entity instanceof EntitySquid) { xp = 10D; }
 			else if (event.entity instanceof EntityChicken) { xp = 15D; }
 			else if (event.entity instanceof EntityCow || event.entity instanceof EntityMooshroom) { xp = 20D; }
 			else if (event.entity instanceof EntityOcelot) { xp = 15D; }

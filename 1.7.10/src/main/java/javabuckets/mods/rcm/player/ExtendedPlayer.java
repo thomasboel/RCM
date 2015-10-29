@@ -41,8 +41,12 @@ public class ExtendedPlayer implements IExtendedEntityProperties
 		RCM.instance.gpHandler.writeToNBT(properties);
 		RCM.instance.combat.writeToNBT(properties);
 		RCM.instance.slayer.writeToNBT(properties);
+		RCM.instance.prayer.writeToNBT(properties);
+		RCM.instance.summoning.writeToNBT(properties);
 		
 		RCM.instance.dailyGiftHandler.writeToNBT(properties);
+		RCM.instance.playerBonuses.writeToNBT(properties);
+		RCM.instance.dailies.writeToNBT(properties);
 
 		compound.setTag(EXT_PROP_NAME, properties);
 	}
@@ -55,10 +59,14 @@ public class ExtendedPlayer implements IExtendedEntityProperties
 		RCM.instance.gpHandler.readFromNBT(properties);
 		RCM.instance.combat.readFromNBT(properties);
 		RCM.instance.slayer.readFromNBT(properties);
+		RCM.instance.prayer.readFromNBT(properties);
+		RCM.instance.summoning.readFromNBT(properties);
 		
 		RCM.instance.dailyGiftHandler.readFromNBT(properties);
+		RCM.instance.playerBonuses.readFromNBT(properties);
+		RCM.instance.dailies.readFromNBT(properties);
 	}
-
+	
 	@Override
 	public void init(Entity entity, World world)
 	{

@@ -21,8 +21,8 @@ public class HUDSkills extends Gui
 	private RenderItem itemRenderer;
 	
 	public static final ResourceLocation skillhud = new ResourceLocation(Reference.MOD_ID, "textures/gui/skillhud.png");
-	public static final ResourceLocation skills1 = new ResourceLocation(Reference.MOD_ID, "textures/gui/skills1.png");
-	public static final ResourceLocation skills2 = new ResourceLocation(Reference.MOD_ID, "textures/gui/skills2.png");
+	public static final ResourceLocation skills1 = new ResourceLocation(Reference.MOD_ID, "textures/gui/interface/skills1.png");
+	public static final ResourceLocation skills2 = new ResourceLocation(Reference.MOD_ID, "textures/gui/interface/skills2.png");
 
 	public HUDSkills(Minecraft mc)
 	{
@@ -47,14 +47,25 @@ public class HUDSkills extends Gui
 			return;
 		}
 		
-		this.drawCenteredString(mc.fontRenderer, "'" + RCM.instance.dailyGiftHandler.getDate() + "'", width / 2, 15, 0xFFFFFF);
-		this.drawCenteredString(mc.fontRenderer, "'" + DateUtil.getDate() + "'", width / 2, 25, 0xFFFFFF);
+		/*this.drawCenteredString(mc.fontRenderer, RCM.instance.dailyGiftHandler.getDate(), width / 2, 15, 0xFFFFFF);
+		this.drawCenteredString(mc.fontRenderer, DateUtil.getDateToday(), width / 2, 25, 0xFFFFFF);
+		
+		if (!(RCM.instance.dailyGiftHandler.getDate().equals(DateUtil.getDateToday())))
+		{
+			this.drawCenteredString(mc.fontRenderer, "false", width / 2, height / 2, 0xffffff);
+		}
+		else
+		{
+			this.drawCenteredString(mc.fontRenderer, "true", width / 2, height / 2, 0xffffff);
+		}*/
 
 		if (RCM.instance.skill.showSkillHUD)
 		{
 			/*this.drawCenteredString(this.mc.fontRenderer, skillToShow + " Level: " + RCM.instance.skillHandler.getLevel(skillToShow), width / 2, 50, 0xFFFFFF);
 			this.drawCenteredString(this.mc.fontRenderer, skillToShow + " Experience: " + RCM.instance.skillHandler.getExperience(skillToShow) + "xp", width / 2, 62, 0xFFFFFF);*/
 			
+			GL11.glEnable(GL11.GL_BLEND);
+			GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
 			
 			int x = SkillHUDUtil.getXFromSkill(skillToShow);
 			int y = SkillHUDUtil.getYFromSkill(skillToShow);
@@ -68,7 +79,7 @@ public class HUDSkills extends Gui
 			else if (SkillHUDUtil.getSkillTextureCategory(skillToShow) == 2) { mc.renderEngine.bindTexture(skills2); }
 			else { mc.renderEngine.bindTexture(skills1); }
 			this.drawTexturedModalRect(width*2+(width/2)-20, 30, x, y, 64, 64);	
-			GL11.glScalef(5F, 5F, 5F);
+		GL11.glScalef(5F, 5F, 5F);
 		}
 	}
 	

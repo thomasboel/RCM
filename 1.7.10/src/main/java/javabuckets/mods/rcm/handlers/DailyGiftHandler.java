@@ -5,7 +5,7 @@ import net.minecraft.nbt.NBTTagCompound;
 
 public class DailyGiftHandler 
 {
-	private String date = DateUtil.getDate();
+	private String date = DateUtil.getDateToday();
 	
 	public void writeToNBT(NBTTagCompound par1NBTTagCompound)
 	{

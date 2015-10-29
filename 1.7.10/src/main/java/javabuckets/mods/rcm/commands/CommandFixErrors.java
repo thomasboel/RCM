@@ -1,6 +1,7 @@
 package javabuckets.mods.rcm.commands;
 
 import javabuckets.mods.rcm.main.RCM;
+import javabuckets.mods.rcm.utility.LevelUpUtil;
 import javabuckets.mods.rcm.utility.SkillReference;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
@@ -38,6 +39,7 @@ public class CommandFixErrors extends CommandBase
 			player.removePotionEffect(Potion.field_76434_w.id);
 			double amp = RCM.instance.skillHandler.getLevel(SkillReference.cons) / 7;
 			player.addPotionEffect(new PotionEffect(Potion.field_76434_w.id, Integer.MAX_VALUE, (int)amp));
+			LevelUpUtil.lvlHandling();
 		}
 	}
 }

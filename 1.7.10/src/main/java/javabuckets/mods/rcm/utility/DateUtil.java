@@ -16,7 +16,20 @@ public class DateUtil
 		Date dNow = new Date( );
 	    SimpleDateFormat ft = new SimpleDateFormat ("yyyy.MM.dd");
 		
-		return ft.format(dNow);
+		return ft.format(dNow).toString();
+	}
+	
+	public static String getDateToday()
+	{
+		String unformated = getDate();
+		
+		String day = unformated.substring(8);
+		String month = unformated.substring(5, 7);
+		String year = unformated.substring(0, 4);
+		
+		String formated = day + "-" + month + "-" + year;
+		
+		return formated;
 	}
 	
 	public static void dateHandling()
@@ -24,8 +37,7 @@ public class DateUtil
 		Minecraft mc = Minecraft.getMinecraft();
 		
 		date = RCM.instance.dailyGiftHandler.getDate();
-		mc.displayGuiScreen(new GUIDailyGift());
 		
-		RCM.instance.dailyGiftHandler.setDate(getDate());
+		RCM.instance.dailyGiftHandler.setDate(getDateToday());
 	}
 }

@@ -2,6 +2,7 @@ package javabuckets.mods.rcm.skills.woodcutting;
 
 import javabuckets.mods.rcm.init.ModFixBlocks;
 import javabuckets.mods.rcm.main.RCM;
+import javabuckets.mods.rcm.utility.DailyChallengeReference;
 import javabuckets.mods.rcm.utility.LogHelper;
 import javabuckets.mods.rcm.utility.SkillReference;
 import net.minecraft.block.Block;
@@ -39,15 +40,15 @@ public class WoodcuttingEventHandler
 			canPlayerUseWoodAxe = isHatchetUsable(event, Items.wooden_axe, 1);
 			canPlayerUseGoldAxe = isHatchetUsable(event, Items.golden_axe, 1);
 			canPlayerUseStoneAxe = isHatchetUsable(event, Items.stone_axe, 3);
-			//canPlayerUseBronzeAxe = isHatchetUsable(event, 4066, 5);
+			canPlayerUseBronzeAxe = isHatchetUsable(event, ModWoodcuttingItems.bronzeHatchet, 5);
 			canPlayerUseIronAxe = isHatchetUsable(event, Items.iron_axe, 10);
-			//canPlayerUseSteelAxe = isHatchetUsable(event, 4067, 15);
-			//canPlayerUseBlackAxe = isHatchetUsable(event, 4068, 18);
+			canPlayerUseSteelAxe = isHatchetUsable(event, ModWoodcuttingItems.steelHatchet, 15);
+			//canPlayerUseBlackAxe = isHatchetUsable(event, 4068, 18); BLACK HATCHET!
 			canPlayerUseDiamondAxe = isHatchetUsable(event, Items.diamond_axe, 21);
-			//canPlayerUseMithrilAxe = isHatchetUsable(event, 4069, 25);
-			//canPlayerUseAdamantAxe = isHatchetUsable(event, 4070, 31);
-			//canPlayerUseRuneAxe = isHatchetUsable(event, 4071, 41);
-			//canPlayerUseDragonAxe = isHatchetUsable(event, 4072, 61);
+			canPlayerUseMithrilAxe = isHatchetUsable(event, ModWoodcuttingItems.mithrilHatchet, 25);
+			canPlayerUseAdamantAxe = isHatchetUsable(event, ModWoodcuttingItems.adamantHatchet, 31);
+			canPlayerUseRuneAxe = isHatchetUsable(event, ModWoodcuttingItems.runeHatchet, 41);
+			canPlayerUseDragonAxe = isHatchetUsable(event, ModWoodcuttingItems.dragonHatchet, 61);
 		}
 	}
 
@@ -79,21 +80,29 @@ public class WoodcuttingEventHandler
 
 			addWoodcuttingXpFromTreeBlock(event, Blocks.log, 1, 15);
 			addWoodcuttingXpFromTreeBlock(event, Blocks.log2, 1, 15);
-			addWoodcuttingXpFromTreeBlock(event, Blocks.leaves, 1, 1);
-			addWoodcuttingXpFromTreeBlock(event, Blocks.leaves2, 1, 1);
+			addWoodcuttingXpFromTreeBlock(event, Blocks.leaves, 1, 1.5);
+			addWoodcuttingXpFromTreeBlock(event, Blocks.leaves2, 1, 1.5);
+			addWoodcuttingXpFromTreeBlock(event, ModWoodcuttingBlocks.willowLog, 30, 50);
+			addWoodcuttingXpFromTreeBlock(event, ModWoodcuttingBlocks.teakLog, 35, 75);
+			addWoodcuttingXpFromTreeBlock(event, ModWoodcuttingBlocks.mapleLog, 45, 150);
+			addWoodcuttingXpFromTreeBlock(event, ModWoodcuttingBlocks.mahoganyLog, 50, 180);
+			addWoodcuttingXpFromTreeBlock(event, ModWoodcuttingBlocks.yewLog, 60, 225);
+			addWoodcuttingXpFromTreeBlock(event, ModWoodcuttingBlocks.chokingIvy, 68, 420);
+			addWoodcuttingXpFromTreeBlock(event, ModWoodcuttingBlocks.magicLog, 75, 300);
+			addWoodcuttingXpFromTreeBlock(event, ModWoodcuttingBlocks.elderLog, 90, 380);
 
 			getHatchetUsageFromLevel(event, Items.wooden_axe, 1);
 			getHatchetUsageFromLevel(event, Items.golden_axe, 1);
 			getHatchetUsageFromLevel(event, Items.stone_axe, 3);
-			//getHatchetUsageFromLevel(event, 4066, 5);
+			getHatchetUsageFromLevel(event, ModWoodcuttingItems.bronzeHatchet, 5);
 			getHatchetUsageFromLevel(event, Items.iron_axe, 10);
-			//getHatchetUsageFromLevel(event, 4067, 15);
-			//getHatchetUsageFromLevel(event, 4068, 18);
+			getHatchetUsageFromLevel(event, ModWoodcuttingItems.steelHatchet, 15);
+			//getHatchetUsageFromLevel(event, 4068, 18); BLACK HATCHET!
 			getHatchetUsageFromLevel(event, Items.diamond_axe, 21);
-			//getHatchetUsageFromLevel(event, 4069, 25);
-			//getHatchetUsageFromLevel(event, 4070, 31);
-			//getHatchetUsageFromLevel(event, 4071, 41);
-			//getHatchetUsageFromLevel(event, 4072, 61);
+			getHatchetUsageFromLevel(event, ModWoodcuttingItems.mithrilHatchet, 25);
+			getHatchetUsageFromLevel(event, ModWoodcuttingItems.adamantHatchet, 31);
+			getHatchetUsageFromLevel(event, ModWoodcuttingItems.runeHatchet, 41);
+			getHatchetUsageFromLevel(event, ModWoodcuttingItems.dragonHatchet, 61);
 			
 			replaceWoodcuttingDrops(event, Blocks.log, 0, ModFixBlocks.oakLog);
 			replaceWoodcuttingDrops(event, Blocks.log, 4, ModFixBlocks.oakLog);
@@ -122,7 +131,7 @@ public class WoodcuttingEventHandler
 		}
 	}
 
-	public void addWoodcuttingXpFromTreeBlock(HarvestDropsEvent event, Block block, int requiredLevel, int xp)
+	public void addWoodcuttingXpFromTreeBlock(HarvestDropsEvent event, Block block, int requiredLevel, double xp)
 	{
 		EntityPlayer player = (EntityPlayer)Minecraft.getMinecraft().thePlayer;
 		ItemStack heldItem = player.getHeldItem();
@@ -176,9 +185,9 @@ public class WoodcuttingEventHandler
 			{
 				if (event.block == Blocks.log)
 				{			
-					event.dropChance = 0.00F;
+					/*event.dropChance = 0.00F;
 					Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("You must use a hatchet to chop tree's with!"));
-					event.world.setBlock(event.x, event.y, event.z, event.block, event.blockMetadata, 2);
+					event.world.setBlock(event.x, event.y, event.z, event.block, event.blockMetadata, 2);*/
 				}
 			}
 		}
@@ -215,8 +224,14 @@ public class WoodcuttingEventHandler
 			if(heldItem.getItem() == Items.wooden_axe) { return true; }
 			else if (heldItem.getItem() == Items.golden_axe) { return true; }
 			else if (heldItem.getItem() == Items.stone_axe) { return true; }
+			else if (heldItem.getItem() == ModWoodcuttingItems.bronzeHatchet) { return true; }
 			else if (heldItem.getItem() == Items.iron_axe) { return true; }
+			else if (heldItem.getItem() == ModWoodcuttingItems.steelHatchet) { return true; }
 			else if (heldItem.getItem() == Items.diamond_axe) { return true; }
+			else if (heldItem.getItem() == ModWoodcuttingItems.mithrilHatchet) { return true; }
+			else if (heldItem.getItem() == ModWoodcuttingItems.adamantHatchet) { return true; }
+			else if (heldItem.getItem() == ModWoodcuttingItems.runeHatchet) { return true; }
+			else if (heldItem.getItem() == ModWoodcuttingItems.dragonHatchet) { return true; }
 			else { return false; }
 		}
 		else

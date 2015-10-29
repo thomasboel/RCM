@@ -15,59 +15,88 @@ public class SkillHandler
 {
 	// Attack
 	private int attackLvl = 1; private double attackxp = 0D;
+	private int attackLvlB = attackLvl;
 	// Constitution
 	private int constitutionLvl = 10; private double constitutionxp = 1154D;
+	//private int constitutionLvlB = constitutionLvl;
 	// Mining
 	private int miningLvl = 1; private double miningxp = 0D;
+	private int miningLvlB = miningLvl;
 	// Strength
 	private int strengthLvl = 1; private double strengthxp = 0D;
+	private int strengthLvlB = strengthLvl;
 	// Agility
 	private int agilityLvl = 1; private double agilityxp = 0D;
+	private int agilityLvlB = agilityLvl;
 	// Smithing
 	private int smithingLvl = 1; private double smithingxp = 0D;
+	private int smithingLvlB = attackLvl;
 	// Defence
 	private int defenceLvl = 1; private double defencexp = 0D;
+	private int defenceLvlB = defenceLvl;
 	// Herblore
 	private int herbloreLvl = 1; private double herblorexp = 0D;
+	private int herbloreLvlB = herbloreLvl;
 	// Fishing
 	private int fishingLvl = 1; private double fishingxp = 0D;
+	private int fishingLvlB = fishingLvl;
 	// Ranged
 	private int rangedLvl = 1; private double rangedxp = 0D;
+	private int rangedLvlB = rangedLvl;
 	// Thieving
 	private int thievingLvl = 1; private double thievingxp = 0D;
+	private int thievingLvlB = thievingLvl;
 	// Cooking
 	private int cookingLvl = 1; private double cookingxp = 0D;
+	private int cookingLvlB = cookingLvl;
 	// Prayer
 	private int prayerLvl = 1; private double prayerxp = 0D;
+	private int prayerLvlB = prayerLvl;
 	// Crafting
 	private int craftingLvl = 1; private double craftingxp = 0D;
+	private int craftingLvlB = craftingLvl;
 	// Firemaking
 	private int firemakingLvl = 1; private double firemakingxp = 0D;
+	private int firemakingLvlB = firemakingLvl;
 	// Magic
 	private int magicLvl = 1; private double magicxp = 0D;
+	private int magicLvlB = magicLvl;
 	// Fletching
 	private int fletchingLvl = 1; private double fletchingxp = 0D;
+	private int fletchingLvlB = fletchingLvl;
 	// Woodcutting
 	private int woodcuttingLvl = 1; private double woodcuttingxp = 0D;
+	private int woodcuttingLvlB = woodcuttingLvl;
 	// Runecrafting
 	private int runecraftingLvl = 1; private double runecraftingxp = 0D;
+	private int runecraftingLvlB = runecraftingLvl;
 	// Slayer
 	private int slayerLvl = 1; private double slayerxp = 0D;
+	private int slayerLvlB = slayerLvl;
 	// Farming
 	private int farmingLvl = 1; private double farmingxp = 0D;
+	private int farmingLvlB = farmingLvl;
 	// Construction
 	private int constructionLvl = 1; private double constructionxp = 0D;
+	private int constructionLvlB = constructionLvl;
 	// Hunter
 	private int hunterLvl = 1; private double hunterxp = 0D;
+	private int hunterLvlB = hunterLvl;
 	// Summoning
 	private int summoningLvl = 1; private double summoningxp = 0D;
+	private int summoningLvlB = summoningLvl;
 	// Dungeoneering
 	private int dungeoneeringLvl = 1; private double dungeoneeringxp = 0D;
+	private int dungeoneeringLvlB = dungeoneeringLvl;
 	// Divination
 	private int divinationLvl = 1; private double divinationxp = 0D;
+	private int divinationLvlB = divinationLvl;
 
 	// Combat Level
 	private double combatLvl;
+
+	// If this is the first time the game is run (per session)
+	private boolean hasRunned = false;
 
 	/**
 	 * Update method including player and world param's
@@ -78,8 +107,18 @@ public class SkillHandler
 	{
 		RCM.instance.skill.skill(player, world);
 		checkCombatLevel();
+		boostedLvlHandling();
+
+		// Updates boost lvl's upon player entering the world (only runs once)
+		if (!hasRunned)
+		{
+			updateBoostLvls();
+			hasRunned = true;
+		}
 	}
 
+	private boolean isFirstTimeLogon = true;
+	
 	public void writeToNBT(NBTTagCompound par1NBTTagCompound)
 	{
 		// Attack
@@ -121,6 +160,7 @@ public class SkillHandler
 		// Prayer
 		par1NBTTagCompound.setInteger("PrayerLevel", prayerLvl);
 		par1NBTTagCompound.setDouble("PrayerExperience", prayerxp);
+		par1NBTTagCompound.setInteger("PrayerLevelBoost", prayerLvlB);
 		// Crafting
 		par1NBTTagCompound.setInteger("CraftingLevel", craftingLvl);
 		par1NBTTagCompound.setDouble("CraftingExperience", craftingxp);
@@ -163,6 +203,8 @@ public class SkillHandler
 
 		// Combat Level
 		par1NBTTagCompound.setDouble("CombatLevel", combatLvl);
+		
+		par1NBTTagCompound.setBoolean("isFirstTimeLogon", isFirstTimeLogon);
 	}
 
 	public void readFromNBT(NBTTagCompound par1NBTTagCompound)
@@ -206,6 +248,7 @@ public class SkillHandler
 		// Prayer
 		prayerLvl = par1NBTTagCompound.getInteger("PrayerLevel");
 		prayerxp = par1NBTTagCompound.getDouble("PrayerExperience");
+		prayerLvlB = par1NBTTagCompound.getInteger("PrayerLevelBoost");
 		// Crafting
 		craftingLvl = par1NBTTagCompound.getInteger("CraftingLevel");
 		craftingxp = par1NBTTagCompound.getDouble("CraftingExperience");
@@ -248,8 +291,20 @@ public class SkillHandler
 
 		// Combat Level
 		combatLvl = par1NBTTagCompound.getDouble("CombatLevel");
+		
+		isFirstTimeLogon = par1NBTTagCompound.getBoolean("isFirstTimeLogon");
 	}
 	
+	public boolean isFirstTimeLogon()
+	{
+		return this.isFirstTimeLogon;
+	}
+	
+	public void setFirstTimeLogon(boolean value) 
+	{
+		this.isFirstTimeLogon = value;
+	}
+
 	public void setLevel(String skill, int level, double xp)
 	{
 		if (skill.equalsIgnoreCase(SkillReference.att)) { this.attackLvl = level; this.attackxp = xp; }
@@ -279,7 +334,7 @@ public class SkillHandler
 		else if (skill.equalsIgnoreCase(SkillReference.dung)) { this.dungeoneeringLvl = level; this.dungeoneeringxp = xp; }
 		else if (skill.equalsIgnoreCase(SkillReference.div)) { this.divinationLvl = level; this.divinationxp = xp; }
 	}
-	
+
 	public int getLevel(String skill)
 	{
 		if (skill.equalsIgnoreCase(SkillReference.att)) { return this.attackLvl; }
@@ -310,7 +365,38 @@ public class SkillHandler
 		else if (skill.equalsIgnoreCase(SkillReference.div)) { return this.divinationLvl; }
 		else { return 0; }
 	}
-	
+
+	public int getLevelB(String skill)
+	{
+		if (skill.equalsIgnoreCase(SkillReference.att)) { return this.attackLvlB; }
+		//else if (skill.equalsIgnoreCase(SkillReference.cons)) { return this.constitutionLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.mine)) { return this.miningLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.str)) { return this.strengthLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.agi)) { return this.agilityLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.smith)) { return this.smithingLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.def)) { return this.defenceLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.herb)) { return this.herbloreLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.fish)) { return this.fishingLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.range)) { return this.rangedLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.thiev)) { return this.thievingLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.cook)) { return this.cookingLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.pray)) { return this.prayerLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.craft)) { return this.craftingLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.fm)) { return this.firemakingLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.mage)) { return this.magicLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.fletch)) { return this.fletchingLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.wc)) { return this.woodcuttingLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.rc)) { return this.runecraftingLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.slay)) { return this.slayerLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.farm)) { return this.farmingLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.con)) { return this.constructionLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.hunt)) { return this.hunterLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.summ)) { return this.summoningLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.dung)) { return this.dungeoneeringLvlB; }
+		else if (skill.equalsIgnoreCase(SkillReference.div)) { return this.divinationLvlB; }
+		else { return 0; }
+	}
+
 	public void setExperience(String skill, double xp)
 	{
 		if (skill.equalsIgnoreCase(SkillReference.att)) { this.attackxp = xp; }
@@ -340,7 +426,7 @@ public class SkillHandler
 		else if (skill.equalsIgnoreCase(SkillReference.dung)) { this.dungeoneeringxp = xp; }
 		else if (skill.equalsIgnoreCase(SkillReference.div)) { this.divinationxp = xp; }
 	}
-	
+
 	public double getExperience(String skill)
 	{
 		if (skill.equalsIgnoreCase(SkillReference.att)) { return this.attackxp; }
@@ -371,21 +457,37 @@ public class SkillHandler
 		else if (skill.equalsIgnoreCase(SkillReference.div)) { return this.divinationxp; }
 		else { return 0; }
 	}
-	
+
 	public int getTotalLvl()
 	{
 		return attackLvl + constitutionLvl + miningLvl + strengthLvl + agilityLvl + smithingLvl + defenceLvl + herbloreLvl + fishingLvl + rangedLvl + thievingLvl + cookingLvl + prayerLvl + craftingLvl + firemakingLvl + magicLvl + fletchingLvl + woodcuttingLvl + runecraftingLvl + slayerLvl + farmingLvl + constructionLvl + hunterLvl + summoningLvl + dungeoneeringLvl + divinationLvl;
 	}
 
-	public double getCombatLvl() 
+	public double getTotalXp()
+	{
+		return attackxp + constitutionxp + miningxp + strengthxp + agilityxp + smithingxp + defencexp + herblorexp + fishingxp + rangedxp + thievingxp + cookingxp + prayerxp + craftingxp + firemakingxp + magicxp + fletchingxp + woodcuttingxp + runecraftingxp + slayerxp + farmingxp + constructionxp + hunterxp + summoningxp + dungeoneeringxp + divinationxp;
+	}
+
+	public double getCombatLvl()
 	{ 
 		return this.combatLvl; 
 	}
 
 	/**
+	 * Gets the amount of experience needed in a skill till the player levels up.
+	 */
+	public double getXpToNextLevel(String skill)
+	{
+		int currentLvl = getLevel(skill);
+		double currentXp = getExperience(skill);
+
+		return SkillReference.getXpFromLvl(currentLvl + 1) - currentXp;
+	}
+
+	/**
 	 * Checks every Tick what Calculate Method should be used to determine the Combat Level, and Calculates it.
 	 */
-	public void checkCombatLevel()
+	private void checkCombatLevel()
 	{
 		if (attackLvl + strengthLvl >= magicLvl * 1.5 && attackLvl + strengthLvl >= rangedLvl * 1.5)
 		{
@@ -400,7 +502,7 @@ public class SkillHandler
 			this.combatLvl = (int) (defenceLvl + constitutionLvl + (prayerLvl / 2) + (summoningLvl / 2) + 1.3 * (rangedLvl * 2)) / 4;
 		}
 	}
-	
+
 	/**
 	 * Method used instead of doing the set-(get-plus) method.
 	 * This also makes sure that the HUD for the skill shows up and that xp earned is displayed on screen.
@@ -408,27 +510,27 @@ public class SkillHandler
 	public void addXPToSkill(String skill, double xp)
 	{
 		setExperience(skill, getExperience(skill) + xp);
-		
+
 		RCM.instance.skill.showSkillHUD = true; RCM.instance.skill.resetTimer();
 		HUDSkills.resetXPToDisplay();
 		HUDSkills.addXPToDisplay(skill, xp);
-		
+
 		LogHelper.info(xp + " xp gained in " + skill + "!");
 	}
-	
+
 	public void addXPToCombatSkill(String skill, double xp)
 	{
 		setExperience(skill, getExperience(skill) + xp);
 		setExperience(SkillReference.cons, getExperience(SkillReference.cons) + xp / 3);
-		
+
 		RCM.instance.skill.showSkillHUD = true; RCM.instance.skill.resetTimer();
 		HUDSkills.resetXPToDisplay();
 		HUDSkills.addXPToDisplay(skill, xp + (xp / 3));
-		
+
 		LogHelper.info(xp + " xp gained in " + skill + "!");
 		LogHelper.info(xp / 3 + " xp gained in " + SkillReference.cons + "!");
 	}
-	
+
 	/**
 	 * Called upon leveling up a skill.
 	 */
@@ -439,15 +541,96 @@ public class SkillHandler
 	}
 
 	/**
+	 * Boosts the player's level temporarily.
+	 */
+	public void boostLvlBy(String skill, int amount)
+	{
+		if (skill.equalsIgnoreCase(SkillReference.att)) { attackLvlB = attackLvl + amount; }
+		//else if (skill.equalsIgnoreCase(SkillReference.cons)) { constitutionLvlB = constitutionLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.mine)) { miningLvlB = miningLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.str)) { strengthLvlB = strengthLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.agi)) { agilityLvlB = agilityLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.smith)) { smithingLvlB = smithingLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.def)) { defenceLvlB = defenceLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.herb)) { herbloreLvlB = herbloreLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.fish)) { fishingLvlB = fishingLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.range)) { rangedLvlB = rangedLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.thiev)) { thievingLvlB = thievingLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.cook)) { cookingLvlB = cookingLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.pray)) { prayerLvlB = prayerLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.craft)) { craftingLvlB = craftingLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.fm)) { firemakingLvlB = firemakingLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.mage)) { magicLvlB = magicLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.fletch)) { fletchingLvlB = fletchingLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.wc)) { woodcuttingLvlB = woodcuttingLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.rc)) { runecraftingLvlB = runecraftingLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.slay)) { slayerLvlB = slayerLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.farm)) { farmingLvlB = farmingLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.con)) { constructionLvlB = constructionLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.hunt)) { hunterLvlB = hunterLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.summ)) { summoningLvlB = summoningLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.dung)) { dungeoneeringLvlB = dungeoneeringLvl + amount; }
+		else if (skill.equalsIgnoreCase(SkillReference.div)) { divinationLvlB = divinationLvl + amount; }
+	}
+
+	private int ticksPassed = 0;
+	private int minuteInTicks = 3600;
+
+	/**
+	 * Makes sure that boosted levels decreases over time.
+	 */
+	private void boostedLvlHandling() 
+	{
+		ticksPassed++;
+
+		if (ticksPassed >= minuteInTicks)
+		{
+			decreaseBoostedLvls();
+			ticksPassed = 0;
+		}
+	}
+
+	private void decreaseBoostedLvls()
+	{
+		if (attackLvlB > attackLvl) { attackLvlB--; }   																				if (miningLvlB > miningLvl) { miningLvlB--; }	
+		if (strengthLvlB > strengthLvl) { strengthLvlB--; }					if (agilityLvlB > agilityLvl) { agilityLvlB--; }			if (smithingLvlB > smithingLvl) { smithingLvlB--; }
+		if (defenceLvlB > defenceLvl) { defenceLvlB--; }					if (herbloreLvlB > herbloreLvl) { herbloreLvlB--; }			if (fishingLvlB > fishingLvl) { fishingLvlB--; }
+		if (rangedLvlB > rangedLvl) { rangedLvlB--; }						if (thievingLvlB > thievingLvl) { thievingLvlB--; }			if (cookingLvlB > cookingLvl) { cookingLvlB--; }
+		if (craftingLvlB > craftingLvl) { craftingLvlB--; }			if (firemakingLvlB > firemakingLvl) { firemakingLvlB--; }
+		if (magicLvlB > magicLvl) { magicLvlB--; }							if (fletchingLvlB > fletchingLvl) { fletchingLvlB--; }		if (woodcuttingLvlB > woodcuttingLvl) { woodcuttingLvlB--; }
+		if (runecraftingLvlB > runecraftingLvl) { runecraftingLvlB--; }		if (slayerLvlB > slayerLvl) { slayerLvlB--; }				if (farmingLvlB > farmingLvl) { farmingLvlB--; }
+		if (constructionLvlB > constructionLvl) { constructionLvlB--; }		if (hunterLvlB > hunterLvl) { hunterLvlB--; }				if (summoningLvlB > summoningLvl) { summoningLvlB--; }
+		if (dungeoneeringLvlB > dungeoneeringLvl) { dungeoneeringLvlB--; }	if (divinationLvlB > divinationLvl) { divinationLvlB--; }		
+	}
+
+	public void updateBoostLvls()
+	{
+		attackLvlB = attackLvl; 												miningLvlB = miningLvl;
+		strengthLvlB = strengthLvl; 			agilityLvlB = agilityLvl; 		smithingLvlB = smithingLvl;
+		defenceLvlB = defenceLvl; 				herbloreLvlB = herbloreLvl; 	fishingLvlB = fishingLvl;
+		rangedLvlB = rangedLvl; 				thievingLvlB = thievingLvl; 	cookingLvlB = cookingLvl;
+		craftingLvlB = craftingLvl; 	firemakingLvlB = firemakingLvl;
+		magicLvlB = magicLvl; 					fletchingLvlB = fletchingLvl; 	woodcuttingLvlB = woodcuttingLvl;
+		runecraftingLvlB = runecraftingLvl; 	slayerLvlB = slayerLvl; 		farmingLvlB = farmingLvl;
+		constructionLvlB = constructionLvl; 	hunterLvlB = hunterLvl; 		summoningLvlB = summoningLvl;
+		dungeoneeringLvlB = dungeoneeringLvl; 	divinationLvlB = divinationLvl;
+	}
+
+	public void decreasePrayerLvl()
+	{
+		prayerLvlB--;
+	}
+
+	/**
 	 * Resets all xp and Lvl's that the player has earned in his/hers playtime with the mod.
 	 * (Use with caution!!!)
 	 */
-	public void resetAllExperienceAndLevels()
+	public void resetPlayer()
 	{	
 		// Attack
 		setLevel(SkillReference.att, 1, 0);
 		// Constitution
-		setLevel(SkillReference.cons, 1, 0);
+		setLevel(SkillReference.cons, 10, 1154D);
 		// Mining
 		setLevel(SkillReference.mine, 1, 0);
 		// Strength

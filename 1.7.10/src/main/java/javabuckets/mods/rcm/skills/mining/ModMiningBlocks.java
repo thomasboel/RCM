@@ -19,22 +19,22 @@ public class ModMiningBlocks
 	public static void init()
 	{
 		// Mining
-		copperOre = new BlockRSOre(2F).setBlockTextureName("copper_ore").setBlockName("copper_ore");
+		copperOre = new BlockRSOre(1.65F).setBlockTextureName("copper_ore").setBlockName("copper_ore");
 		GameRegistry.registerBlock(copperOre, "copper_ore");
 		
-		tinOre = new BlockRSOre(2F).setBlockTextureName("tin_ore").setBlockName("tin_ore");
+		tinOre = new BlockRSOre(1.65F).setBlockTextureName("tin_ore").setBlockName("tin_ore");
 		GameRegistry.registerBlock(tinOre, "tin_ore"); 
 		
-		silverOre = new BlockRSOre(3F).setBlockTextureName("silver_ore").setBlockName("silver_ore");
+		silverOre = new BlockRSOre(2.5F).setBlockTextureName("silver_ore").setBlockName("silver_ore");
 		GameRegistry.registerBlock(silverOre, "silver_ore");
 		
 		mithrilOre = new BlockRSOre(3.5F).setBlockTextureName("mithril_ore").setBlockName("mithril_ore");
 		GameRegistry.registerBlock(mithrilOre, "mithril_ore"); 
 		
-		adamantiteOre = new BlockRSOre(4F).setBlockTextureName("adamantite_ore").setBlockName("adamantite_ore");
+		adamantiteOre = new BlockRSOre(4.5F).setBlockTextureName("adamantite_ore").setBlockName("adamantite_ore");
 		GameRegistry.registerBlock(adamantiteOre, "adamantite_ore");
 		
-		runiteOre = new BlockRSOre(5F).setBlockTextureName("runite_ore").setBlockName("runite_ore");
+		runiteOre = new BlockRSOre(6.25F).setBlockTextureName("runite_ore").setBlockName("runite_ore");
 		GameRegistry.registerBlock(runiteOre, "runite_ore"); 
 	}
 }

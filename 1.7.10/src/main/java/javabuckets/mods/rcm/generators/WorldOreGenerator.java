@@ -34,7 +34,7 @@ public class WorldOreGenerator implements IWorldGenerator
 		generateOre(world, random, chunkX, chunkZ, 10, 16, 16, 64, ModMiningBlocks.silverOre, 6);
 		generateOre(world, random, chunkX, chunkZ, 13, 16, 16, 40, ModMiningBlocks.mithrilOre, 4);
 		generateOre(world, random, chunkX, chunkZ, 13, 16, 16, 28, ModMiningBlocks.adamantiteOre, 3);
-		generateOre(world, random, chunkX, chunkZ, 10, 16, 16, 14, ModMiningBlocks.runiteOre, 2);
+		generateOre(world, random, chunkX, chunkZ, 11, 16, 16, 14, ModMiningBlocks.runiteOre, 3);
 	}
 	
 	public void generateNether(World world, Random random, int chunkX, int chunkZ)

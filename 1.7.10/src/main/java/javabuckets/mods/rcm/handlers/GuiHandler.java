@@ -1,6 +1,6 @@
 package javabuckets.mods.rcm.handlers;
 
-import javabuckets.mods.rcm.guis.GUICombatSelection;
+import javabuckets.mods.rcm.skills.combat.GUICombatSelection;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;

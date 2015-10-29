@@ -2,6 +2,7 @@ package javabuckets.mods.rcm.commands;
 
 import java.util.List;
 
+import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.utility.SkillReference;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
@@ -84,6 +85,15 @@ public class CommandSetLevel extends CommandBase
 			else
 			{
 				CommandSetLvlChecker.checker(skill, Integer.valueOf(astring[1]));
+			}
+			
+			RCM.instance.skillHandler.updateBoostLvls();
+			
+			if (skill == SkillReference.pray) {
+				RCM.instance.prayer.rechargePrayerPoints();
+			}
+			if (skill == SkillReference.summ) {
+				RCM.instance.summoning.rechargeSummoningPoints();
 			}
 		}	
 	}

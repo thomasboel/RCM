@@ -8,6 +8,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MovingObjectPosition;
@@ -23,7 +24,15 @@ public class ItemFishingNet extends ItemBase
 		this.setCreativeTab(CreativeTabs.tabTools);
 	}
 	
-	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) 
+	@Override
+	public boolean onItemUse(ItemStack itemstack, EntityPlayer player, World world, int x, int y, int z, int i, float f1, float f2, float f3) 
+	{
+		world.setBlock(x, y+1, z, Blocks.wheat, 7, 2);
+		
+		return true;
+	}
+	
+	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player)
 	{
 		MovingObjectPosition movingobjectposition = this.getMovingObjectPositionFromPlayer(world, player, true);
 		ItemStack heldItem = player.getHeldItem();

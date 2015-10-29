@@ -11,5 +11,7 @@ public class HUDOverlay
 		
 		MinecraftForge.EVENT_BUS.register(new HUDSkills(mc));
 		MinecraftForge.EVENT_BUS.register(new HUDSkillsTab(mc));
+		MinecraftForge.EVENT_BUS.register(new HUDScreen(mc));
+		MinecraftForge.EVENT_BUS.register(new HUDTest(mc));
 	}
 }

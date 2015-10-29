@@ -66,4 +66,35 @@ public class LevelUpUtil
 		dungeoneeringLvl = RCM.instance.skillHandler.getLevel(SkillReference.dung);
 		divinationLvl = RCM.instance.skillHandler.getLevel(SkillReference.div);
 	}
+	
+	public static int getLevel(String skill)
+	{
+		if (skill.equalsIgnoreCase(SkillReference.att)) { return attackLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.cons)) { return constitutionLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.mine)) { return miningLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.str)) { return strengthLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.agi)) { return agilityLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.smith)) { return smithingLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.def)) { return defenceLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.herb)) { return herbloreLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.fish)) { return fishingLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.range)) { return rangedLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.thiev)) { return thievingLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.cook)) { return cookingLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.pray)) { return prayerLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.craft)) { return craftingLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.fm)) { return firemakingLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.mage)) { return magicLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.fletch)) { return fletchingLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.wc)) { return woodcuttingLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.rc)) { return runecraftingLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.slay)) { return slayerLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.farm)) { return farmingLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.con)) { return constructionLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.hunt)) { return hunterLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.summ)) { return summoningLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.dung)) { return dungeoneeringLvl; }
+		else if (skill.equalsIgnoreCase(SkillReference.div)) { return divinationLvl; }
+		else { return 0; }
+	}
 }

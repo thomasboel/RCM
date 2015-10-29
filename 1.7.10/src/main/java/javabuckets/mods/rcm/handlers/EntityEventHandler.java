@@ -1,7 +1,10 @@
 package javabuckets.mods.rcm.handlers;
 
+import javabuckets.mods.rcm.init.ModWeapons;
 import javabuckets.mods.rcm.main.RCM;
+import javabuckets.mods.rcm.skills.mining.ModMiningItems;
 import javabuckets.mods.rcm.skills.prayer.ModPrayerItems;
+import javabuckets.mods.rcm.skills.woodcutting.ModWoodcuttingItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.boss.EntityWither;
@@ -34,7 +37,9 @@ public class EntityEventHandler
 		{
 			for (int i = 0; i < 20; ++i)
 			{
-				addDropToEntity(event, 1.00D, ModPrayerItems.dragonBones, 1); 
+				addDropToEntity(event, 1.00D, ModPrayerItems.dragonBones, 1);
+				
+				addTwoTwoDropToEntity(event, ModWoodcuttingItems.dragonHatchet, ModMiningItems.dragonPickaxe);
 			}
 
 			//addDropToEntity(event, 0.5, 4061, 1);
@@ -45,7 +50,7 @@ public class EntityEventHandler
 
 	public void addDropToEntity(LivingDropsEvent event, double chance, Item item, int count)
 	{
-		if (event.source.getDamageType().equals("player"))
+		if (event.source.getDamageType().equals("player") || event.source.isProjectile())
 		{
 			double rand = Math.random();
 
@@ -55,6 +60,23 @@ public class EntityEventHandler
 				{
 					event.entity.dropItem(item, count);
 				}
+			}
+		}
+	}
+
+	private void addTwoTwoDropToEntity(LivingDropsEvent event, Item item1, Item item2) 
+	{
+		double rand = Math.random();
+
+		if (event.entity instanceof Entity)
+		{
+			if (rand > 0.5)
+			{
+				event.entity.dropItem(item1, 1);
+			}
+			else
+			{
+				event.entity.dropItem(item2, 1);
 			}
 		}
 	}
@@ -71,12 +93,12 @@ public class EntityEventHandler
 				addGpDropWithChance(0.1D, 33);
 				addGpDropWithChance(0.075D, 176);
 			}
-			
+
 			if (event.entity instanceof EntityWither) 
 			{
 				addGpDropWithChance(1D, 15000);
 			}
-			
+
 			if (event.entity instanceof EntityDragon) 
 			{
 				addGpDropWithChance(1D, 250000);
