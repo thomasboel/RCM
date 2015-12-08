@@ -3,7 +3,6 @@ package javabuckets.mods.rcm.skills.thieving;
 import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.utility.LogHelper;
 import javabuckets.mods.rcm.utility.SkillReference;
-import javabuckets.mods.rcm.utility.ThievingReference;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.util.ChatComponentText;

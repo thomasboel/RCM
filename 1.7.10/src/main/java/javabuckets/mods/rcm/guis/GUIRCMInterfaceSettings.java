@@ -19,7 +19,7 @@ public class GUIRCMInterfaceSettings extends GuiScreen
 		buttonList.clear();
 		
 		buttonList.add(new GUICustomButton(0, width / 2 - 100, 70, 200, 20, StatCollector.translateToLocal("Back to Game")));
-		buttonList.add(new GUICustomButton(1, width / 2 - 100, 170, 200, 20, StatCollector.translateToLocal("Return to Runescape menu")));
+		buttonList.add(new GUICustomButton(1, width / 2 - 100, 170, 200, 20, StatCollector.translateToLocal("Return to Runescape Menu")));
 		
 		buttonList.add(new GUICustomButton(2, width / 2 - 50, 100, 20, 20, StatCollector.translateToLocal("+")));
 		buttonList.add(new GUICustomButton(3, width / 2 + 30, 100, 20, 20, StatCollector.translateToLocal("-")));
@@ -37,21 +37,19 @@ public class GUIRCMInterfaceSettings extends GuiScreen
 			
 			case 1:
 			{
-				//ModLoader.openGUI(this.mc.getMinecraft().thePlayer, new GuiRunescapeIngameMenu());
+				this.mc.displayGuiScreen(new GUIRCMMainMenu());
 				break;
 			}
 			
 			case 2:
 			{
 				this.interfaceSetting = 0;
-				this.closeGui();
 				break;
 			}
 			
 			case 3:
 			{
 				this.interfaceSetting = 1;
-				this.closeGui();
 				break;
 			}
 		}
@@ -77,7 +75,9 @@ public class GUIRCMInterfaceSettings extends GuiScreen
 	{
 		this.drawDefaultBackground();
 		
-		this.drawCenteredString(mc.fontRenderer, "Runescape Interface menu", width / 2, 40, 0xFFFFFF);
+		this.drawCenteredString(mc.fontRenderer, "Runescape Interface Settings", width / 2, 40, 0xFFFFFF);
+		
+		this.drawString(mc.fontRenderer, "setting: " + interfaceSetting, 3, height - 12, 0xFFFFFF);
 		
 		super.drawScreen(par1, par2, par3);
 	}

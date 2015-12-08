@@ -1,8 +1,8 @@
 package javabuckets.mods.rcm.skills.combat;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import javabuckets.mods.rcm.init.ModWeapons;
 import javabuckets.mods.rcm.main.RCM;
+import javabuckets.mods.rcm.skills.attack.ModWeapons;
 import javabuckets.mods.rcm.skills.mining.ModMiningItems;
 import javabuckets.mods.rcm.skills.woodcutting.ModWoodcuttingItems;
 import javabuckets.mods.rcm.utility.SkillReference;

@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import javabuckets.mods.rcm.items.ItemBase;
 import javabuckets.mods.rcm.main.RCM;
+import javabuckets.mods.rcm.skills.prayer.BlockPrayerAltar;
 import javabuckets.mods.rcm.skills.prayer.ModPrayerItems;
 import javabuckets.mods.rcm.utility.SkillReference;
 
@@ -27,14 +28,20 @@ public class ItemBones extends ItemBase
 	{
 		if (player.isSneaking() && player.isInWater() == false) 
 		{
-			addBone(player, itemstack, ModPrayerItems.bones, 4.5);
-			addBone(player, itemstack, ModPrayerItems.bigBones, 15);
-			addBone(player, itemstack, ModPrayerItems.dragonBones, 72);
-			
-			if (!player.capabilities.isCreativeMode)
+			if (world.getBlock(x, y, z) instanceof BlockPrayerAltar)
 			{
-				--itemstack.stackSize;
+				addBone(player, itemstack, ModPrayerItems.bones, 4.5*3);
+				addBone(player, itemstack, ModPrayerItems.bigBones, 15*3);
+				addBone(player, itemstack, ModPrayerItems.dragonBones, 72*3);
 			}
+			else
+			{
+				addBone(player, itemstack, ModPrayerItems.bones, 4.5);
+				addBone(player, itemstack, ModPrayerItems.bigBones, 15);
+				addBone(player, itemstack, ModPrayerItems.dragonBones, 72);
+			}
+			
+			--itemstack.stackSize;
 		}
 		return true;
 	}

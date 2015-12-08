@@ -3,7 +3,7 @@ package javabuckets.mods.rcm.skills.smithing;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import javabuckets.mods.rcm.init.ModArmor;
-import javabuckets.mods.rcm.init.ModWeapons;
+import javabuckets.mods.rcm.skills.attack.ModWeapons;
 import javabuckets.mods.rcm.skills.mining.ModMiningItems;
 import javabuckets.mods.rcm.skills.woodcutting.ModWoodcuttingItems;
 import cpw.mods.fml.common.registry.GameRegistry;

@@ -104,6 +104,6 @@ public class SummoningHandler extends BaseSkill
 
 	public void rechargeSummoningPoints() 
 	{
-		setSummoningPoints(RCM.instance.skillHandler.getLevel(SkillReference.summ) * 100);
+		setSummoningPoints(RCM.instance.skillHandler.getLevel(SkillReference.summ));
 	}
 }

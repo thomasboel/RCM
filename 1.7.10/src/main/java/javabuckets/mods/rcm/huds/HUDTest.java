@@ -1,7 +1,7 @@
 package javabuckets.mods.rcm.huds;
 
 import javabuckets.mods.rcm.main.RCM;
-import javabuckets.mods.rcm.utility.PrayerReference;
+import javabuckets.mods.rcm.skills.prayer.PrayerReference;
 import javabuckets.mods.rcm.utility.Reference;
 import javabuckets.mods.rcm.utility.SkillReference;
 
@@ -35,10 +35,7 @@ public class HUDTest extends Gui
 		int height = event.resolution.getScaledHeight();
 		renderOverlay(event, width, height);
 	}
-	
-	public static final ResourceLocation skills = new ResourceLocation(Reference.MOD_ID, "textures/gui/interface/skills1.png");
-	public static final ResourceLocation skills2 = new ResourceLocation(Reference.MOD_ID, "textures/gui/interface/skills2.png");
-	
+		
 	public void renderOverlay(RenderGameOverlayEvent event, int width, int height)
 	{
 		FontRenderer fontrenderer = this.mc.fontRenderer;

@@ -270,6 +270,53 @@ item.water_staff.name=Water Staff
 item.earth_staff.name=Earth Staff
 item.fire_staff.name=Fire Staff
 
+tile.air_altar.name=Air Altar
+tile.mind_altar.name=Mind Altar
+tile.water_altar.name=Water Altar
+tile.earth_altar.name=Earth Altar
+tile.fire_altar.name=Fire Altar
+tile.body_altar.name=Body Altar
+tile.cosmic_altar.name=Cosmic Altar
+tile.chaos_altar.name=Chaos Altar
+tile.astral_altar.name=Astral Altar
+tile.nature_altar.name=Nature Altar
+tile.law_altar.name=Law Altar
+tile.death_altar.name=Death Altar
+tile.blood_altar.name=Blood Altar
+tile.soul_altar.name=Soul Altar
+
+item.rune_essence.name=Rune Essence
+item.pure_essence.name=Pure Essence
+item.air_rune.name=Air Rune
+item.mind_rune.name=Mind Rune
+item.water_rune.name=Water Rune
+item.earth_rune.name=Earth Rune
+item.fire_rune.name=Fire Rune
+item.body_rune.name=Body Rune
+item.cosmic_rune.name=Cosmic Rune
+item.chaos_rune.name=Chaos Rune
+item.astral_rune.name=Astral Rune
+item.nature_rune.name=Nature Rune
+item.law_rune.name=Law Rune
+item.death_rune.name=Death Rune
+item.blood_rune.name=Blood Rune
+item.soul_rune.name=Soul Rune
+item.armadyl_rune.name=Armadyl Rune
+
+item.air_talisman.name=Air Talisman
+item.mind_talisman.name=Mind Talisman
+item.water_talisman.name=Water Talisman
+item.earth_talisman.name=Earth Talisman
+item.fire_talisman.name=Fire Talisman
+item.body_talisman.name=Body Talisman
+item.cosmic_talisman.name=Cosmic Talisman
+item.chaos_talisman.name=Chaos Talisman
+item.nature_talisman.name=Nature Talisman
+item.law_talisman.name=Law Talisman
+item.death_talisman.name=Death Talisman
+item.blood_talisman.name=Blood Talisman
+item.omni_talisman.name=Omni Talisman
+
 tile.null.name=Experiment XY23uI9
 
 tile.oak_log.name=Oak Logs

@@ -4,7 +4,6 @@ import org.lwjgl.opengl.GL11;
 
 import javabuckets.mods.rcm.guis.GUICustomButtonInv;
 import javabuckets.mods.rcm.main.RCM;
-import javabuckets.mods.rcm.utility.PrayerReference;
 import javabuckets.mods.rcm.utility.Reference;
 import javabuckets.mods.rcm.utility.SkillReference;
 import net.minecraft.client.gui.GuiButton;
@@ -278,7 +277,7 @@ public class GUIPrayerSelection extends GuiScreen
 		addPrayerBasedOnLvl(9, 27, 45, 5, 1);
 		addPrayerBasedOnLvl(9, 27, 45, 6, 0);
 		
-		drawString(mc.fontRenderer, "Prayers", 22, 6, 0xD48624);
+		drawString(mc.fontRenderer, "Prayers", 13, 6, 0xD48624);
 		
 		super.drawScreen(par1, par2, par3);
 	}

@@ -10,6 +10,7 @@ import javabuckets.mods.rcm.huds.HUDSkillsTab;
 import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.player.ExtendedPlayer;
 import javabuckets.mods.rcm.skills.combat.GUICombatSelection;
+import javabuckets.mods.rcm.skills.magic.GUIMagicSpellSelection;
 import javabuckets.mods.rcm.skills.prayer.GUIPrayerSelection;
 import javabuckets.mods.rcm.skills.slayer.GUISlayerMenu;
 import javabuckets.mods.rcm.utility.DateUtil;
@@ -91,6 +92,14 @@ public class RCMEventHandler
 				skillTabOpened = false;
 				isSkillTabTimerRunning = true;
 				mc.displayGuiScreen(new GUIPrayerSelection());
+			}
+			
+			if (Keyboard.isKeyDown(Keyboard.KEY_LCONTROL) && Keyboard.isKeyDown(Keyboard.KEY_C))
+			{
+				HUDSkillsTab.displaySkillTab = true;
+				skillTabOpened = false;
+				isSkillTabTimerRunning = true;
+				mc.displayGuiScreen(new GUIMagicSpellSelection());
 			}
 			
 			if (Keyboard.isKeyDown(Keyboard.KEY_LCONTROL) && Keyboard.isKeyDown(Keyboard.KEY_F) && skillTabOpened == false && skillTabOpenCloseTimer >= 20)

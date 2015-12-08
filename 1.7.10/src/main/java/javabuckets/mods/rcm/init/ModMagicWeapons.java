@@ -1,7 +1,7 @@
 package javabuckets.mods.rcm.init;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import javabuckets.mods.rcm.skills.combat.magic.ItemStaff;
+import javabuckets.mods.rcm.skills.magic.ItemStaff;
 import net.minecraft.item.Item;
 
 public class ModMagicWeapons 

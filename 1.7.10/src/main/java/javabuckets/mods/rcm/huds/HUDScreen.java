@@ -7,6 +7,7 @@ import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.utility.Reference;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
+import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
@@ -19,6 +20,7 @@ public class HUDScreen extends Gui
 	
 	public static final ResourceLocation skills1 = new ResourceLocation(Reference.MOD_ID, "textures/gui/interface/skills1.png");
 	public static final ResourceLocation skills2 = new ResourceLocation(Reference.MOD_ID, "textures/gui/interface/skills2.png");
+	public static final ResourceLocation overlay = new ResourceLocation(Reference.MOD_ID, "textures/gui/overlay.png");
 
 	public HUDScreen(Minecraft mc)
 	{
@@ -41,6 +43,37 @@ public class HUDScreen extends Gui
 		{
 			return;
 		}
+		
+		/*Tessellator tessellator = Tessellator.instance;
+
+		GL11.glDisable(GL11.GL_TEXTURE_2D);
+		GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
+        tessellator.startDrawingQuads();
+        tessellator.addVertexWithUV(0.0D, (double)height, -90.0D, 0.0D, 1.0D);
+        tessellator.addVertexWithUV((double)width, (double)height, -90.0D, 1.0D, 1.0D);
+        tessellator.addVertexWithUV((double)width, 0.0D, -90.0D, 1.0D, 0.0D);
+        tessellator.addVertexWithUV(0.0D, 0.0D, -90.0D, 0.0D, 0.0D);
+        tessellator.draw();
+        GL11.glEnable(GL11.GL_TEXTURE_2D);
+        
+		GL11.glEnable(GL11.GL_BLEND);
+    	GL11.glDisable(GL11.GL_DEPTH_TEST);
+        GL11.glDepthMask(false);
+        GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+        float f = 0.5F;
+        GL11.glColor4f(f, f, f, 1.0F);
+        GL11.glDisable(GL11.GL_ALPHA_TEST);
+        Minecraft.getMinecraft().getTextureManager().bindTexture(overlay);
+        tessellator.startDrawingQuads();
+        tessellator.addVertexWithUV(0.0D, (double)height, -90.0D, 0.0D, 1.0D);
+        tessellator.addVertexWithUV((double)width, (double)height, -90.0D, 1.0D, 1.0D);
+        tessellator.addVertexWithUV((double)width, 0.0D, -90.0D, 1.0D, 0.0D);
+        tessellator.addVertexWithUV(0.0D, 0.0D, -90.0D, 0.0D, 0.0D);
+        tessellator.draw();
+        GL11.glDepthMask(true);
+        GL11.glEnable(GL11.GL_DEPTH_TEST);
+        GL11.glEnable(GL11.GL_ALPHA_TEST);
+        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);	  */   
 
 		GL11.glScalef(0.25F, 0.25F, 0.25F);
 		mc.renderEngine.bindTexture(skills1);

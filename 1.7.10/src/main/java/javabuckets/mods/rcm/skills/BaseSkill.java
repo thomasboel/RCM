@@ -26,6 +26,8 @@ public class BaseSkill
 		RCM.instance.prayer.prayer(player, world);
 		// Woodcutting
 		RCM.instance.woodcutting.woodcutting(player, world);
+		// Runecrafting
+		RCM.instance.runecrafting.runecrafting(player, world);
 		// Slayer
 		RCM.instance.slayer.slayer(player, world);
 		// Farming

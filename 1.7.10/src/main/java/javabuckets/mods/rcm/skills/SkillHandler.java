@@ -489,6 +489,11 @@ public class SkillHandler
 	 */
 	private void checkCombatLevel()
 	{
+		
+		/**
+		 * 0.25 * (1.3 * max[att + str, mage * 2, range * 2] + def + hp + 0.5 * pray + 0.5 * summ)
+		 */
+		
 		if (attackLvl + strengthLvl >= magicLvl * 1.5 && attackLvl + strengthLvl >= rangedLvl * 1.5)
 		{
 			this.combatLvl = (int) (defenceLvl + constitutionLvl + (prayerLvl / 2) + (summoningLvl / 2) + 1.3 * (attackLvl + strengthLvl)) / 4;

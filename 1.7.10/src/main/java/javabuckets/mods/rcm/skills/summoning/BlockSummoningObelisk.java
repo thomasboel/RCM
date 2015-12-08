@@ -63,7 +63,7 @@ public class BlockSummoningObelisk extends BlockContainer
 
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int i, float f1, float f2, float f3) 
 	{
-		if (RCM.instance.summoning.getSummoningPoints() < RCM.instance.skillHandler.getLevel(SkillReference.summ) * 10)
+		if (RCM.instance.summoning.getSummoningPoints() < RCM.instance.skillHandler.getLevel(SkillReference.summ))
 		{
 			RCM.instance.summoning.rechargeSummoningPoints();
 		}

@@ -1,9 +1,12 @@
 package javabuckets.mods.rcm.init;
 
+import javabuckets.mods.rcm.skills.attack.ModWeapons;
 import javabuckets.mods.rcm.skills.fishing.ModFishingItems;
 import javabuckets.mods.rcm.skills.herblore.ModHerbloreItems;
+import javabuckets.mods.rcm.skills.magic.ModMagicItems;
 import javabuckets.mods.rcm.skills.mining.ModMiningItems;
 import javabuckets.mods.rcm.skills.prayer.ModPrayerItems;
+import javabuckets.mods.rcm.skills.runecrafting.ModRunecraftingItems;
 import javabuckets.mods.rcm.skills.smithing.ModSmithingItems;
 import javabuckets.mods.rcm.skills.woodcutting.ModWoodcuttingItems;
 
@@ -16,7 +19,9 @@ public class ModItems
 		ModFishingItems.init();
 		ModHerbloreItems.init();
 		ModPrayerItems.init();
+		ModMagicItems.init();
 		ModWoodcuttingItems.init();
+		ModRunecraftingItems.init();
 		
 		//ModQuestItems.init();
 		DropTable.init();

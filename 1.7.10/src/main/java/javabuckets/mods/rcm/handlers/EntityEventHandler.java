@@ -1,7 +1,7 @@
 package javabuckets.mods.rcm.handlers;
 
-import javabuckets.mods.rcm.init.ModWeapons;
 import javabuckets.mods.rcm.main.RCM;
+import javabuckets.mods.rcm.skills.attack.ModWeapons;
 import javabuckets.mods.rcm.skills.mining.ModMiningItems;
 import javabuckets.mods.rcm.skills.prayer.ModPrayerItems;
 import javabuckets.mods.rcm.skills.woodcutting.ModWoodcuttingItems;
@@ -50,7 +50,7 @@ public class EntityEventHandler
 
 	public void addDropToEntity(LivingDropsEvent event, double chance, Item item, int count)
 	{
-		if (event.source.getDamageType().equals("player") || event.source.isProjectile())
+		if (event.source.getDamageType().equals("player") || event.source.isProjectile() || event.source.isMagicDamage() || event.source.isFireDamage())
 		{
 			double rand = Math.random();
 

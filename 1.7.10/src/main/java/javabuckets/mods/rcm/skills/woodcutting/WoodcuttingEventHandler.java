@@ -1,8 +1,8 @@
 package javabuckets.mods.rcm.skills.woodcutting;
 
+import javabuckets.mods.rcm.dailies.DailyChallengeReference;
 import javabuckets.mods.rcm.init.ModFixBlocks;
 import javabuckets.mods.rcm.main.RCM;
-import javabuckets.mods.rcm.utility.DailyChallengeReference;
 import javabuckets.mods.rcm.utility.LogHelper;
 import javabuckets.mods.rcm.utility.SkillReference;
 import net.minecraft.block.Block;

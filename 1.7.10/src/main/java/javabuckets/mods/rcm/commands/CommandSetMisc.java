@@ -49,6 +49,8 @@ public class CommandSetMisc extends CommandBase
 				RCM.instance.skillHandler.resetPlayer();
 				RCM.instance.gpHandler.setGoldPointsInPouch(0);
 				RCM.instance.skillHandler.setFirstTimeLogon(true);
+				RCM.instance.prayer.rechargePrayerPoints();
+				RCM.instance.summoning.rechargeSummoningPoints();
 				return;
 			}
 			

@@ -1,8 +1,8 @@
 package javabuckets.mods.rcm.skills.mining;
 
+import javabuckets.mods.rcm.dailies.DailyChallengeReference;
 import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.skills.BaseSkill;
-import javabuckets.mods.rcm.utility.DailyChallengeReference;
 import javabuckets.mods.rcm.utility.LevelUpUtil;
 import javabuckets.mods.rcm.utility.SkillReference;
 import net.minecraft.entity.player.EntityPlayer;

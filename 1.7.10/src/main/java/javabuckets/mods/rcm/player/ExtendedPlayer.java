@@ -40,6 +40,7 @@ public class ExtendedPlayer implements IExtendedEntityProperties
 		RCM.instance.skillHandler.writeToNBT(properties);
 		RCM.instance.gpHandler.writeToNBT(properties);
 		RCM.instance.combat.writeToNBT(properties);
+		RCM.instance.magic.writeToNBT(properties);
 		RCM.instance.slayer.writeToNBT(properties);
 		RCM.instance.prayer.writeToNBT(properties);
 		RCM.instance.summoning.writeToNBT(properties);
@@ -58,6 +59,7 @@ public class ExtendedPlayer implements IExtendedEntityProperties
 		RCM.instance.skillHandler.readFromNBT(properties);
 		RCM.instance.gpHandler.readFromNBT(properties);
 		RCM.instance.combat.readFromNBT(properties);
+		RCM.instance.magic.readFromNBT(properties);
 		RCM.instance.slayer.readFromNBT(properties);
 		RCM.instance.prayer.readFromNBT(properties);
 		RCM.instance.summoning.readFromNBT(properties);

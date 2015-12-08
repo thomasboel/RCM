@@ -26,7 +26,7 @@ public class GUIRCMMainMenu extends GuiScreen
 		
 		buttonList.add(new GUICustomButton(0, width / 2 - 100, 70, 200, 20, StatCollector.translateToLocal("Back to Game")));
 		buttonList.add(new GUICustomButton(1, width / 2 - 100, 95, 97, 20, StatCollector.translateToLocal("Interface Settings")));
-		buttonList.add(new GUICustomButton(2, width / 2 + 3, 95, 97, 20, StatCollector.translateToLocal("Slayer Tab")));
+		buttonList.add(new GUICustomButton(2, width / 2 + 3, 95, 97, 20, StatCollector.translateToLocal("Skill Tabs")));
 		buttonList.add(new GUICustomButton(3, width / 2 - 100, 145 + 25, 200, 20, StatCollector.translateToLocal("Save and Quit to Title")));
 		buttonList.add(new GUICustomButton(4, width / 2 - 100, 120, 97, 20, StatCollector.translateToLocal("Skill Guides")));
 		buttonList.add(new GUICustomButton(5, width / 2 + 3, 120, 97, 20, StatCollector.translateToLocal("Combat Selection")));
@@ -45,13 +45,13 @@ public class GUIRCMMainMenu extends GuiScreen
 			
 			case 1:
 			{
-				//GuiRunescapeInterfaceSettings()
+				this.mc.displayGuiScreen(new GUIRCMInterfaceSettings());
 				break;
 			}
 			
 			case 2:
 			{
-				this.mc.displayGuiScreen(new GUISlayerMenu());
+				this.mc.displayGuiScreen(new GUISkillTabs());
 				break;
 			}
 			
@@ -91,7 +91,7 @@ public class GUIRCMMainMenu extends GuiScreen
 	{
 		this.drawDefaultBackground();
 		
-		this.drawCenteredString(mc.fontRenderer, "Runescape game menu", width / 2, 40, 0xFFFFFF);
+		this.drawCenteredString(mc.fontRenderer, "Runescape Game Menu", width / 2, 40, 0xFFFFFF);
 		
 		super.drawScreen(par1, par2, par3);
 	}

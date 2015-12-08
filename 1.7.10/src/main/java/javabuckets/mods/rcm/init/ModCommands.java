@@ -17,5 +17,7 @@ public class ModCommands
 
 		event.registerServerCommand(new CommandSetSlayerTask());
 		event.registerServerCommand(new CommandSetBossTask());
+		
+		event.registerServerCommand(new AdminCommandBuy());
 	}
 }
