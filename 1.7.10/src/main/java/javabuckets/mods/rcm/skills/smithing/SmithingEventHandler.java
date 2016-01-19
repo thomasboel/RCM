@@ -9,6 +9,7 @@ import net.minecraft.client.gui.inventory.GuiInventory;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.event.entity.player.AnvilRepairEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
@@ -62,6 +63,8 @@ public class SmithingEventHandler
 	{
 
 	}
+	
+	
 
 	public void updatePlayerInventory(Minecraft mc, EntityPlayer player)
 	{

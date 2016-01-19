@@ -46,5 +46,9 @@ public class ModFixRecipes
 		GameRegistry.addShapedRecipe(new ItemStack(ModFishingItems.fishingNet), new Object[] {
 			"S S", " S ", "S S", 'S', Items.string
 		});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.pumpkin_seeds, 4), new Object[] {
+				ModFixBlocks.pumpkin
+		});
 	}
 }

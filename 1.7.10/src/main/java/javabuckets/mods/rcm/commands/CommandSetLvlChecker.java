@@ -20,6 +20,14 @@ public class CommandSetLvlChecker
 		RCM.instance.combat.isCombating = true;
 		RCM.instance.mining.isMining = true;
 		RCM.instance.woodcutting.isWoodcutting = true;
+		RCM.instance.farming.isFarming = true;
+		RCM.instance.fishing.isFishing = true;
+		RCM.instance.prayer.isPraying = true;
+		RCM.instance.runecrafting.isRunecrafting = true;
+		RCM.instance.slayer.isCombatingAssignedSlayerMonster = true;
+		RCM.instance.smithing.isSmithing = true;
+		RCM.instance.summoning.isSummoning = true;
+		RCM.instance.thieving.isThieving = true;
 	}
 	
 	public static double getXpFromLevel(int level)

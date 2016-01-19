@@ -192,7 +192,7 @@ public class GUISkillGuides extends GuiScreen
 		drawString(mc.fontRenderer, "" + RCM.instance.skillHandler.getTotalLvl(), xPos1 + 4, yPos + 187, 0xFFFFFF);
 		
 		// Total XP
-		this.drawString(mc.fontRenderer, "Total Experience: " + RCM.instance.skillHandler.getTotalXp() + " xp", 5, height - 14, 0xFFFFFF);
+		this.drawString(mc.fontRenderer, "Total Experience: " + RCM.instance.skillHandler.getTotalXp() + " xp", 127, 55, 0xFFFFFF);
 
 		// Combat Level
 		drawString(mc.fontRenderer, "" + (int)RCM.instance.skillHandler.getCombatLvl(), xPos1 + 65, yPos + 187, 0xFFFFFF);
@@ -201,7 +201,8 @@ public class GUISkillGuides extends GuiScreen
 		String gpInPouch = "gp in pouch: " + RCM.instance.gpHandler.getEnumChatFormatting() + RCM.instance.gpHandler.getGoldPointsDisplay() + EnumChatFormatting.RESET;
 		drawString(mc.fontRenderer, gpInPouch, 5, 194, 0xFFFFFF);
 		
-		drawCenteredString(mc.fontRenderer, RCM.instance.dailyGiftHandler.getDate(), width / 2, height / 2, 0xFFFFFF);
+		// Last Login Date
+		drawCenteredString(mc.fontRenderer, RCM.instance.dailyGiftHandler.getDate(), width /2, height - 40, 0xFFFFFF);
 
 		GL11.glScalef(0.25F, 0.25F, 0.25F);
 		mc.renderEngine.bindTexture(Skills1);

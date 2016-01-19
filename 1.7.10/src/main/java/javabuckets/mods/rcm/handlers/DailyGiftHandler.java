@@ -17,6 +17,7 @@ public class DailyGiftHandler
 		date = par1NBTTagCompound.getString("Date");
 	}
 	
+	// Last login date
 	public String getDate() 
 	{
 		return date;

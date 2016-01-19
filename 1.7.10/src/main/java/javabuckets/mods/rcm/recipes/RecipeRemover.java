@@ -1,26 +1,15 @@
-package javabuckets.mods.rcm.proxies;
+package javabuckets.mods.rcm.recipes;
 
 import java.util.List;
 
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.ShapedRecipes;
 
-public class CommonProxy 
+public class RecipeRemover 
 {
-	public void proxy()
-	{
-		removeRecipes();
-	}
-	
-	public void removeRecipes()
-	{
-		removeRecipe(new ItemStack(Items.iron_sword, 1));
-	}
-	
-	private static void removeRecipe(ItemStack resultItem)
+	public void removeRecipe(ItemStack resultItem)
 	{
 		List<IRecipe> recipes = CraftingManager.getInstance().getRecipeList();
 		

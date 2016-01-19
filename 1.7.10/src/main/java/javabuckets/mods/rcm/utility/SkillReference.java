@@ -29,6 +29,8 @@ public class SkillReference
 	public static final String dung = "dungeoneering";
 	public static final String div = "divination";
 	
+	public static String[] skill = { att, cons, mine, str, agi, smith, def, herb, fish, range, thiev, cook, pray, craft, fm, mage, fletch, wc, rc, slay, farm, con, hunt, summ, dung, div };
+	
 	public static double getXpFromLvl(int lvl)
 	{
 		if (lvl == 1) { return 0; }

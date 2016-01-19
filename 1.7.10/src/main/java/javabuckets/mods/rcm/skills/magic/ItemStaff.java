@@ -52,13 +52,20 @@ public class ItemStaff extends ItemBase
 
 		if (RCM.instance.magic.getCurrentSelectedSpell() != "")
 		{
-			RCM.instance.magic.checkForEffecientRunesForSpell(player, RCM.instance.magic.getCurrentSelectedSpell());
-
-			if (RCM.instance.magic.hasEffecientRunesForSpell)
+			if (RCM.instance.magic.getRequiredLevelFromSpell(RCM.instance.magic.getCurrentSelectedSpell()) != 0 && RCM.instance.skillHandler.getLevel(SkillReference.mage) >= RCM.instance.magic.getRequiredLevelFromSpell(RCM.instance.magic.getCurrentSelectedSpell()))
 			{
-				player.setItemInUse(itemstack, this.getMaxItemUseDuration(itemstack));
+				RCM.instance.magic.checkForEffecientRunesForSpell(player, RCM.instance.magic.getCurrentSelectedSpell());
+
+				if (RCM.instance.magic.hasEffecientRunesForSpell)
+				{
+					player.setItemInUse(itemstack, this.getMaxItemUseDuration(itemstack));
+				}
+				else { }
 			}
-			else { }
+			else
+			{
+				player.addChatMessage(new ChatComponentText("You need a Level of at least: " + RCM.instance.magic.getRequiredLevelFromSpell(RCM.instance.magic.getCurrentSelectedSpell()) + " in Magic, utilize this spell!"));
+			}
 		}
 		else
 		{
@@ -67,7 +74,7 @@ public class ItemStaff extends ItemBase
 
 		return itemstack;
 	}
-	
+
 	public void onPlayerStoppedUsing(ItemStack itemstack, World world, EntityPlayer player, int itemInUseCount)
 	{
 		int j = this.getMaxItemUseDuration(itemstack) - itemInUseCount;
@@ -98,7 +105,7 @@ public class ItemStaff extends ItemBase
 
 	public void useMagicSpell(ItemStack itemstack, World world, EntityPlayer player)
 	{
-		
+
 		Random rand = new Random();
 
 		int magicLvl = RCM.instance.skillHandler.getLevel(SkillReference.mage);

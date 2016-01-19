@@ -1,10 +1,13 @@
-package javabuckets.mods.rcm.skills.smithing;
+package javabuckets.mods.rcm.recipes;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import javabuckets.mods.rcm.init.ModArmor;
+import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.skills.attack.ModWeapons;
 import javabuckets.mods.rcm.skills.mining.ModMiningItems;
+import javabuckets.mods.rcm.skills.smithing.ModSmithingItems;
 import javabuckets.mods.rcm.skills.woodcutting.ModWoodcuttingItems;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -15,6 +18,11 @@ public class ModSmithingRecipes
 		initializeArmors();
 		initializeOreAndBars();
 		initializeToolsAndWeps();
+	}
+
+	public static void removeRecipes() 
+	{
+		RCM.instance.recipeRemover.removeRecipe(new ItemStack(Blocks.gold_block, 1));
 	}
 
 	private static void initializeArmors()
@@ -117,6 +125,19 @@ public class ModSmithingRecipes
 
 		GameRegistry.addShapelessRecipe(new ItemStack(ModMiningItems.rune_coal), new Object[] {
 				ModMiningItems.runiteOre, Items.coal, Items.coal, Items.coal, Items.coal, Items.coal, Items.coal });
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(ModMiningItems.iron_coal), new Object[] {
+				ModMiningItems.ironOre, new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1) });
+
+		GameRegistry.addShapelessRecipe(new ItemStack(ModMiningItems.mithril_coal), new Object[] {
+				ModMiningItems.mithrilOre, new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1) });
+
+		GameRegistry.addShapelessRecipe(new ItemStack(ModMiningItems.adamant_coal), new Object[] {
+				ModMiningItems.adamantiteOre, new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1) });
+
+		GameRegistry.addShapelessRecipe(new ItemStack(ModMiningItems.rune_coal), new Object[] {
+				ModMiningItems.runiteOre, new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1) });
+		
 
 		GameRegistry.addSmelting(ModMiningItems.copper_tin, new ItemStack(ModSmithingItems.bronzeBar), 1F);
 		GameRegistry.addSmelting(ModMiningItems.ironOre, new ItemStack(Items.iron_ingot), 1.5F);

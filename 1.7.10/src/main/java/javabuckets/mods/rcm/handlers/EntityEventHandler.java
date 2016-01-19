@@ -1,5 +1,6 @@
 package javabuckets.mods.rcm.handlers;
 
+import javabuckets.mods.rcm.init.ModArmor;
 import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.skills.attack.ModWeapons;
 import javabuckets.mods.rcm.skills.mining.ModMiningItems;
@@ -38,9 +39,11 @@ public class EntityEventHandler
 			for (int i = 0; i < 20; ++i)
 			{
 				addDropToEntity(event, 1.00D, ModPrayerItems.dragonBones, 1);
-				
-				addTwoTwoDropToEntity(event, ModWoodcuttingItems.dragonHatchet, ModMiningItems.dragonPickaxe);
 			}
+			
+			addTwoTwoDropToEntity(event, ModWoodcuttingItems.dragonHatchet, ModMiningItems.dragonPickaxe);
+			addDropToEntity(event, 0.125, ModWeapons.dragonLongsword, 1);
+			addDropToEntity(event, 0.125, ModArmor.runePlatebody, 1);
 
 			//addDropToEntity(event, 0.5, 4061, 1);
 			//addDropToEntity(event, 0.3, 4072, 1);

@@ -1,6 +1,8 @@
 package javabuckets.mods.rcm.skills.mining;
 
+import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import javabuckets.mods.rcm.blocks.BlockRSOre;
 import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.utility.LogHelper;
 import javabuckets.mods.rcm.utility.SkillReference;
@@ -13,6 +15,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
@@ -172,6 +175,15 @@ public class MiningEventHandler
 			event.dropChance = 0.00F;
 			Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("You need a Level of at least: " + requiredLevel + " in Mining, to use this pickaxe!"));
 			event.world.setBlock(event.x, event.y, event.z, event.block);
+		}
+	}
+	
+	@EventHandler
+	public void onBlockLeftClick(PlayerInteractEvent event)
+	{
+		if (event.action == PlayerInteractEvent.Action.LEFT_CLICK_BLOCK)
+		{
+			LogHelper.info("lel");
 		}
 	}
 

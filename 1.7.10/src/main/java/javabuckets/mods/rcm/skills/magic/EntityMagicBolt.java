@@ -252,7 +252,7 @@ public class EntityMagicBolt extends Entity implements IProjectile
                 /**
                  * Custom code for what happens when a bolt hits a target
                  */
-                EntityLivingBase elb = (EntityLivingBase)movingobjectposition.entityHit;
+                /*EntityLivingBase elb = (EntityLivingBase)movingobjectposition.entityHit;
                 
                 if (RCM.instance.magic.getCurrentSelectedSpell() == MagicReference.confuse)
                 {
@@ -265,7 +265,7 @@ public class EntityMagicBolt extends Entity implements IProjectile
                 if (RCM.instance.magic.getCurrentSelectedSpell() == MagicReference.stagger)
                 {
                 	elb.addPotionEffect(new PotionEffect(Potion.weakness.id, 2400, 2, false));
-                }
+                }*/
             }
             else
             {

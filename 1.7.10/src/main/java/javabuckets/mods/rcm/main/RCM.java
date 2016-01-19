@@ -23,6 +23,8 @@ import javabuckets.mods.rcm.init.ModItems;
 import javabuckets.mods.rcm.init.ModRecipes;
 import javabuckets.mods.rcm.player.PlayerBonuses;
 import javabuckets.mods.rcm.proxies.CommonProxy;
+import javabuckets.mods.rcm.recipes.ModSmithingRecipes;
+import javabuckets.mods.rcm.recipes.RecipeRemover;
 import javabuckets.mods.rcm.skills.BaseSkill;
 import javabuckets.mods.rcm.skills.SkillHandler;
 import javabuckets.mods.rcm.skills.combat.CombatEventHandler;
@@ -69,8 +71,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION)
 
-public class RCM // 478 63 349 HOME              -770 16 300 SOME CAVE                -915 13 290                  596 37 408 UNEXPLOIRED CAVE                        1405 80 -603 JUNGLE
-{ // Home 718 81 -150		Farm 2147 64 -600
+public class RCM
+{
 	@SidedProxy(clientSide = "javabuckets.mods.rcm.proxies.ClientProxy",
 				serverSide = "javabuckets.mods.rcm.proxies.CommonProxy")
 	public static CommonProxy proxy;
@@ -98,6 +100,7 @@ public class RCM // 478 63 349 HOME              -770 16 300 SOME CAVE          
 	public DailyGiftHandler dailyGiftHandler = new DailyGiftHandler();
 	public PlayerBonuses playerBonuses = new PlayerBonuses();
 	public DailyChallengeHandler dailies = new DailyChallengeHandler();
+	public RecipeRemover recipeRemover = new RecipeRemover();
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -118,6 +121,7 @@ public class RCM // 478 63 349 HOME              -770 16 300 SOME CAVE          
 	public void postInit(FMLPostInitializationEvent event)
 	{
 		ModEvents.postInit();
+		ModSmithingRecipes.removeRecipes();
 		proxy.proxy();
 	}
 

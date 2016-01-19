@@ -54,7 +54,7 @@ public class CommandSetLastTimePlayed extends CommandBase
 		}
 		else if (astring.length == 3)
 		{
-			return getListOfStringsMatchingLastWord(astring, new String[] { "2015" });
+			return getListOfStringsMatchingLastWord(astring, new String[] { "2015", "2016" });
 		}
 		return null;
 	}
