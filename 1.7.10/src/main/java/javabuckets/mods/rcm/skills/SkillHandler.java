@@ -72,7 +72,7 @@ public class SkillHandler
 		RCM.instance.playerBonuses.writeToNBT(par1NBTTagCompound);
 		//RCM.instance.dailies.writeToNBT(par1NBTTagCompound);
 	}
-
+	
 	public void readFromNBT(NBTTagCompound par1NBTTagCompound)
 	{
 		for (int i = 0; i < 26; i++)

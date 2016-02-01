@@ -9,6 +9,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class ModPrayerItems
 {
 	public static Item bones;
+	public static Item wolfBones;
 	public static Item bigBones;
 	public static Item dragonBones;
 	
@@ -16,6 +17,9 @@ public class ModPrayerItems
 	{
 		bones = new ItemBones("bones");
 		GameRegistry.registerItem(bones, "bones", Reference.MOD_ID);
+		
+		wolfBones = new ItemBones("wolf_bones");
+		GameRegistry.registerItem(wolfBones, "wolf_bones", Reference.MOD_ID);
 		
 		bigBones = new ItemBones("big_bones");
 		GameRegistry.registerItem(bigBones, "big_bones", Reference.MOD_ID);

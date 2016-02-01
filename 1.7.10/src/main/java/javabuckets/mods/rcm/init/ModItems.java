@@ -8,6 +8,7 @@ import javabuckets.mods.rcm.skills.mining.ModMiningItems;
 import javabuckets.mods.rcm.skills.prayer.ModPrayerItems;
 import javabuckets.mods.rcm.skills.runecrafting.ModRunecraftingItems;
 import javabuckets.mods.rcm.skills.smithing.ModSmithingItems;
+import javabuckets.mods.rcm.skills.summoning.ModSummoningItems;
 import javabuckets.mods.rcm.skills.woodcutting.ModWoodcuttingItems;
 
 public class ModItems
@@ -22,6 +23,7 @@ public class ModItems
 		ModMagicItems.init();
 		ModWoodcuttingItems.init();
 		ModRunecraftingItems.init();
+		ModSummoningItems.init();
 		
 		//ModQuestItems.init();
 		DropTable.init();

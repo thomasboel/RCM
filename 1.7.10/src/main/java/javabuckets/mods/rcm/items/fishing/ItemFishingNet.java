@@ -3,9 +3,13 @@ package javabuckets.mods.rcm.items.fishing;
 import javabuckets.mods.rcm.items.ItemBase;
 import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.skills.fishing.FishingEventHandler;
+import javabuckets.mods.rcm.utility.LogHelper;
 import javabuckets.mods.rcm.utility.Reference;
 import javabuckets.mods.rcm.utility.SkillReference;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.gui.inventory.GuiInventory;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -60,7 +64,6 @@ public class ItemFishingNet extends ItemBase
 					if (!RCM.instance.fishing.isFishing)
 					{
 						RCM.instance.fishing.isFishing = true;
-//						FishingEventHandler.didPlayerAccesClassFromFishingEquipment = true;
 						
 						//fish(heldItem, player);
 					}
@@ -69,19 +72,5 @@ public class ItemFishingNet extends ItemBase
 			
 			return itemstack;
 		}
-	}
-	
-	/*public void fish(ItemStack net, EntityPlayer player)
-	{
-		int fishLvl = RCM.instance.skillHandler.getLevel(SkillReference.fish);
-		int 
-		
-	}*/
-	
-	public int getAvailableFish(int fishingLvl)
-	{
-		if (fishingLvl < 10) { return 1; }
-		else if (fishingLvl >= 10 && fishingLvl < 15) { return 2; }
-		return 0;
 	}
 }

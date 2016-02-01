@@ -7,12 +7,17 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import javabuckets.mods.rcm.blocks.tileentities.*;
+import javabuckets.mods.rcm.entities.summoning.FamiliarSpiritwolf;
+import javabuckets.mods.rcm.entities.summoning.renderers.RenderSpiritwolf;
+import javabuckets.mods.rcm.main.RCM;
+import javabuckets.mods.rcm.models.ModelSpiritwolf;
 import javabuckets.mods.rcm.renderers.*;
 import javabuckets.mods.rcm.renderers.blocks.*;
 import javabuckets.mods.rcm.renderers.items.*;
 import javabuckets.mods.rcm.skills.magic.EntityMagicBolt;
 import javabuckets.mods.rcm.skills.prayer.ModPrayerBlocks;
 import javabuckets.mods.rcm.skills.runecrafting.ModRunecraftingBlocks;
+import javabuckets.mods.rcm.skills.smithing.ModSmithingBlocks;
 import javabuckets.mods.rcm.skills.summoning.ModSummoningBlocks;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.MinecraftForgeClient;
@@ -36,6 +41,10 @@ public class ClientProxy extends CommonProxy
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPrayerAltar.class, new RenderPrayerAltar());
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(ModPrayerBlocks.prayerAltar), new ItemRenderPrayerAltar());
 		
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(ModSmithingBlocks.rsFurnace), new ItemRendererFurnace());
+		GameRegistry.registerTileEntity(TileEntityRSFurnace.class, "furnace");
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityRSFurnace.class, new BlockRendererFurnace());
+		
 		renderAltars();
 	}
 	
@@ -43,6 +52,11 @@ public class ClientProxy extends CommonProxy
 	{
 		EntityRegistry.registerGlobalEntityID(EntityMagicBolt.class, "magicbolt", EntityRegistry.findGlobalUniqueEntityId());
 		RenderingRegistry.instance().registerEntityRenderingHandler(EntityMagicBolt.class, new RenderMagicBolt());
+		
+		int spiritWolfID = EntityRegistry.findGlobalUniqueEntityId();
+		EntityRegistry.registerGlobalEntityID(FamiliarSpiritwolf.class, "spirit_wolf", spiritWolfID);
+		EntityRegistry.registerModEntity(FamiliarSpiritwolf.class, "spirit_wolf", spiritWolfID, RCM.instance, 64, 1, true);
+		RenderingRegistry.instance().registerEntityRenderingHandler(FamiliarSpiritwolf.class, new RenderSpiritwolf(new ModelSpiritwolf(), 1));
 	}
 	
 	public void renderAltars()

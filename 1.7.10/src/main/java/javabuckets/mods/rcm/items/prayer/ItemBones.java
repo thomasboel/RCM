@@ -31,12 +31,14 @@ public class ItemBones extends ItemBase
 			if (world.getBlock(x, y, z) instanceof BlockPrayerAltar)
 			{
 				addBone(player, itemstack, ModPrayerItems.bones, 4.5*3);
+				addBone(player, itemstack, ModPrayerItems.wolfBones, 4.5*3);
 				addBone(player, itemstack, ModPrayerItems.bigBones, 15*3);
 				addBone(player, itemstack, ModPrayerItems.dragonBones, 72*3);
 			}
 			else
 			{
 				addBone(player, itemstack, ModPrayerItems.bones, 4.5);
+				addBone(player, itemstack, ModPrayerItems.wolfBones, 4.5);
 				addBone(player, itemstack, ModPrayerItems.bigBones, 15);
 				addBone(player, itemstack, ModPrayerItems.dragonBones, 72);
 			}

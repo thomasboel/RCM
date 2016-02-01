@@ -28,7 +28,7 @@ public class ItemSword extends net.minecraft.item.ItemSword
 		this.weaponDamage = defaultWeaponDamage + (double)toolMaterial.getDamageVsEntity();
 	}
 	
-	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) 
+	/*public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) 
     {
     	String s = "" + this.weaponDamage;
     	
@@ -42,7 +42,7 @@ public class ItemSword extends net.minecraft.item.ItemSword
     	}
     	
     	par3List.add(EnumChatFormatting.BLUE + "+" + this.strengthBonus + " Strength Bonus Damage");
-    }
+    }*/
 
 	@Override
 	public Multimap getItemAttributeModifiers() 

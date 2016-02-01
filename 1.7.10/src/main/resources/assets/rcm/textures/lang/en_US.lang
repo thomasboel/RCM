@@ -250,6 +250,8 @@ item.dragon_scimitar.name=Dragon Scimitar
 item.dragon_off_scimitar.name=Off-hand Dragon Scimitar
 item.dragon_longsword.name=Dragon Longsword
 item.dragon_off_longsword.name=Off-hand Dragon Longsword
+item.dragon_warhammer.name=Dragon Warhammer
+item.dragon_off_warhammer.name=Off-hand Dragon Warhammer
 item.dragon_battleaxe.name=Dragon Battleaxe
 item.dragon_off_battleaxe.name=Off-hand Dragon Battleaxe
 item.dragon_claw.name=Dragon Claw
@@ -350,7 +352,7 @@ tile.copper_ore.name=Copper Ore
 tile.tin_ore.name=Tin Ore
 tile.silver_ore.name=Silver Ore
 tile.mithril_ore.name=Mithril Ore
-tile.adamantite_ore.name=Adamntite Ore
+tile.adamantite_ore.name=Adamantite Ore
 tile.runite_ore.name=Runite Ore
 
 item.copper_ore.name=Copper Ore
@@ -359,7 +361,7 @@ item.iron_ore.name=Iron Ore
 item.silver_ore.name=Silver Ore
 item.gold_ore.name=Gold Ore
 item.mithril_ore.name=Mithril Ore
-item.adamantite_ore.name=Adamntite Ore
+item.adamantite_ore.name=Adamantite Ore
 item.runite_ore.name=Runite Ore
 
 item.copper_tin.name=Copper and Tin Ore
@@ -377,5 +379,16 @@ item.rune_bar.name=Rune Bar
 item.dragon_bar.name=Dragon Bar
 
 item.bones.name=Bones
+item.wolf_bones.name=Wolf Bones
 item.big_bones.name=Big Bones
 item.dragon_bones.name=Dragon Bones
+
+item.empty_pouch.name=Empty Pouch
+item.spirit_shards.name=Spirit Shards
+item.gold_charm.name=Gold Charm
+item.green_charm.name=Green Charm
+item.red_charm.name=Red Charm
+item.blue_charm.name=Blue Charm
+item.elder_charm.name=Elder Charm
+
+item.pouch_spiritwolf.name=Spirit Wolf Pouch
