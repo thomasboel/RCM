@@ -16,7 +16,7 @@ public class BlockAltar extends BlockContainer
 	public BlockAltar()
 	{
 		super(Material.rock);
-		this.setCreativeTab(CreativeTabs.tabBlock);
+		//this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 	
 	public int getRenderType() { return -1; }

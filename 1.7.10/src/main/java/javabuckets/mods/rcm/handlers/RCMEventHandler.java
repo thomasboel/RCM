@@ -3,6 +3,7 @@ package javabuckets.mods.rcm.handlers;
 import org.lwjgl.input.Keyboard;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import javabuckets.mods.rcm.blocks.tileentities.TileEntityRSFurnace;
 import javabuckets.mods.rcm.guis.GUIRCMMainMenu;
 import javabuckets.mods.rcm.huds.HUDSkillsTab;
 import javabuckets.mods.rcm.main.RCM;

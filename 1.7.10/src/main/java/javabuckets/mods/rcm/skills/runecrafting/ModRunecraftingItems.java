@@ -1,7 +1,9 @@
 package javabuckets.mods.rcm.skills.runecrafting;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import javabuckets.mods.rcm.init.ModCreativeTabs;
 import javabuckets.mods.rcm.items.ItemBase;
+import javabuckets.mods.rcm.main.RCM;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
@@ -26,10 +28,10 @@ public class ModRunecraftingItems
 	
 	public static void init()
 	{
-		runeEssence = new ItemBase("rune_essence").setCreativeTab(CreativeTabs.tabMaterials);
+		runeEssence = new ItemBase("rune_essence").setCreativeTab(ModCreativeTabs.rcmRunecrafting);
 		GameRegistry.registerItem(runeEssence, "rune_essence");
 		
-		pureEssence = new ItemBase("pure_essence").setCreativeTab(CreativeTabs.tabMaterials);
+		pureEssence = new ItemBase("pure_essence").setCreativeTab(ModCreativeTabs.rcmRunecrafting);
 		GameRegistry.registerItem(pureEssence, "pure_essence");
 		
 		

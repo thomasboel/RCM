@@ -1,5 +1,6 @@
 package javabuckets.mods.rcm.items.fishing;
 
+import javabuckets.mods.rcm.init.ModCreativeTabs;
 import javabuckets.mods.rcm.items.ItemBase;
 import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.skills.fishing.FishingEventHandler;
@@ -26,7 +27,7 @@ public class ItemFishingNet extends ItemBase
 	{
 		super(unlocalizedName);
 		this.setMaxStackSize(1);
-		this.setCreativeTab(CreativeTabs.tabTools);
+		this.setCreativeTab(ModCreativeTabs.rcmTools);
 	}
 	
 	@Override

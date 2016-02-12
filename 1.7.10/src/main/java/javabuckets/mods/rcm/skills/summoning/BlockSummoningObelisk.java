@@ -25,7 +25,7 @@ public class BlockSummoningObelisk extends BlockContainer
 	{
 		super(Material.rock);
 		this.setBlockUnbreakable();
-		this.setCreativeTab(CreativeTabs.tabBlock);
+		//this.setCreativeTab(CreativeTabs.tabBlock);
 		this.setBlockBounds(0, 0, 0, 1, 2.2F, 1);
 		this.setLightLevel(0.5F);
 	}

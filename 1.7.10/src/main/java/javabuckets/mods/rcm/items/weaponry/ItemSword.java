@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.google.common.collect.Multimap;
 
+import javabuckets.mods.rcm.init.ModCreativeTabs;
 import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.utility.Reference;
 import javabuckets.mods.rcm.utility.SkillReference;
@@ -26,6 +27,7 @@ public class ItemSword extends net.minecraft.item.ItemSword
 		super(toolMaterial);
 		this.setUnlocalizedName(unlocalizedName);
 		this.weaponDamage = defaultWeaponDamage + (double)toolMaterial.getDamageVsEntity();
+		this.setCreativeTab(ModCreativeTabs.rcmWeapons);
 	}
 	
 	/*public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) 

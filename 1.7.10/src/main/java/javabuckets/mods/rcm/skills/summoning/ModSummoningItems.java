@@ -1,6 +1,7 @@
 package javabuckets.mods.rcm.skills.summoning;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import javabuckets.mods.rcm.init.ModCreativeTabs;
 import javabuckets.mods.rcm.items.ItemBase;
 import javabuckets.mods.rcm.items.summoning.PouchSpirirwolf;
 import javabuckets.mods.rcm.utility.Reference;
@@ -25,25 +26,25 @@ public class ModSummoningItems
 	
 	public static void init()
 	{
-		emptyPouch = new ItemBase("empty_pouch");
+		emptyPouch = new ItemBase("empty_pouch").setCreativeTab(ModCreativeTabs.rcmSummoning);;
 		GameRegistry.registerItem(emptyPouch, "empty_pouch", Reference.MOD_ID);
 		
-		spiritShards = new ItemBase("spirit_shards");
+		spiritShards = new ItemBase("spirit_shards").setCreativeTab(ModCreativeTabs.rcmSummoning);;
 		GameRegistry.registerItem(spiritShards, "spirit_shards", Reference.MOD_ID);
 		
-		goldCharm = new ItemBase("gold_charm");
+		goldCharm = new ItemBase("gold_charm").setCreativeTab(ModCreativeTabs.rcmSummoning);;
 		GameRegistry.registerItem(goldCharm, "gold_charm", Reference.MOD_ID);
 		
-		greenCharm = new ItemBase("green_charm");
+		greenCharm = new ItemBase("green_charm").setCreativeTab(ModCreativeTabs.rcmSummoning);;
 		GameRegistry.registerItem(greenCharm, "green_charm", Reference.MOD_ID);
 		
-		redCharm = new ItemBase("red_charm");
+		redCharm = new ItemBase("red_charm").setCreativeTab(ModCreativeTabs.rcmSummoning);;
 		GameRegistry.registerItem(redCharm, "red_charm", Reference.MOD_ID);
 		
-		blueCharm = new ItemBase("blue_charm");
+		blueCharm = new ItemBase("blue_charm").setCreativeTab(ModCreativeTabs.rcmSummoning);;
 		GameRegistry.registerItem(blueCharm, "blue_charm", Reference.MOD_ID);
 		
-		/*elderCharm = new ItemBase("elder_charm");
+		/*elderCharm = new ItemBase("elder_charm").setCreativeTab(ModCreativeTabs.rcmSummoning);;
 		GameRegistry.registerItem(elderCharm, "elder_charm", Reference.MOD_ID);*/
 		
 		/**

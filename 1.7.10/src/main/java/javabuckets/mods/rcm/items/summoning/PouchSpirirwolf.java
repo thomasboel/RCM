@@ -1,7 +1,9 @@
 package javabuckets.mods.rcm.items.summoning;
 
 import javabuckets.mods.rcm.entities.summoning.FamiliarSpiritwolf;
+import javabuckets.mods.rcm.init.ModCreativeTabs;
 import javabuckets.mods.rcm.items.ItemBase;
+import javabuckets.mods.rcm.main.RCM;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -13,6 +15,7 @@ public class PouchSpirirwolf extends ItemBase
 	{
 		super(unlocalizedName);
 		this.setMaxStackSize(1);
+		this.setCreativeTab(ModCreativeTabs.rcmSummoning);
 	}
 
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) 

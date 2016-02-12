@@ -111,7 +111,7 @@ public class ModSmithingRecipes
 
 	private static void initializeOreAndBars() 
 	{
-		GameRegistry.addShapelessRecipe(new ItemStack(ModMiningItems.copper_tin), new Object[] {
+		/*GameRegistry.addShapelessRecipe(new ItemStack(ModMiningItems.copper_tin), new Object[] {
 				ModMiningItems.copperOre, ModMiningItems.tinOre	});
 
 		GameRegistry.addShapelessRecipe(new ItemStack(ModMiningItems.iron_coal), new Object[] {
@@ -137,15 +137,15 @@ public class ModSmithingRecipes
 
 		GameRegistry.addShapelessRecipe(new ItemStack(ModMiningItems.rune_coal), new Object[] {
 				ModMiningItems.runiteOre, new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1) });
-		
+		*/
 
-		GameRegistry.addSmelting(ModMiningItems.copper_tin, new ItemStack(ModSmithingItems.bronzeBar), 1F);
+		//GameRegistry.addSmelting(ModMiningItems.copper_tin, new ItemStack(ModSmithingItems.bronzeBar), 1F);
 		GameRegistry.addSmelting(ModMiningItems.ironOre, new ItemStack(Items.iron_ingot), 1.5F);
-		GameRegistry.addSmelting(ModMiningItems.iron_coal, new ItemStack(ModSmithingItems.steelBar), 2F);
+		//GameRegistry.addSmelting(ModMiningItems.iron_coal, new ItemStack(ModSmithingItems.steelBar), 2F);
 		GameRegistry.addSmelting(ModMiningItems.silverOre, new ItemStack(ModSmithingItems.silverBar), 3.5F);
 		GameRegistry.addSmelting(ModMiningItems.goldOre, new ItemStack(Items.gold_ingot), 5F);
-		GameRegistry.addSmelting(ModMiningItems.mithril_coal, new ItemStack(ModSmithingItems.mithrilBar), 7.5F);
-		GameRegistry.addSmelting(ModMiningItems.adamant_coal, new ItemStack(ModSmithingItems.adamantBar), 8F);
-		GameRegistry.addSmelting(ModMiningItems.rune_coal, new ItemStack(ModSmithingItems.runeBar), 10F);
+		//GameRegistry.addSmelting(ModMiningItems.mithril_coal, new ItemStack(ModSmithingItems.mithrilBar), 7.5F);
+		//GameRegistry.addSmelting(ModMiningItems.adamant_coal, new ItemStack(ModSmithingItems.adamantBar), 8F);
+		//GameRegistry.addSmelting(ModMiningItems.rune_coal, new ItemStack(ModSmithingItems.runeBar), 10F);
 	}
 }

@@ -1,6 +1,8 @@
 package javabuckets.mods.rcm.items.armory;
 
 import javabuckets.mods.rcm.init.ModArmor;
+import javabuckets.mods.rcm.init.ModCreativeTabs;
+import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.utility.Reference;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
@@ -12,6 +14,7 @@ public class ItemRSArmor extends ItemArmor
 	public ItemRSArmor(ArmorMaterial armorMaterial, int renderIndex, int armorType) 
 	{
 		super(armorMaterial, renderIndex, armorType);
+		this.setCreativeTab(ModCreativeTabs.rcmWeapons);
 	}
 	
 	@Override

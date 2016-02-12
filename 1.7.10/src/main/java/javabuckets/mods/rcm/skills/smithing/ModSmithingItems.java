@@ -1,8 +1,8 @@
 package javabuckets.mods.rcm.skills.smithing;
 
-import javabuckets.mods.rcm.items.ItemBase;
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.creativetab.CreativeTabs;
+import javabuckets.mods.rcm.init.ModCreativeTabs;
+import javabuckets.mods.rcm.items.ItemBase;
 import net.minecraft.item.Item;
 
 public class ModSmithingItems 
@@ -16,22 +16,22 @@ public class ModSmithingItems
 	
 	public static void init()
 	{
-		bronzeBar = new ItemBase("bronze_bar").setCreativeTab(CreativeTabs.tabMaterials);
+		bronzeBar = new ItemRSBar("bronze_bar").setCreativeTab(ModCreativeTabs.rcmResources);
 		GameRegistry.registerItem(bronzeBar, "bronze_bar");
 		
-		steelBar = new ItemBase("steel_bar").setCreativeTab(CreativeTabs.tabMaterials);
+		steelBar = new ItemRSBar("steel_bar").setCreativeTab(ModCreativeTabs.rcmResources);
 		GameRegistry.registerItem(steelBar, "steel_bar");
 		
-		silverBar = new ItemBase("silver_bar").setCreativeTab(CreativeTabs.tabMaterials);
+		silverBar = new ItemRSBar("silver_bar").setCreativeTab(ModCreativeTabs.rcmResources);
 		GameRegistry.registerItem(silverBar, "silver_bar");
 		
-		mithrilBar = new ItemBase("mithril_bar").setCreativeTab(CreativeTabs.tabMaterials);
+		mithrilBar = new ItemRSBar("mithril_bar").setCreativeTab(ModCreativeTabs.rcmResources);
 		GameRegistry.registerItem(mithrilBar, "mithril_bar");
 		
-		adamantBar = new ItemBase("adamant_bar").setCreativeTab(CreativeTabs.tabMaterials);
+		adamantBar = new ItemRSBar("adamant_bar").setCreativeTab(ModCreativeTabs.rcmResources);
 		GameRegistry.registerItem(adamantBar, "adamant_bar");
 
-		runeBar = new ItemBase("rune_bar").setCreativeTab(CreativeTabs.tabMaterials);
+		runeBar = new ItemRSBar("rune_bar").setCreativeTab(ModCreativeTabs.rcmResources);
 		GameRegistry.registerItem(runeBar, "rune_bar");
 	}
 }

@@ -24,7 +24,7 @@ public class BlockPrayerAltar extends BlockContainer
 	{
 		super(Material.wood);
 		this.setBlockUnbreakable();
-		this.setCreativeTab(CreativeTabs.tabBlock);
+		//this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 
 	@Override

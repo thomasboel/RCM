@@ -8,6 +8,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import javabuckets.mods.rcm.init.ModCreativeTabs;
 import javabuckets.mods.rcm.items.ItemBase;
 import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.skills.prayer.BlockPrayerAltar;
@@ -20,7 +21,7 @@ public class ItemBones extends ItemBase
 	{
 		super(unlocalizedName);
 		this.setMaxStackSize(1);
-		this.setCreativeTab(CreativeTabs.tabMaterials);
+		this.setCreativeTab(ModCreativeTabs.rcmLoot);
 	}
 
 	@Override

@@ -3,6 +3,7 @@ package javabuckets.mods.rcm.skills.magic;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javabuckets.mods.rcm.init.ModCreativeTabs;
 import javabuckets.mods.rcm.items.ItemBase;
 import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.utility.LogHelper;
@@ -28,7 +29,7 @@ public class ItemStaff extends ItemBase
 		super(unlocalizedName);
 		this.setMaxStackSize(1);
 		this.setFull3D();
-		this.setCreativeTab(CreativeTabs.tabCombat);
+		this.setCreativeTab(ModCreativeTabs.rcmMagic);
 	}
 
 	public ItemStaff(String unlocalizedName, String element) 
