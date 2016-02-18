@@ -2,9 +2,12 @@ package javabuckets.mods.rcm.handlers;
 
 import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import javabuckets.mods.rcm.blocks.containers.ContainerFire;
 import javabuckets.mods.rcm.blocks.containers.ContainerRSFurnace;
+import javabuckets.mods.rcm.blocks.tileentities.TileEntityFire;
 import javabuckets.mods.rcm.blocks.tileentities.TileEntityRSFurnace;
 import javabuckets.mods.rcm.main.RCM;
+import javabuckets.mods.rcm.skills.firemaking.GuiFire;
 import javabuckets.mods.rcm.skills.smithing.GUIRSFurnace;
 import javabuckets.mods.rcm.skills.smithing.ModSmithingBlocks;
 import net.minecraft.entity.player.EntityPlayer;
@@ -23,6 +26,9 @@ public class GuiHandler implements IGuiHandler
 		case 0:
 			if (entity != null && entity instanceof TileEntityRSFurnace) return new ContainerRSFurnace(player.inventory, (TileEntityRSFurnace) entity);
 			else return null;
+		case 2:
+			if (entity != null && entity instanceof TileEntityFire) return new ContainerFire(player.inventory, (TileEntityFire) entity);
+			else return null;
 		default:
 			return null;
 		}
@@ -37,6 +43,9 @@ public class GuiHandler implements IGuiHandler
 		{
 		case 0:
 			if (entity != null && entity instanceof TileEntityRSFurnace) return new GUIRSFurnace(player.inventory, (TileEntityRSFurnace) entity);
+			else return null;
+		case 2:
+			if (entity != null && entity instanceof TileEntityFire) return new GuiFire(player.inventory, (TileEntityFire) entity);
 			else return null;
 		default:
 			return null;

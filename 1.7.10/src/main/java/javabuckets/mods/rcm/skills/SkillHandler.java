@@ -2,6 +2,7 @@ package javabuckets.mods.rcm.skills;
 
 import javabuckets.mods.rcm.huds.HUDSkills;
 import javabuckets.mods.rcm.main.RCM;
+import javabuckets.mods.rcm.utility.DoubleXPUtil;
 import javabuckets.mods.rcm.utility.LogHelper;
 import javabuckets.mods.rcm.utility.SkillReference;
 import net.minecraft.client.Minecraft;
@@ -247,6 +248,8 @@ public class SkillHandler
 	 */
 	public void addXPToSkill(String skill, double xp)
 	{
+		if (DoubleXPUtil.daysToDoubleXP() == 0) xp *= 2;
+		
 		setExperience(skill, getExperience(skill) + xp);
 
 		RCM.instance.skill.showSkillHUD = true; RCM.instance.skill.resetTimer();
@@ -255,9 +258,25 @@ public class SkillHandler
 
 		LogHelper.info(xp + " xp gained in " + skill + "!");
 	}
+	
+	public void addXPToSkillBugged(String skill, double xp)
+	{
+		if (DoubleXPUtil.daysToDoubleXP() == 0) xp *= 2;
+		
+		setExperience(skill, getExperience(skill) + xp);
+
+		RCM.instance.skill.showSkillHUD = true; RCM.instance.skill.resetTimer();
+		HUDSkills.resetXPToDisplay();
+		HUDSkills.addXPToDisplay(skill, xp*2);
+
+		LogHelper.info(xp*2 + " xp gained in " + skill + "!");
+	}
+
 
 	public void addXPToCombatSkill(String skill, double xp)
 	{
+		if (DoubleXPUtil.daysToDoubleXP() == 0) xp *= 2;
+		
 		setExperience(skill, getExperience(skill) + xp);
 		setExperience(SkillReference.cons, getExperience(SkillReference.cons) + xp / 3);
 
@@ -362,5 +381,7 @@ public class SkillHandler
 		{
 			setLevel(SkillReference.skill[i], 99, 200000000);
 		}
+		
+		setLevel(SkillReference.dung, 120, 200000000);
 	}
 }

@@ -4,6 +4,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import javabuckets.mods.rcm.init.ModCreativeTabs;
 import javabuckets.mods.rcm.items.ItemBase;
 import javabuckets.mods.rcm.items.summoning.PouchSpirirwolf;
+import javabuckets.mods.rcm.utility.ItemRegistry;
 import javabuckets.mods.rcm.utility.Reference;
 import net.minecraft.item.Item;
 
@@ -27,10 +28,10 @@ public class ModSummoningItems
 	public static void init()
 	{
 		emptyPouch = new ItemBase("empty_pouch").setCreativeTab(ModCreativeTabs.rcmSummoning);;
-		GameRegistry.registerItem(emptyPouch, "empty_pouch", Reference.MOD_ID);
+		ItemRegistry.registerItem(emptyPouch, true);
 		
 		spiritShards = new ItemBase("spirit_shards").setCreativeTab(ModCreativeTabs.rcmSummoning);;
-		GameRegistry.registerItem(spiritShards, "spirit_shards", Reference.MOD_ID);
+		ItemRegistry.registerItem(spiritShards, true);
 		
 		goldCharm = new ItemBase("gold_charm").setCreativeTab(ModCreativeTabs.rcmSummoning);;
 		GameRegistry.registerItem(goldCharm, "gold_charm", Reference.MOD_ID);

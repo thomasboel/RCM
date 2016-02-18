@@ -2,6 +2,7 @@ package javabuckets.mods.rcm.creativetabs;
 
 import javabuckets.mods.rcm.init.ModCreativeTabs;
 import javabuckets.mods.rcm.skills.attack.ModWeapons;
+import javabuckets.mods.rcm.skills.farming.ModFarmingItems;
 import javabuckets.mods.rcm.skills.magic.ModMagicWeapons;
 import javabuckets.mods.rcm.skills.mining.ModMiningItems;
 import javabuckets.mods.rcm.skills.prayer.ModPrayerItems;
@@ -40,9 +41,12 @@ public class CreativeTabRCM extends CreativeTabs
 			return ModMagicWeapons.airStaff;
 		}
 		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[5])) {
-			return ModRunecraftingItems.omniTalisman;
+			return ModFarmingItems.allotmentseed_cabbage;	
 		}
 		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[6])) {
+			return ModRunecraftingItems.omniTalisman;
+		}
+		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[7])) {
 			return ModSummoningItems.pouch_spiritWolf;
 		}
 		

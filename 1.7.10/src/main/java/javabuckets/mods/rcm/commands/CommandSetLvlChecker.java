@@ -1,6 +1,7 @@
 package javabuckets.mods.rcm.commands;
 
 import javabuckets.mods.rcm.main.RCM;
+import javabuckets.mods.rcm.utility.LevelUpUtil;
 
 public class CommandSetLvlChecker 
 {
@@ -16,18 +17,7 @@ public class CommandSetLvlChecker
 		RCM.instance.skillHandler.addXPToSkill(skill, getXpFromLevel(level) - RCM.instance.skillHandler.getExperience(skill));
 		RCM.instance.skillHandler.setLevel(skill, level, getXpFromLevel(level));
 		
-		
-		RCM.instance.combat.isCombating = true;
-		RCM.instance.mining.isMining = true;
-		RCM.instance.woodcutting.isWoodcutting = true;
-		RCM.instance.farming.isFarming = true;
-		RCM.instance.fishing.isFishing = true;
-		RCM.instance.prayer.isPraying = true;
-		RCM.instance.runecrafting.isRunecrafting = true;
-		RCM.instance.slayer.isCombatingAssignedSlayerMonster = true;
-		RCM.instance.smithing.isSmithing = true;
-		RCM.instance.summoning.isSummoning = true;
-		RCM.instance.thieving.isThieving = true;
+		LevelUpUtil.updateLvls();
 	}
 	
 	public static double getXpFromLevel(int level)

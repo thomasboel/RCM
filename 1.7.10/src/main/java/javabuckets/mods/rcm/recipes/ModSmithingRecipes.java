@@ -7,6 +7,7 @@ import javabuckets.mods.rcm.init.ModArmor;
 import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.skills.attack.ModWeapons;
 import javabuckets.mods.rcm.skills.mining.ModMiningItems;
+import javabuckets.mods.rcm.skills.smithing.ModSmithingBlocks;
 import javabuckets.mods.rcm.skills.smithing.ModSmithingItems;
 import javabuckets.mods.rcm.skills.woodcutting.ModWoodcuttingItems;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -18,11 +19,12 @@ public class ModSmithingRecipes
 		initializeArmors();
 		initializeOreAndBars();
 		initializeToolsAndWeps();
+		initializeBlocks();
 	}
 
 	public static void removeRecipes() 
 	{
-		RCM.instance.recipeRemover.removeRecipe(new ItemStack(Blocks.gold_block, 1));
+		//RCM.instance.recipeRemover.removeRecipe(new ItemStack(Blocks.gold_block, 1));
 	}
 
 	private static void initializeArmors()
@@ -147,5 +149,13 @@ public class ModSmithingRecipes
 		//GameRegistry.addSmelting(ModMiningItems.mithril_coal, new ItemStack(ModSmithingItems.mithrilBar), 7.5F);
 		//GameRegistry.addSmelting(ModMiningItems.adamant_coal, new ItemStack(ModSmithingItems.adamantBar), 8F);
 		//GameRegistry.addSmelting(ModMiningItems.rune_coal, new ItemStack(ModSmithingItems.runeBar), 10F);
+	}
+	
+	public static void initializeBlocks()
+	{
+		GameRegistry.addShapedRecipe(new ItemStack(ModSmithingBlocks.rsFurnace), new Object[]
+				{
+					"XXX", "X X", "XXX", 'X', Blocks.cobblestone	
+				});
 	}
 }

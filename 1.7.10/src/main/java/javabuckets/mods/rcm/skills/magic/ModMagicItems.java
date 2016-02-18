@@ -1,6 +1,7 @@
 package javabuckets.mods.rcm.skills.magic;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import javabuckets.mods.rcm.utility.ItemRegistry;
 import net.minecraft.item.Item;
 
 public class ModMagicItems 
@@ -24,48 +25,48 @@ public class ModMagicItems
 	public static void init()
 	{
 		airRune = new ItemRune("air_rune");
-		GameRegistry.registerItem(airRune, "air_rune");
+		ItemRegistry.registerItem(airRune, true);
 		
 		mindRune = new ItemRune("mind_rune");
-		GameRegistry.registerItem(mindRune, "mind_rune");
+		ItemRegistry.registerItem(mindRune, true);
 		
 		waterRune = new ItemRune("water_rune");
-		GameRegistry.registerItem(waterRune, "water_rune");
+		ItemRegistry.registerItem(waterRune, true);
 		
 		earthRune = new ItemRune("earth_rune");
-		GameRegistry.registerItem(earthRune, "earth_rune");
+		ItemRegistry.registerItem(earthRune, true);
 		
 		fireRune = new ItemRune("fire_rune");
-		GameRegistry.registerItem(fireRune, "fire_rune");
+		ItemRegistry.registerItem(fireRune, true);
 		
 		bodyRune = new ItemRune("body_rune");
-		GameRegistry.registerItem(bodyRune, "body_rune");
+		ItemRegistry.registerItem(bodyRune, true);
 		
 		cosmicRune = new ItemRune("cosmic_rune");
-		GameRegistry.registerItem(cosmicRune, "cosmic_rune");
+		ItemRegistry.registerItem(cosmicRune, true);
 		
 		chaosRune = new ItemRune("chaos_rune");
-		GameRegistry.registerItem(chaosRune, "chaos_rune");
+		ItemRegistry.registerItem(chaosRune, true);
 		
 		astralRune = new ItemRune("astral_rune");
-		GameRegistry.registerItem(astralRune, "astral_rune");
+		ItemRegistry.registerItem(astralRune, true);
 		
 		natureRune = new ItemRune("nature_rune");
-		GameRegistry.registerItem(natureRune, "nature_rune");
+		ItemRegistry.registerItem(natureRune, true);
 		
 		lawRune = new ItemRune("law_rune");
-		GameRegistry.registerItem(lawRune, "law_rune");
+		ItemRegistry.registerItem(lawRune, true);
 		
 		deathRune = new ItemRune("death_rune");
-		GameRegistry.registerItem(deathRune, "death_rune");
+		ItemRegistry.registerItem(deathRune, true);
 		
 		bloodRune = new ItemRune("blood_rune");
-		GameRegistry.registerItem(bloodRune, "blood_rune");
+		ItemRegistry.registerItem(bloodRune, true);
 		
 		soulRune = new ItemRune("soul_rune");
-		GameRegistry.registerItem(soulRune, "soul_rune");
+		ItemRegistry.registerItem(soulRune, true);
 		
 		armadylRune = new ItemRune("armadyl_rune");
-		GameRegistry.registerItem(armadylRune, "armadyl_rune");
+		ItemRegistry.registerItem(armadylRune, true);
 	}
 }

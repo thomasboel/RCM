@@ -1,5 +1,7 @@
 item.small_fishingnet.name=Small Fishing Net
 
+item.tinderbox.name=Tinderbox
+
 item.bronze_helm.name=Bronze Helm
 item.bronze_full_helm.name=Bronze Full Helm
 item.bronze_sq_shield.name=Bronze Square Shield
@@ -392,3 +394,5 @@ item.blue_charm.name=Blue Charm
 item.elder_charm.name=Elder Charm
 
 item.pouch_spiritwolf.name=Spirit Wolf Pouch
+
+item.bone_crusher.name=Bone Crusher

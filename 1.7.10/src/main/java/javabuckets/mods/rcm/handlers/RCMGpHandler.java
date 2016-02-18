@@ -116,4 +116,9 @@ public class RCMGpHandler
 	{
 		return this.enumChatFormatting;
 	}
+
+	public void removeGoldPointsFromPouch(long priceOfItem) 
+	{
+		this.setGoldPointsInPouch(this.getGoldPointsInPouch() - priceOfItem);
+	}
 }

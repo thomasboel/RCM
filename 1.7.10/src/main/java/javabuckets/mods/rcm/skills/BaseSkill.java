@@ -22,8 +22,12 @@ public class BaseSkill
 		RCM.instance.fishing.fishing(player, world);
 		// Thieving
 		RCM.instance.thieving.thieving(player, world);
+		// Cooking
+		RCM.instance.cooking.cooking(player, world);
 		// Prayer
 		RCM.instance.prayer.prayer(player, world);
+		// Firemaking
+		RCM.instance.firemaking.firemaking(player, world);
 		// Woodcutting
 		RCM.instance.woodcutting.woodcutting(player, world);
 		// Runecrafting

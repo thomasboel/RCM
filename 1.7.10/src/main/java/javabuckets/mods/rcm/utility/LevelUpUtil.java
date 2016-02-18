@@ -65,8 +65,27 @@ public class LevelUpUtil
 		summoningLvl = RCM.instance.skillHandler.getLevel(SkillReference.summ);
 		dungeoneeringLvl = RCM.instance.skillHandler.getLevel(SkillReference.dung);
 		divinationLvl = RCM.instance.skillHandler.getLevel(SkillReference.div);
+		
+		updateLvls();
 	}
 	
+	public static void updateLvls() 
+	{
+		RCM.instance.combat.isCombating = true;
+		RCM.instance.cooking.isCooking = true;
+		RCM.instance.farming.isFarming = true;
+		RCM.instance.firemaking.isFiremaking = true;
+		RCM.instance.fishing.isFishing = true;
+		RCM.instance.mining.isMining = true;
+		RCM.instance.prayer.isPraying = true;
+		RCM.instance.runecrafting.isRunecrafting = true;
+		RCM.instance.slayer.isCombatingAssignedSlayerMonster = true;
+		RCM.instance.smithing.isSmithing = true;
+		RCM.instance.summoning.isSummoning = true;
+		RCM.instance.thieving.isThieving = true;
+		RCM.instance.woodcutting.isWoodcutting = true;
+	}
+
 	public static int getLevel(String skill)
 	{
 		if (skill.equalsIgnoreCase(SkillReference.att)) { return attackLvl; }

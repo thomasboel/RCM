@@ -1,6 +1,7 @@
 package javabuckets.mods.rcm.skills.magic;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import javabuckets.mods.rcm.utility.ItemRegistry;
 import net.minecraft.item.Item;
 
 public class ModMagicWeapons 
@@ -75,21 +76,21 @@ public class ModMagicWeapons
 	public static void init()
 	{
 		staff = new ItemStaff("staff");
-		GameRegistry.registerItem(staff, "staff");
+		ItemRegistry.registerItem(staff, true);
 		
 		magicStaff = new ItemStaff("magic_staff");
-		GameRegistry.registerItem(magicStaff, "magic_staff");
+		ItemRegistry.registerItem(magicStaff, true);
 		
 		airStaff = new ItemStaff("air_staff", "air");
-		GameRegistry.registerItem(airStaff, "air_staff");
+		ItemRegistry.registerItem(airStaff, false);
 		
 		waterStaff = new ItemStaff("water_staff", "water");
-		GameRegistry.registerItem(waterStaff, "water_staff");
+		ItemRegistry.registerItem(waterStaff, false);
 		
 		earthStaff = new ItemStaff("earth_staff", "earth");
-		GameRegistry.registerItem(earthStaff, "earth_staff");
+		ItemRegistry.registerItem(earthStaff, false);
 		
 		fireStaff = new ItemStaff("fire_staff", "fire");
-		GameRegistry.registerItem(fireStaff, "fire_staff");
+		ItemRegistry.registerItem(fireStaff	, false);
 	}
 }

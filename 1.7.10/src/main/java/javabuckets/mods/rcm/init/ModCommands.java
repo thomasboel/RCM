@@ -8,6 +8,8 @@ public class ModCommands
 	public static void init(FMLServerStartingEvent event)
 	{
 		event.registerServerCommand(new CommandSetLevel());
+		event.registerServerCommand(new CommandAddXPToSkill());
+		event.registerServerCommand(new CommandMaxSkill());
 		event.registerServerCommand(new CommandSetGp());
 		event.registerServerCommand(new CommandSetMisc());
 

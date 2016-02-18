@@ -10,6 +10,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
 
 public class SlotRSFurnace extends Slot
 {
@@ -60,14 +61,21 @@ public class SlotRSFurnace extends Slot
 		
 		if (!this.player.worldObj.isRemote)
 		{
-			RCM.instance.skillHandler.addXPToSkill(SkillReference.smith, getXPFromBar(itemstack.getItem()));
+			RCM.instance.smithing.isSmithing = true;
+			RCM.instance.skillHandler.addXPToSkill(SkillReference.smith, getXPFromBar(itemstack.getItem()) * itemstack.stackSize);
 		}
 	}
 	
-	public int getXPFromBar(Item bar)
+	public double getXPFromBar(Item bar)
 	{
 		if (bar == ModSmithingItems.bronzeBar) return 7;
 		else if (bar == Items.iron_ingot) return 15;
+		else if (bar == ModSmithingItems.steelBar) return 17.5;
+		else if (bar == ModSmithingItems.silverBar) return 20;
+		else if (bar == Items.gold_ingot) return 25;
+		else if (bar == ModSmithingItems.mithrilBar) return 30;
+		else if (bar == ModSmithingItems.adamantBar) return 45;
+		else if (bar == ModSmithingItems.runeBar) return 60;
 		else return 0;
 	}
 }

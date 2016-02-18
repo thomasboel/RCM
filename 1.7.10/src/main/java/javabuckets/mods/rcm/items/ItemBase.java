@@ -14,7 +14,6 @@ public class ItemBase extends Item
 	{
 		super();
 		this.setUnlocalizedName(unlocalizedName);
-		this.itemList.add("rcm:"+unlocalizedName);
 	}
 	
 	@Override

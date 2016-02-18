@@ -10,7 +10,10 @@ import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.player.ExtendedPlayer;
 import javabuckets.mods.rcm.skills.magic.GUIMagicSpellSelection;
 import javabuckets.mods.rcm.skills.prayer.GUIPrayerSelection;
+import javabuckets.mods.rcm.utility.DateUtil;
+import javabuckets.mods.rcm.utility.DoubleXPUtil;
 import javabuckets.mods.rcm.utility.LevelUpUtil;
+import javabuckets.mods.rcm.utility.LogHelper;
 import javabuckets.mods.rcm.utility.SkillReference;
 import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.Enchantment;
@@ -71,7 +74,7 @@ public class RCMEventHandler
 				checkForSilkTouch(player, heldItem);
 			}
 
-			if (Keyboard.isKeyDown(Keyboard.KEY_W) && hasBeenRun == false)
+			if (Keyboard.isKeyDown(Keyboard.KEY_W) && !hasBeenRun)
 			{
 				/*if (!(RCM.instance.dailyGiftHandler.getDate().equals(DateUtil.getDateToday())))
 				{
@@ -81,6 +84,18 @@ public class RCMEventHandler
 					player.addChatMessage(new ChatComponentText("Your new daily challenge is: " + RCM.instance.dailies.getDailyChallenge()));
 					//mc.displayGuiScreen(new GUIDailyGift(player));
 				}*/
+				
+				String currentDate = DateUtil.getDateToday();
+				int currentDay = Integer.valueOf(currentDate.substring(0, 2));
+				int currentMonth = Integer.valueOf(currentDate.substring(3, 5));
+				
+				LogHelper.info("Current date: " + currentDate);
+				LogHelper.info("Current day: " + currentDay);
+				LogHelper.info("Current month: " + currentMonth);
+				LogHelper.info("Days till Double XP: " + (DoubleXPUtil.getDaysInMonth(currentMonth) - currentDay));
+				
+				if (DoubleXPUtil.getDaysInMonth(currentMonth) - currentDay == 0) player.addChatMessage(new ChatComponentText("Today is Double XP! You will yield twice as much experience as normal when training your skills!"));
+				
 				hasBeenRun = true;
 			}
 

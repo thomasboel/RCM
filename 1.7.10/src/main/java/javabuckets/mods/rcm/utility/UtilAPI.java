@@ -19,4 +19,17 @@ public class UtilAPI
 		
 		return amount;
 	}
+	
+	public static int getAmountOfTickFromTime(int hours, int minutes, int seconds)
+	{
+		int ticks = 0;
+		int totalSeconds = seconds + (minutes * 60) + (hours * 60 * 60);
+		
+		for (int i = 0; i < totalSeconds; i++)
+		{
+			ticks += 20;
+		}
+		
+		return ticks;
+	}
 }

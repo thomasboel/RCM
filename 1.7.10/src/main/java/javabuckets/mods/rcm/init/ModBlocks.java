@@ -1,5 +1,6 @@
 package javabuckets.mods.rcm.init;
 
+import javabuckets.mods.rcm.skills.firemaking.ModFiremakingBlocks;
 import javabuckets.mods.rcm.skills.mining.ModMiningBlocks;
 import javabuckets.mods.rcm.skills.prayer.ModPrayerBlocks;
 import javabuckets.mods.rcm.skills.runecrafting.ModRunecraftingBlocks;
@@ -14,6 +15,7 @@ public class ModBlocks
 		ModMiningBlocks.init();
 		ModSmithingBlocks.init();
 		ModPrayerBlocks.init();
+		ModFiremakingBlocks.init();
 		ModWoodcuttingBlocks.init();
 		ModRunecraftingBlocks.init();
 		ModSummoningBlocks.init();

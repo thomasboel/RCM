@@ -14,6 +14,7 @@ import javabuckets.mods.rcm.models.ModelSpiritwolf;
 import javabuckets.mods.rcm.renderers.*;
 import javabuckets.mods.rcm.renderers.blocks.*;
 import javabuckets.mods.rcm.renderers.items.*;
+import javabuckets.mods.rcm.skills.firemaking.ModFiremakingBlocks;
 import javabuckets.mods.rcm.skills.magic.EntityMagicBolt;
 import javabuckets.mods.rcm.skills.prayer.ModPrayerBlocks;
 import javabuckets.mods.rcm.skills.runecrafting.ModRunecraftingBlocks;
@@ -44,6 +45,10 @@ public class ClientProxy extends CommonProxy
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(ModSmithingBlocks.rsFurnace), new ItemRendererFurnace());
 		GameRegistry.registerTileEntity(TileEntityRSFurnace.class, "furnace");
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityRSFurnace.class, new BlockRendererFurnace());
+		
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(ModFiremakingBlocks.fire), new ItemRenderFire());
+		GameRegistry.registerTileEntity(TileEntityFire.class, "fire");
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityFire.class, new BlockRendererFire());
 		
 		renderAltars();
 	}

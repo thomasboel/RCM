@@ -3,6 +3,7 @@ package javabuckets.mods.rcm.init;
 import javabuckets.mods.rcm.generators.WorldOreGenerator;
 import javabuckets.mods.rcm.handlers.EntityEventHandler;
 import javabuckets.mods.rcm.handlers.GuiHandler;
+import javabuckets.mods.rcm.handlers.ItemHandler;
 import javabuckets.mods.rcm.handlers.RCMEventHandler;
 import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.skills.combat.CombatEventHandler;
@@ -31,6 +32,7 @@ public class ModEvents
 	{
 		MinecraftForge.EVENT_BUS.register(new RCMEventHandler());
 		MinecraftForge.EVENT_BUS.register(new EntityEventHandler());
+		MinecraftForge.EVENT_BUS.register(new ItemHandler());
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(RCM.instance, new GuiHandler());
 
