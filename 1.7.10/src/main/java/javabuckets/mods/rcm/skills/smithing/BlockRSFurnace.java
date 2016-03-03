@@ -4,6 +4,7 @@ import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 import javabuckets.mods.rcm.blocks.tileentities.TileEntityRSFurnace;
 import javabuckets.mods.rcm.init.ModFixBlocks;
 import javabuckets.mods.rcm.main.RCM;
+import javabuckets.mods.rcm.utility.GuiHandlerReference;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -27,7 +28,7 @@ public class BlockRSFurnace extends BlockContainer
 	{
 		if (!world.isRemote)
 		{
-			FMLNetworkHandler.openGui(player, RCM.instance, 0, world, x, y, z);
+			FMLNetworkHandler.openGui(player, RCM.instance, GuiHandlerReference.furnaceGuiID, world, x, y, z);
 		}
 		return true;
 	}

@@ -14,7 +14,7 @@ public class ItemRSArmor extends ItemArmor
 	public ItemRSArmor(ArmorMaterial armorMaterial, int renderIndex, int armorType) 
 	{
 		super(armorMaterial, renderIndex, armorType);
-		this.setCreativeTab(ModCreativeTabs.rcmWeapons);
+		this.setCreativeTab(ModCreativeTabs.rcmMelee);
 	}
 	
 	@Override

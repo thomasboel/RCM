@@ -50,5 +50,9 @@ public class ModFixRecipes
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.pumpkin_seeds, 4), new Object[] {
 				ModFixBlocks.pumpkin
 		});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.pumpkin_pie, 1), new Object[] {
+				ModFixBlocks.pumpkin, Items.sugar, Items.egg
+		});
 	}
 }

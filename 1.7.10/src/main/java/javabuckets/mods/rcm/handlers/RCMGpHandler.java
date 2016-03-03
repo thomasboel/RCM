@@ -12,6 +12,8 @@ public class RCMGpHandler
 	private String gpUnit;
 	private String gpToDisplay;
 	
+	private long gpEarnedSession = 0;
+	
 	public void onUpdate(EntityPlayer player, World world)
 	{
 		gpUpdater(player);
@@ -78,6 +80,7 @@ public class RCMGpHandler
 	public void addGPToPouch(long gp)
 	{
 		setGoldPointsInPouch(getGoldPointsInPouch() + gp);
+		gpEarnedSession+=gp;
 	}
 	
 	public void setGoldPointsInPouch(long gp)
@@ -103,6 +106,11 @@ public class RCMGpHandler
 	public String getGoldPointsDisplay()
 	{
 		return gpToDisplay + gpUnit;
+	}
+	
+	public long getGpEarnedSession() 
+	{
+		return gpEarnedSession;
 	}
 	
 	private EnumChatFormatting enumChatFormatting;

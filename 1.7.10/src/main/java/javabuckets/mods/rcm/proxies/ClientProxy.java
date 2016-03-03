@@ -2,6 +2,7 @@ package javabuckets.mods.rcm.proxies;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.common.IWorldGenerator;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -9,6 +10,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import javabuckets.mods.rcm.blocks.tileentities.*;
 import javabuckets.mods.rcm.entities.summoning.FamiliarSpiritwolf;
 import javabuckets.mods.rcm.entities.summoning.renderers.RenderSpiritwolf;
+import javabuckets.mods.rcm.generators.WorldGenYewTree;
 import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.models.ModelSpiritwolf;
 import javabuckets.mods.rcm.renderers.*;

@@ -61,6 +61,7 @@ public class GUIRCMMainMenu extends GuiScreen
                 this.mc.theWorld.sendQuittingDisconnectingPacket();
                 this.mc.loadWorld((WorldClient)null);
                 this.mc.displayGuiScreen(new GuiMainMenu());
+                break;
 			}
 			
 			case 4:
@@ -92,6 +93,11 @@ public class GUIRCMMainMenu extends GuiScreen
 		this.drawDefaultBackground();
 		
 		this.drawCenteredString(mc.fontRenderer, "Runescape Game Menu", width / 2, 40, 0xFFFFFF);
+		
+		this.drawCenteredString(mc.fontRenderer, "This session:", width / 6, height / 2 - 30, 0xFFFFFF);
+		this.drawCenteredString(mc.fontRenderer, "XP: " + (long)RCM.instance.skillHandler.getXpEarnedSession(), width / 6, height / 2 - 10, 0xFFFFFF);
+		this.drawCenteredString(mc.fontRenderer, "LVL's: " + RCM.instance.skillHandler.getLvlsEarnedSession(), width / 6, height / 2 + 10, 0xFFFFFF);
+		this.drawCenteredString(mc.fontRenderer, "GP: " + RCM.instance.gpHandler.getGpEarnedSession(), width / 6, height / 2 + 30, 0xFFFFFF);
 		
 		super.drawScreen(par1, par2, par3);
 	}

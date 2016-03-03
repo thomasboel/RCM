@@ -2,6 +2,7 @@ package javabuckets.mods.rcm.items;
 
 import java.util.ArrayList;
 
+import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.utility.Reference;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;

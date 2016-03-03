@@ -22,6 +22,7 @@ public class ItemHandler
 			{
 				if (UtilAPI.getAmountOfItemInInventory(player.inventory, "Bones") >= 1)
 				{
+					RCM.instance.prayer.isPraying = true;
 					player.inventory.consumeInventoryItem(ModPrayerItems.bones);
 					RCM.instance.skillHandler.addXPToSkillBugged(SkillReference.pray, 2.25);
 				}

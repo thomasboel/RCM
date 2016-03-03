@@ -1,5 +1,6 @@
 package javabuckets.mods.rcm.items.dungeoneering;
 
+import javabuckets.mods.rcm.init.ModCreativeTabs;
 import javabuckets.mods.rcm.items.ItemBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
@@ -12,6 +13,7 @@ public class ItemBoneCrusher extends ItemBase
 	{
 		super(unlocalizedName);
 		this.setMaxStackSize(1);
+		this.setCreativeTab(ModCreativeTabs.rcmDungeoneering);
 	}
 	
 	@Override

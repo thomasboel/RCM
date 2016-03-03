@@ -150,7 +150,7 @@ public class MiningEventHandler
 		{
 			if (event.block == block && RCM.instance.skillHandler.getLevel(SkillReference.mine) >= requiredLevel)
 			{
-				RCM.instance.skillHandler.addXPToSkill("mining", xp);
+				RCM.instance.skillHandler.addXPToSkill(SkillReference.mine, xp);
 			}
 			else if (event.block == block && RCM.instance.skillHandler.getLevel(SkillReference.mine) < requiredLevel)
 			{

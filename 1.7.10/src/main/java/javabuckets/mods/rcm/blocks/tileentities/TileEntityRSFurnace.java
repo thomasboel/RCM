@@ -96,9 +96,9 @@ public class TileEntityRSFurnace extends TileEntity implements IInventory
 			{
 				if (fuel.getItem() == Items.coal)
 				{
-					if (output == null || output.getItem() == getResult(inputMain, inputSecond).getItem())
+					if (isInputSufficient(0))
 					{
-						if (isInputSufficient(0)) 
+						if (output == null || output.getItem() == getResult(inputMain, inputSecond).getItem()) 
 						{
 							if (isSmithingLevelSufficientForBar(getResult(inputMain, inputSecond).getItem())) return true;
 							else return false;
@@ -117,9 +117,9 @@ public class TileEntityRSFurnace extends TileEntity implements IInventory
 			{		
 				if (fuel.getItem() == Items.coal)
 				{
-					if (output == null || output.getItem() == getResult(inputMain).getItem())
+					if (isInputSufficient(1))
 					{
-						if (isInputSufficient(1))
+						if (output == null || output.getItem() == getResult(inputMain).getItem())
 						{
 							if (isSmithingLevelSufficientForBar(getResult(inputMain).getItem())) return true;
 							else return false;

@@ -12,7 +12,7 @@ public class ItemHatchet extends ItemAxe
 	public ItemHatchet(Item.ToolMaterial toolMaterial) 
 	{
 		super(toolMaterial);
-		this.setCreativeTab(ModCreativeTabs.rcmTools);
+		this.setCreativeTab(ModCreativeTabs.rcmWoodcutting);
 	}
 
 	public void registerIcons(IIconRegister par1IconRegister)

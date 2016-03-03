@@ -9,6 +9,7 @@ import javabuckets.mods.rcm.skills.prayer.ModPrayerItems;
 import javabuckets.mods.rcm.skills.smithing.ModSmithingItems;
 import javabuckets.mods.rcm.skills.summoning.ModSummoningItems;
 import javabuckets.mods.rcm.skills.woodcutting.ModWoodcuttingItems;
+import javabuckets.mods.rcm.utility.DroptableReference;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.boss.EntityWither;
@@ -23,10 +24,14 @@ public class EntityEventHandler
 {
 	@SubscribeEvent
 	public void entityDrops(LivingDropsEvent event)
-	{
+	{		
 		if (event.entity instanceof EntityAnimal || event.entity instanceof EntityMob) 
 		{
-			addDropToEntity(event, 1.00D, ModPrayerItems.bones, 1); 
+			addDropToEntity(event, 1.00, ModPrayerItems.bones, 1); 
+			addDropTableToEntity(event, 0.15, DroptableReference.herbSeeds);
+			addDropTableToEntity(event, 0.2, DroptableReference.farmingSeeds);
+			addDropTableToEntity(event, 0.2, DroptableReference.allotmentSeeds);
+			addDropTableToEntity(event, 0.075, DroptableReference.fruitTreeCactiSeeds);
 		}
 
 		if (event.entity instanceof EntityZombie)
@@ -56,7 +61,7 @@ public class EntityEventHandler
 		{
 			for (int i = 0; i < 15; ++i)
 			{
-				addDropToEntity(event, 1.00D, ModPrayerItems.bigBones, 1);	
+				addDropToEntity(event, 1.00, ModPrayerItems.bigBones, 1);	
 			} 
 
 			addTwoTwoDropToEntity(event, ModWeapons.runiteSword, ModWeapons.runiteScimitar);
@@ -66,6 +71,7 @@ public class EntityEventHandler
 			addDropToEntity(event, 0.125, ModMagicItems.soulRune, 50);
 			addDropToEntity(event, 0.125, ModMagicItems.deathRune, 150);
 			addDropToEntity(event, 0.125, ModMagicItems.chaosRune, 300);
+			addDropTableToEntity(event, 1, DroptableReference.herbSeeds);
 
 			addDropToEntity(event, 0.5, ModSummoningItems.blueCharm, 3);
 		}
@@ -83,8 +89,25 @@ public class EntityEventHandler
 			addDropToEntity(event, 0.1, ModArmor.adamantPlatelegs, 1);
 			addDropToEntity(event, 0.1, ModMagicItems.chaosRune, 300);
 			addDropToEntity(event, 0.1, ModMagicItems.bloodRune, 200);	
+			addDropTableToEntity(event, 1, DroptableReference.herbSeeds);
 
-			addDropToEntity(event, 0.5, ModSummoningItems.blueCharm, 3);
+			addDropToEntity(event, 1, ModSummoningItems.blueCharm, 30);
+		}
+	}
+
+	private void addDropTableToEntity(LivingDropsEvent event, double chance, String droptableName) 
+	{
+		if (event.source.getDamageType().equals("player") || event.source.isProjectile() || event.source.isMagicDamage() || event.source.isFireDamage())
+		{
+			double rand = Math.random();
+
+			if (event.entity instanceof Entity)
+			{
+				if (rand < chance)
+				{
+					RCM.instance.droptable.dropItemFromDroptable(event, droptableName);
+				}
+			}
 		}
 	}
 
@@ -159,7 +182,7 @@ public class EntityEventHandler
 
 		if (rand < chance)
 		{
-			RCM.instance.gpHandler.setGoldPointsInPouch(RCM.instance.gpHandler.getGoldPointsInPouch() + gp);
+			RCM.instance.gpHandler.addGPToPouch(gp);
 		}
 	}
 

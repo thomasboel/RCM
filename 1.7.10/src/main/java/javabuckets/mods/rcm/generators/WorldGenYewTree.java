@@ -3,6 +3,7 @@ package javabuckets.mods.rcm.generators;
 import java.util.Random;
 
 import javabuckets.mods.rcm.skills.woodcutting.ModWoodcuttingBlocks;
+import javabuckets.mods.rcm.utility.LogHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.material.Material;
@@ -13,121 +14,140 @@ import net.minecraftforge.common.util.ForgeDirection;
 
 public class WorldGenYewTree extends WorldGenAbstractTree
 {
-    public WorldGenYewTree()
-    {
-        super(false);
-    }
+	private int treeHeight = 12;
 
-    public boolean generate(World world, Random random, int x, int y, int z)
-    {
-        int l = random.nextInt(5) + 7;
-        int i1 = l - random.nextInt(2) - 3;
-        int j1 = l - i1;
-        int k1 = 1 + random.nextInt(j1 + 1);
-        boolean flag = true;
+	public WorldGenYewTree() 
+	{
+		super(false);
+	}
 
-        if (y >= 1 && y + l + 1 <= 256)
-        {
-            int i2;
-            int j2;
-            int i3;
+	@Override
+	public boolean generate(World world, Random rand, int x, int y, int z)
+	{
+		Block base = world.getBlock(x, y, z);
 
-            for (int l1 = y; l1 <= y + 1 + l && flag; ++l1)
-            {
-                boolean flag1 = true;
+		if (!isBaseSuitable(base))
+		{
+			return false;
+		}
+		else
+		{
+			if (isSurroundingSpaceSuitable(world, x, y, z))
+			{
+				generateTreeBase(world, x, y, z);
+				generateTreeLeaves(world, x, y, z);
+				return true;
+			}
+			else 
+			{
+				return false;
+			}
+		}
+	}
 
-                if (l1 - y < i1)
-                {
-                    i3 = 0;
-                }
-                else
-                {
-                    i3 = k1;
-                }
+	public void generateTreeBase(World world, int x, int y, int z)
+	{
+		for (int i = 0; i < treeHeight; i++)
+		{
+			buildLogAt(world, x, y + i +1, z);
+		}
+	}
 
-                for (i2 = x - i3; i2 <= x + i3 && flag; ++i2)
-                {
-                    for (j2 = z - i3; j2 <= z + i3 && flag; ++j2)
-                    {
-                        if (l1 >= 0 && l1 < 256)
-                        {
-                            Block block = world.getBlock(i2, l1, j2);
+	public void generateTreeLeaves(World world, int x, int y, int z)
+	{
+		buildLeavesAt(world, x, y, z);
+		buildLeavesAt(world, x, y+1, z);
 
-                            if (!this.isReplaceable(world, i2, l1, j2))
-                            {
-                                flag = false;
-                            }
-                        }
-                        else
-                        {
-                            flag = false;
-                        }
-                    }
-                }
-            }
+		buildLeavesAt(world, x+1, y, z);
+		buildLeavesAt(world, x-1, y, z);
+		buildLeavesAt(world, x, y, z+1);
+		buildLeavesAt(world, x, y, z-1);
 
-            if (!flag)
-            {
-                return false;
-            }
-            else
-            {
-                Block block1 = world.getBlock(x, y - 1, z);
+		buildLeavesAt(world, x+1, y-1, z);
+		buildLeavesAt(world, x-1, y-1, z);
+		buildLeavesAt(world, x, y-1, z+1);
+		buildLeavesAt(world, x, y-1, z-1);
+		buildLeavesAt(world, x+1, y-1, z+1);
+		buildLeavesAt(world, x-1, y-1, z+1);
+		buildLeavesAt(world, x-1, y-1, z-1);
+		buildLeavesAt(world, x+1, y-1, z-1);
 
-                boolean isSoil = block1.canSustainPlant(world, x, y - 1, z, ForgeDirection.UP, (BlockSapling)Blocks.sapling);
-                
-                if (isSoil && y < 256 - l - 1)
-                {
-                    block1.onPlantGrow(world, x, y - 1, z, x, y, z);
-                    i3 = 0;
+		buildLeavesAt(world, x+1, y-2, z);
+		buildLeavesAt(world, x-1, y-2, z);
+		buildLeavesAt(world, x, y-2, z+1);
+		buildLeavesAt(world, x, y-2, z-1);
+		buildLeavesAt(world, x+1, y-2, z+1);
+		buildLeavesAt(world, x-1, y-2, z+1);
+		buildLeavesAt(world, x-1, y-2, z-1);
+		buildLeavesAt(world, x+1, y-2, z-1);
+		buildLeavesAt(world, x+2, y-2, z-1);
+		buildLeavesAt(world, x+2, y-2, z);
+		buildLeavesAt(world, x+2, y-2, z+1);
+		buildLeavesAt(world, x-2, y-2, z-1);
+		buildLeavesAt(world, x-2, y-2, z);
+		buildLeavesAt(world, x-2, y-2, z+1);
+		buildLeavesAt(world, x-1, y-2, z+2);
+		buildLeavesAt(world, x, y-2, z+2);
+		buildLeavesAt(world, x+1, y-2, z+2);
+		buildLeavesAt(world, x-1, y-2, z-2);
+		buildLeavesAt(world, x, y-2, z-2);
+		buildLeavesAt(world, x+1, y-2, z-2);
 
-                    for (i2 = y + l; i2 >= y + i1; --i2)
-                    {
-                        for (j2 = x - i3; j2 <= x + i3; ++j2)
-                        {
-                            int j3 = j2 - x;
+		buildLeavesAt(world, x+1, y-3, z);
+		buildLeavesAt(world, x-1, y-3, z);
+		buildLeavesAt(world, x, y-3, z+1);
+		buildLeavesAt(world, x, y-3, z-1);
+	}
 
-                            for (int k2 = z - i3; k2 <= z + i3; ++k2)
-                            {
-                                int l2 = k2 - z;
+	public boolean isSurroundingSpaceSuitable(World world, int x, int y, int z)
+	{
+		if (getBlockAt(world, x, y + 1, z) == Blocks.air && getBlockAt(world, x, y + 2, z) == Blocks.air && getBlockAt(world, x, y + 3, z) == Blocks.air && getBlockAt(world, x, y + 4, z) == Blocks.air && getBlockAt(world, x, y + 5, z) == Blocks.air && getBlockAt(world, x, y + 6, z) == Blocks.air && getBlockAt(world, x, y + 7, z) == Blocks.air && getBlockAt(world, x, y + 8, z) == Blocks.air)
+		{
+			if (getBlockAt(world, x + 2, y + 1, z) == Blocks.air && getBlockAt(world, x + 2, y + 2, z) == Blocks.air && getBlockAt(world, x + 2, y + 3, z) == Blocks.air && getBlockAt(world, x + 2, y + 4, z) == Blocks.air && getBlockAt(world, x + 2, y + 5, z) == Blocks.air && getBlockAt(world, x + 2, y + 6, z) == Blocks.air && getBlockAt(world, x + 2, y + 7, z) == Blocks.air && getBlockAt(world, x + 2, y + 8, z) == Blocks.air)
+			{
+				if (getBlockAt(world, x - 2, y + 1, z) == Blocks.air && getBlockAt(world, x - 2, y + 2, z) == Blocks.air && getBlockAt(world, x - 2, y + 3, z) == Blocks.air && getBlockAt(world, x - 2, y + 4, z) == Blocks.air && getBlockAt(world, x - 2, y + 5, z) == Blocks.air && getBlockAt(world, x - 2, y + 6, z) == Blocks.air && getBlockAt(world, x - 2, y + 7, z) == Blocks.air && getBlockAt(world, x - 2, y + 8, z) == Blocks.air)
+				{
+					if (getBlockAt(world, x, y + 1, z + 2) == Blocks.air && getBlockAt(world, x, y + 2, z + 2) == Blocks.air && getBlockAt(world, x, y + 3, z + 2) == Blocks.air && getBlockAt(world, x, y + 4, z + 2) == Blocks.air && getBlockAt(world, x, y + 5, z + 2) == Blocks.air && getBlockAt(world, x, y + 6, z + 2) == Blocks.air && getBlockAt(world, x, y + 7, z + 2) == Blocks.air && getBlockAt(world, x, y + 8, z + 2) == Blocks.air)
+					{
+						if (getBlockAt(world, x, y + 1, z - 2) == Blocks.air && getBlockAt(world, x, y + 2, z - 2) == Blocks.air && getBlockAt(world, x, y + 3, z - 2) == Blocks.air && getBlockAt(world, x, y + 4, z - 2) == Blocks.air && getBlockAt(world, x, y + 5, z - 2) == Blocks.air && getBlockAt(world, x, y + 6, z - 2) == Blocks.air && getBlockAt(world, x, y + 7, z - 2) == Blocks.air && getBlockAt(world, x, y + 8, z - 2) == Blocks.air)
+						{
+							return true;
+						}
+						else return false;
+					}
+					else return false;
+				}
+				else return false;
+			}
+			else return false;
+		}
+		else return false;
+	}
 
-                                if ((Math.abs(j3) != i3 || Math.abs(l2) != i3 || i3 <= 0) && world.getBlock(j2, i2, k2).canBeReplacedByLeaves(world, j2, i2, k2))
-                                {
-                                    this.setBlockAndNotifyAdequately(world, j2, i2, k2, Blocks.leaves, 1);
-                                }
-                            }
-                        }
+	public boolean isBaseSuitable(Block block)
+	{
+		if (block == Blocks.grass || block == Blocks.dirt)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 
-                        if (i3 >= 1 && i2 == y + i1 + 1)
-                        {
-                            --i3;
-                        }
-                        else if (i3 < k1)
-                        {
-                            ++i3;
-                        }
-                    }
+	public Block getBlockAt(World world, int x, int y, int z)
+	{
+		return world.getBlock(x, y, z);
+	}
 
-                    for (i2 = 0; i2 < l - 1; ++i2)
-                    {
-                        Block block2 = world.getBlock(x, y + i2, z);
+	public void buildLogAt(World world, int x, int y, int z)
+	{
+		world.setBlock(x, y, z, ModWoodcuttingBlocks.yewLog);
+	}
 
-                        {
-                            this.setBlockAndNotifyAdequately(world, x, y + i2, z, ModWoodcuttingBlocks.yewLog, 1);
-                        }
-                    }
-
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
-        else
-        {
-            return false;
-        }
-    }
+	public void buildLeavesAt(World world, int x, int y, int z)
+	{
+		world.setBlock(x, y + treeHeight, z, ModWoodcuttingBlocks.yewLeaves);
+	}
 }

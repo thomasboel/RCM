@@ -1,5 +1,6 @@
 package javabuckets.mods.rcm.blocks;
 
+import javabuckets.mods.rcm.init.ModCreativeTabs;
 import javabuckets.mods.rcm.utility.Reference;
 import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.material.Material;
@@ -24,7 +25,7 @@ public class BlockRSWood extends BlockRotatedPillar
 	{
 		super(Material.wood);
 		this.setStepSound(soundTypeWood);
-		this.setCreativeTab(CreativeTabs.tabBlock);
+		this.setCreativeTab(ModCreativeTabs.rcmWoodcutting);
 	}
 	
     @SideOnly(Side.CLIENT)
@@ -39,7 +40,7 @@ public class BlockRSWood extends BlockRotatedPillar
         	world.spawnParticle("fireworksSpark", x, y + 1, z + 1, 0, 0, 0);
         	world.spawnParticle("fireworksSpark", x+0.5, y + 1, z + 1, 0, 0, 0);
         	world.spawnParticle("fireworksSpark", x + 1, y + 1, z + 1, 0, 0, 0);
-        	world.spawnParticle("fireworksSpark", x + 1, y + 1, z + 0.5, 0, 0, 0);
+        	world.spawnParticle("fireworksSpark", x, y + 1, z + 0.5, 0, 0, 0);
     	}
     }
 

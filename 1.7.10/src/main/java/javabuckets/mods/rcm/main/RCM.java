@@ -9,7 +9,9 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import javabuckets.mods.rcm.dailies.DailyChallengeHandler;
+import javabuckets.mods.rcm.generators.WorldGenYewTree;
 import javabuckets.mods.rcm.handlers.DailyGiftHandler;
+import javabuckets.mods.rcm.handlers.DropTableHandler;
 import javabuckets.mods.rcm.handlers.RCMGpHandler;
 import javabuckets.mods.rcm.huds.HUDOverlay;
 import javabuckets.mods.rcm.init.ModBlocks;
@@ -74,15 +76,16 @@ public class RCM
 	public PlayerBonuses playerBonuses = new PlayerBonuses();
 	public DailyChallengeHandler dailies = new DailyChallengeHandler();
 	public RecipeRemover recipeRemover = new RecipeRemover();
+	public DropTableHandler droptable = new DropTableHandler();
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		ModCreativeTabs.init();
-		HUDOverlay.init();
 		ModBlocks.init();
 		ModItems.init();
 		ModRecipes.init();
+		HUDOverlay.init();
 	}
 
 	@EventHandler

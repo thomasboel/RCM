@@ -1,14 +1,8 @@
 package javabuckets.mods.rcm.creativetabs;
 
 import javabuckets.mods.rcm.init.ModCreativeTabs;
-import javabuckets.mods.rcm.skills.attack.ModWeapons;
-import javabuckets.mods.rcm.skills.farming.ModFarmingItems;
-import javabuckets.mods.rcm.skills.magic.ModMagicWeapons;
-import javabuckets.mods.rcm.skills.mining.ModMiningItems;
-import javabuckets.mods.rcm.skills.prayer.ModPrayerItems;
-import javabuckets.mods.rcm.skills.runecrafting.ModRunecraftingItems;
-import javabuckets.mods.rcm.skills.smithing.ModSmithingItems;
-import javabuckets.mods.rcm.skills.summoning.ModSummoningItems;
+import javabuckets.mods.rcm.init.ModTabIcons;
+import javabuckets.mods.rcm.skills.firemaking.ModFiremakingItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
@@ -26,32 +20,80 @@ public class CreativeTabRCM extends CreativeTabs
 	public Item getTabIconItem() 
 	{
 		if (tabLabel.equals(ModCreativeTabs.creativeTabNames[0])) {
-			return ModWeapons.dragonLongsword;
+			return ModTabIcons.att;
 		}
 		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[1])) {
-			return ModMiningItems.runePickaxe;
+			return ModTabIcons.range;
 		}
 		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[2])) {
-			return ModMiningItems.mithrilOre;
+			return ModTabIcons.mage;
 		}
 		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[3])) {
-			return ModPrayerItems.bigBones;
+			return ModTabIcons.mine;
 		}
 		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[4])) {
-			return ModMagicWeapons.airStaff;
+			return ModTabIcons.smith;
 		}
 		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[5])) {
-			return ModFarmingItems.allotmentseed_cabbage;	
+			return ModTabIcons.herb;	
 		}
 		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[6])) {
-			return ModRunecraftingItems.omniTalisman;
+			return ModTabIcons.fish;
 		}
 		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[7])) {
-			return ModSummoningItems.pouch_spiritWolf;
+			return ModTabIcons.cook;
+		}
+		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[8])) {
+			return ModTabIcons.craft;
+		}
+		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[9])) {
+			return ModTabIcons.fletch;
+		}
+		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[10])) {
+			return ModTabIcons.wc;
+		}
+		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[11])) {
+			return ModTabIcons.rc;
+		}
+		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[12])) {
+			return ModTabIcons.slay;
+		}
+		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[13])) {
+			return ModTabIcons.farm;
+		}
+		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[14])) {
+			return ModTabIcons.con;
+		}
+		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[15])) {
+			return ModTabIcons.hunt;
+		}
+		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[16])) {
+			return ModTabIcons.summ;
+		}
+		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[17])) {
+			return ModTabIcons.dung;
+		}
+		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[18])) {
+			return ModTabIcons.div;
+		}
+		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[19])) {
+			return ModTabIcons.loot;
+		}
+		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[20])) {
+			return ModFiremakingItems.tinderbox;
+		}
+		else if (tabLabel.equals(ModCreativeTabs.creativeTabNames[21])) {
+			return ModTabIcons.quest;
 		}
 		
 		else { return null; }
 	}
+	
+	/*@Override
+	public boolean hasSearchBar() 
+	{
+		return true;
+	}*/
 	
 	@Override
 	public String getTranslatedTabLabel()

@@ -18,7 +18,7 @@ public class ItemTinderbox extends ItemBase
 	public ItemTinderbox(String unlocalizedName) 
 	{
 		super(unlocalizedName);
-		this.setCreativeTab(ModCreativeTabs.rcmTools);
+		this.setCreativeTab(ModCreativeTabs.rcmItems);
 		this.setMaxStackSize(1);
 	}
 	

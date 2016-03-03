@@ -1,7 +1,9 @@
 package javabuckets.mods.rcm.skills.woodcutting;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import javabuckets.mods.rcm.blocks.BlockRSLeaves;
 import javabuckets.mods.rcm.blocks.BlockRSWood;
+import javabuckets.mods.rcm.utility.BlockRegistry;
 import net.minecraft.block.Block;
 
 public class ModWoodcuttingBlocks 
@@ -14,6 +16,14 @@ public class ModWoodcuttingBlocks
 	public static Block chokingIvy;
 	public static Block magicLog;
 	public static Block elderLog;
+	
+	public static Block willowLeaves;
+	public static Block teakLeaves;
+	public static Block mapleLeaves;
+	public static Block mahoganyLeaves;
+	public static Block yewLeaves;
+	public static Block magicLeaves;
+	public static Block elderLeaves;
 
 	public static void init()
 	{
@@ -40,5 +50,28 @@ public class ModWoodcuttingBlocks
 		
 		elderLog = new BlockRSWood().setHardness(9F).setBlockTextureName("elder_log").setBlockName("elder_log");
 		GameRegistry.registerBlock(elderLog, "elder_log");
+		
+		
+		
+		willowLeaves = new BlockRSLeaves();
+		BlockRegistry.registerBlock(willowLeaves, "willow_leaves");
+		
+		teakLeaves = new BlockRSLeaves();
+		BlockRegistry.registerBlock(teakLeaves, "teak_leaves");
+		
+		mapleLeaves = new BlockRSLeaves();
+		BlockRegistry.registerBlock(mapleLeaves, "maple_leaves");
+		
+		mahoganyLeaves = new BlockRSLeaves();
+		BlockRegistry.registerBlock(mahoganyLeaves, "mahogany_leaves");
+		
+		yewLeaves = new BlockRSLeaves();
+		BlockRegistry.registerBlock(yewLeaves, "yew_leaves");
+		
+		magicLeaves = new BlockRSLeaves();
+		BlockRegistry.registerBlock(magicLeaves, "magic_leaves");
+	
+		elderLeaves = new BlockRSLeaves();
+		BlockRegistry.registerBlock(elderLeaves, "elder_leaves");
 	}
 }

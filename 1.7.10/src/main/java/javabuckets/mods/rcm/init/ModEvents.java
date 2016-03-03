@@ -1,6 +1,7 @@
 package javabuckets.mods.rcm.init;
 
 import javabuckets.mods.rcm.generators.WorldOreGenerator;
+import javabuckets.mods.rcm.generators.WorldTreeGenerator;
 import javabuckets.mods.rcm.handlers.EntityEventHandler;
 import javabuckets.mods.rcm.handlers.GuiHandler;
 import javabuckets.mods.rcm.handlers.ItemHandler;
@@ -37,6 +38,7 @@ public class ModEvents
 		NetworkRegistry.INSTANCE.registerGuiHandler(RCM.instance, new GuiHandler());
 
 		GameRegistry.registerWorldGenerator(new WorldOreGenerator(), 0);
+		GameRegistry.registerWorldGenerator(new WorldTreeGenerator(), 0);
 		
 		RenderingRegistry.addNewArmourRendererPrefix("5"); // Mithril
 	}

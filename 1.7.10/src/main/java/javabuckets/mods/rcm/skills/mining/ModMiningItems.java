@@ -30,28 +30,28 @@ public class ModMiningItems
 	
 	public static void init()
 	{
-		copperOre = new ItemRSOre("copper_ore").setCreativeTab(ModCreativeTabs.rcmResources);
+		copperOre = new ItemRSOre("copper_ore").setCreativeTab(ModCreativeTabs.rcmMining);
 		GameRegistry.registerItem(copperOre, "ITEM_copper_ore");
 		
-		tinOre = new ItemRSOre("tin_ore").setCreativeTab(ModCreativeTabs.rcmResources);
+		tinOre = new ItemRSOre("tin_ore").setCreativeTab(ModCreativeTabs.rcmMining);
 		GameRegistry.registerItem(tinOre, "ITEM_tin_ore");
 		
-		ironOre = new ItemRSOre("iron_ore").setCreativeTab(ModCreativeTabs.rcmResources);
+		ironOre = new ItemRSOre("iron_ore").setCreativeTab(ModCreativeTabs.rcmMining);
 		GameRegistry.registerItem(ironOre, "ITEM_iron_ore");
 		
-		silverOre = new ItemRSOre("silver_ore").setCreativeTab(ModCreativeTabs.rcmResources);
+		silverOre = new ItemRSOre("silver_ore").setCreativeTab(ModCreativeTabs.rcmMining);
 		GameRegistry.registerItem(silverOre, "ITEM_silver_ore");
 		
-		goldOre = new ItemRSOre("gold_ore").setCreativeTab(ModCreativeTabs.rcmResources);
+		goldOre = new ItemRSOre("gold_ore").setCreativeTab(ModCreativeTabs.rcmMining);
 		GameRegistry.registerItem(goldOre, "ITEM_gold_ore");
 		
-		mithrilOre = new ItemRSOre("mithril_ore").setCreativeTab(ModCreativeTabs.rcmResources);
+		mithrilOre = new ItemRSOre("mithril_ore").setCreativeTab(ModCreativeTabs.rcmMining);
 		GameRegistry.registerItem(mithrilOre, "ITEM_mithril_ore");
 		
-		adamantiteOre = new ItemRSOre("adamantite_ore").setCreativeTab(ModCreativeTabs.rcmResources);
+		adamantiteOre = new ItemRSOre("adamantite_ore").setCreativeTab(ModCreativeTabs.rcmMining);
 		GameRegistry.registerItem(adamantiteOre, "ITEM_adamantite_ore");
 		
-		runiteOre = new ItemRSOre("runite_ore").setCreativeTab(ModCreativeTabs.rcmResources);
+		runiteOre = new ItemRSOre("runite_ore").setCreativeTab(ModCreativeTabs.rcmMining);
 		GameRegistry.registerItem(runiteOre, "ITEM_runite_ore");
 
 		

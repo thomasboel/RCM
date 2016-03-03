@@ -1,6 +1,11 @@
+item.seed_bag.name=Seed Bag
+
 item.small_fishingnet.name=Small Fishing Net
 
 item.tinderbox.name=Tinderbox
+item.chisel.name=Chisel
+item.knife.name=Knife
+item.hammer.name=Hammer
 
 item.bronze_helm.name=Bronze Helm
 item.bronze_full_helm.name=Bronze Full Helm
@@ -385,6 +390,200 @@ item.wolf_bones.name=Wolf Bones
 item.big_bones.name=Big Bones
 item.dragon_bones.name=Dragon Bones
 
+item.seed_onion.name=Onion Seeds
+item.seed_cabbage.name=Cabbage Seeds
+item.seed_tomato.name=Tomato Seeds
+item.seed_sweetcorn.name=Sweetcorn Seeds
+item.seed_strawberry.name=Strawberry Seeds
+item.seed_snapegrass.name=Snapegrass Seeds
+
+item.seed_marigold.name=Marigold Seeds
+item.seed_rosemary.name=Rosemary Seeds
+item.seed_nasturtium.name=Nasturtium Seeds
+item.seed_woad.name=Woad Seeds
+item.seed_limpwurt.name=Limpwurt Seeds
+item.seed_whitelily.name=White Lily Seeds
+item.seed_butterfly_flower.name=Butterfly Flower Seeds
+
+item.seed_guam.name=Guam Seeds
+item.seed_marrentill.name=Marrentill Seeds
+item.seed_tarromin.name=Tarromin Seeds
+item.seed_harralander.name=Harralander Seeds
+item.seed_ranarr.name=Ranarr Seeds
+item.seed_spiritweed.name=Spirit Weed Seeds
+item.seed_toadflax.name=Toadflax Seeds
+item.seed_irit.name=Irit Seeds
+item.seed_wergali.name=Wergali Seeds
+item.seed_avantoe.name=Avantoe Seeds
+item.seed_kwuarm.name=Kwuarm Seeds
+item.seed_snapdragon.name=Snapdragon Seeds
+item.seed_cadantine.name=Cadantine Seeds
+item.seed_lantadyme.name=Lantadyme Seeds
+item.seed_dwarf_weed.name=Dwarf Weed Seeds
+item.seed_torstol.name=Torstol Seeds
+item.seed_fellstalk.name=Fellstalk Seeds
+
+item.seed_redberry.name=Redberry Seeds
+item.seed_cadavaberry.name=Cadavaberry Seeds
+item.seed_dwellberry.name=Dwellberry Seeds
+item.seed_jangerberry.name=Jangerberry Seeds
+item.seed_whiteberry.name=Whiteberry Seeds
+item.seed_poison_ivy.name=Poison Ivy Seeds
+item.seed_barberry.name=Barberry Seeds
+
+item.seed_acorn.name=Acorn Seeds
+item.seed_willow.name=Willow Seeds
+item.seed_maple.name=Maple Seeds
+item.seed_yew.name=Yew Seeds
+item.seed_magic.name=Magic Seeds
+
+item.seed_apple.name=Apple Tree Seeds
+item.seed_banana.name=Banana Tree Seeds
+item.seed_orange.name=Orange Tree Seeds
+item.seed_curry.name=Curry Tree Seeds
+item.seed_pineapple.name=Pineapple Tree Seeds
+item.seed_papaya.name=Papaya Tree Seeds
+item.seed_palm.name=Palm Tree Seeds
+
+item.seed_cactus.name=Cactus Seeds
+item.seed_potato_cactus.name=Potato Cactus Seeds
+
+item.onion.name=Onion
+item.cabbage.name=Cabbage
+item.tomato.name=Tomato
+item.sweetcorn.name=Sweetcorn
+item.strawberry.name=Strawberry
+item.watermelon.name=Watermelon
+
+item.marigold.name=Marigold
+item.rosemary.name=Rosemary
+item.nasturtium.name=Nasturtium
+item.woad_leaf.name=Woad Leaves
+
+item.grimy_guam.name=Grimy Guam
+item.grimy_marrentill.name=Grimy Marrentill
+item.grimy_tarromin.name=Grimy Tarromin
+item.grimy_harralander.name=Grimy Harralander
+item.grimy_ranarr.name=Grimy Ranarr
+item.grimy_spirit_weed.name=Grimy Spirit Weed
+item.grimy_toadflax.name=Grimy Toadflax
+item.grimy_irit.name=Grimy Irit
+item.grimy_wergali.name=Grimy Wergali
+item.grimy_avantoe.name=Grimy Avantoe
+item.grimy_kwuarm.name=Grimy Kwuarm
+item.grimy_snapdragon.name=Grimy Snapdragon
+item.grimy_cadantine.name=Grimy Cadantine
+item.grimy_lantadyme.name=Grimy Lantadyme
+item.grimy_dwarf_weed.name=Grimy Dwarf Weed
+item.grimy_torstol.name=Grimy Torstol
+item.grimy_fellstalk.name=Grimy Fellstalk
+
+item.redberry.name=Redberries
+item.cadavaberry.name=Cadava Berries
+item.dwellberry.name=Dwellberries
+item.jangerberry.name=Jangerberries
+item.whiteberry.name=White Berries
+item.poison_ivy_berry.name=Poison Ivy Berries
+
+item.oak_roots.name=Oak Roots
+item.willow_roots.name=Willow Roots
+item.maple_roots.name=Maple Roots
+item.yew_roots.name=Yew Roots
+item.magic_roots.name=Magic Roots
+
+item.apple.name=Cooking Apple
+item.banana.name=Banana
+item.orange.name=Orange
+item.curry_leaf.name=Curry Leaves
+item.pineapple.name=Pineapple
+item.papaya.name=Papaya
+item.coconut.name=Coconut
+
+item.cactus_spine.name=Cactus Spine
+item.potato_cactus.name=Potato Cactus
+
+item.pestle_and_mortar.name=Pestle And Mortar
+item.vial.name=Empty Vial
+item.vial_of_water.name=Vial of Water
+
+item.clean_guam.name=Clean Guam
+item.clean_tarromin.name=Clean Tarromin
+item.clean_marrentill.name=Clean Marrentill
+item.clean_harralander.name=Clean Harralander
+item.clean_ranarr.name=Clean Ranarr
+item.clean_spirit_weed.name=Clean Spirit Weed
+item.clean_toadflax.name=Clean Toadflax
+item.clean_irit.name=Clean Irit
+item.clean_wergali.name=Clean Wergali
+item.clean_avantoe.name=Clean Avantoe
+item.clean_kwuarm.name=Clean Kwuarm
+item.clean_snapdragon.name=Clean Snapdragon
+item.clean_cadantine.name=Clean Cadantine
+item.clean_lantadyme.name=Clean Lantadyme
+item.clean_dwarf_weed.name=Clean Dwarf Weed
+item.clean_torstol.name=Clean Torstol
+item.clean_fellstalk.name=Clean Fellstalk
+
+item.potion_attack.name=Attack Potion
+item.potion_ranged.name=Ranging Potion
+item.potion_magic.name=Magic Potion
+item.potion_strength.name=Strength Potion
+item.potion_defence.name=Defence Potion
+item.potion_antipoison.name=Antipoison Potion
+item.potion_guthix_rest.name=Guthix Rest
+item.potion_restore.name=Restore Potion
+item.potion_energy.name=Energy Potion
+item.potion_agility.name=Agility Potion
+item.potion_prayer.name=Prayer Potion
+item.potion_summoning.name=Summoning Potion
+item.potion_crafting.name=Crafting Potion
+item.potion_fishing.name=Fishing Potion
+item.potion_hunter.name=Hunter Potion
+item.potion_fletching.name=Fletching Potion
+item.potion_antifire.name=Antifire Potion
+item.potion_zamorak_brew.name=Zamorak Brew
+item.potion_saradomin_brew.name=Saradomin Brew
+item.potion_adrenaline.name=Adrenaline Potion
+
+item.potion_super_attack.name=Super Attack Potion
+item.potion_super_antipoison.name=Super Antipoison Potion
+item.potion_super_energy.name=Super Energy Potion
+item.potion_super_strength.name=Super Strength Potion
+item.potion_super_restore.name=Super Restore Potion
+item.potion_super_defence.name=Super Defence Potion
+item.potion_super_ranged.name=Super Ranging Potion
+item.potion_super_magic.name=Super Magic Potion
+item.potion_super_antifire.name=Super Antifire Potion
+item.potion_super_saradomin_brew.name=Super Saradomin Brew
+item.potion_super_zamorak_brew.name=Super Zamorak Brew
+item.potion_super_guthix_rest.name=Super Guthix Rest
+item.potion_super_prayer.name=Super Prayer Potion
+
+item.potion_extreme_attack.name=Extreme Attack Potion
+item.potion_extreme_strength.name=Extreme Strength Potion
+item.potion_extreme_defence.name=Extreme Defence Potion
+item.potion_extreme_magic.name=Extreme Magic Potion
+item.potion_extreme_ranged.name=Extreme Ranging Potion
+item.potion_overload.name=Overload
+
+item.eye_of_newt.name=Eye of Newt
+item.limpwurt.name=Limpwurt Root
+item.unicorn_horn_dust.name=Unicorn Horn Dust
+item.chocolate_dust.name=Chocolate Dust
+item.snape_grass.name=Snapegrass
+item.dragon_scale_dust.name=Dragon Scale Dust
+item.crushed_nest.name=Crushed Nest
+item.ashes.name=Ashes
+
+item.black_bead.name=Black Bead
+item.red_bead.name=Red Bead
+item.yellow_bead.name=Yellow Bead
+item.white_bead.name=White Bead
+item.bear_fur.name=Bear Fur
+item.unicorn_horn.name=Unicorn Horn
+item.red_spiders_eggs.name=Red Spider's Eggs
+item.cockatrice_egg.name=Cockatrice Egg
+
 item.empty_pouch.name=Empty Pouch
 item.spirit_shards.name=Spirit Shards
 item.gold_charm.name=Gold Charm
@@ -392,6 +591,12 @@ item.green_charm.name=Green Charm
 item.red_charm.name=Red Charm
 item.blue_charm.name=Blue Charm
 item.elder_charm.name=Elder Charm
+item.spirit_sapphire.name=Spirit Sapphire
+item.spirit_emerald.name=Spirit Emerald
+item.spirit_ruby.name=Spirit Ruby
+item.spirit_diamond.name=Spirit Diamond
+item.spirit_dragonstone.name=Spirit Dragonstone
+item.spirit_onyx.name=Spirit Onyx
 
 item.pouch_spiritwolf.name=Spirit Wolf Pouch
 

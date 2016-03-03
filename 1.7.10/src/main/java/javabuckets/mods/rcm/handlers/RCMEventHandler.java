@@ -8,6 +8,7 @@ import javabuckets.mods.rcm.guis.GUIRCMMainMenu;
 import javabuckets.mods.rcm.huds.HUDSkillsTab;
 import javabuckets.mods.rcm.main.RCM;
 import javabuckets.mods.rcm.player.ExtendedPlayer;
+import javabuckets.mods.rcm.skills.fishing.ModFishingItems;
 import javabuckets.mods.rcm.skills.magic.GUIMagicSpellSelection;
 import javabuckets.mods.rcm.skills.prayer.GUIPrayerSelection;
 import javabuckets.mods.rcm.utility.DateUtil;
@@ -15,6 +16,7 @@ import javabuckets.mods.rcm.utility.DoubleXPUtil;
 import javabuckets.mods.rcm.utility.LevelUpUtil;
 import javabuckets.mods.rcm.utility.LogHelper;
 import javabuckets.mods.rcm.utility.SkillReference;
+import javabuckets.mods.rcm.utility.UtilAPI;
 import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.EntityPlayer;
@@ -26,6 +28,8 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.world.BlockEvent;
 
 public class RCMEventHandler 
 {
@@ -185,6 +189,47 @@ public class RCMEventHandler
 		if (event.entity instanceof EntityPlayer)
 		{
 			LevelUpUtil.lvlHandling();
+		}
+	}
+	
+	int i = 0;
+	int x, y, z, x2, y2, z2;
+	
+	//@SubscribeEvent
+	public void onBlockRightClick(PlayerInteractEvent event) 
+	{
+		if (event.entityPlayer.getHeldItem() != null && event.entityPlayer.getHeldItem().getItem() == ModFishingItems.fishingNet)
+		{
+			if (event.action.equals(event.action.RIGHT_CLICK_BLOCK))
+			{
+				x = event.x+1;
+				y = event.y-1;
+				z = event.z+1;
+				
+				if (i == 0) 
+				{ 
+					i = 1; 
+					LogHelper.info("Position 1: " + x + " " + y + " " + z); 
+				}
+			}
+		}
+	}
+	
+	//@SubscribeEvent
+	public void onBlockBreak(BlockEvent.BreakEvent event)
+	{
+		if (event.getPlayer().getHeldItem() != null && event.getPlayer().getHeldItem().getItem() == ModFishingItems.fishingNet)
+		{
+			x2 = event.x;
+			y2 = event.y;
+			z2 = event.z;
+			
+			if (i == 1) 
+			{ 
+				i = 0; 
+				LogHelper.info("Position 2: " + x2 + " " + y2 + " " + z2); 
+				UtilAPI.getListOfBlocksInArea(event.world, x, y, z, x2, y2, z2); 
+			}
 		}
 	}
 }

@@ -11,7 +11,7 @@ public class ItemPickaxe extends net.minecraft.item.ItemPickaxe
 	public ItemPickaxe(Item.ToolMaterial toolMaterial) 
 	{
 		super(toolMaterial);
-		this.setCreativeTab(ModCreativeTabs.rcmTools);
+		this.setCreativeTab(ModCreativeTabs.rcmMining);
 	}
 	
 	public void registerIcons(IIconRegister par1IconRegister) 

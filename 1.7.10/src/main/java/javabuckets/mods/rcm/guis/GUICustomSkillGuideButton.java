@@ -51,6 +51,8 @@ public class GUICustomSkillGuideButton extends GuiButton
         		this.drawString(fontrenderer, skill + " Experience: " + (long)RCM.instance.skillHandler.getExperience(skill) + " xp", 127, 5, 0xFFFFFF);
         		this.drawString(fontrenderer, skill + " Level: " + RCM.instance.skillHandler.getLevelB(skill) + "/" + RCM.instance.skillHandler.getLevel(skill), 127, 15, 0xFFFFFF);
         		this.drawString(fontrenderer, skill + " Experience to next level: " + (long)RCM.instance.skillHandler.getXpToNextLevel(skill), 127, 25, 0xFFFFFF);
+        		this.drawString(fontrenderer, skill + " Levels earned this session: " + (long)RCM.instance.skillHandler.getLvlsEarnedSessionInSkill(skill), 127, 75, 0xFFFFFF);
+        		this.drawString(fontrenderer, skill + " Experience earned this session: " + (long)RCM.instance.skillHandler.getXpEarnedSessionInSkill(skill), 127, 85, 0xFFFFFF);
         }
         
         else 

@@ -27,7 +27,7 @@ public class ItemSword extends net.minecraft.item.ItemSword
 		super(toolMaterial);
 		this.setUnlocalizedName(unlocalizedName);
 		this.weaponDamage = defaultWeaponDamage + (double)toolMaterial.getDamageVsEntity();
-		this.setCreativeTab(ModCreativeTabs.rcmWeapons);
+		this.setCreativeTab(ModCreativeTabs.rcmMelee);
 	}
 	
 	/*public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) 

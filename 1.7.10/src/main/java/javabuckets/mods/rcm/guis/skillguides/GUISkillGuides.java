@@ -95,7 +95,7 @@ public class GUISkillGuides extends GuiScreen
 			case 18: { mc.displayGuiScreen(new SkillGuideWoodcutting()); break; }
 //			case 19: { mc.displayGuiScreen(new SkillGuideRunecrafting()); break; }
 //			case 20: { mc.displayGuiScreen(new SkillGuideSlayer()); break; }
-//			case 21: { mc.displayGuiScreen(new SkillGuideFarming()); break; }
+			case 21: { mc.displayGuiScreen(new SkillGuideFarming()); break; }
 //			case 22: { mc.displayGuiScreen(new SkillGuideContruction()); break; }
 //			case 23: { mc.displayGuiScreen(new SkillGuideHunter()); break; }
 //			case 24: { mc.displayGuiScreen(new SkillGuideSummoning()); break; }

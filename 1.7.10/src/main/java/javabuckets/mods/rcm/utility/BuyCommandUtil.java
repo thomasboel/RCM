@@ -2,11 +2,15 @@ package javabuckets.mods.rcm.utility;
 
 import java.util.ArrayList;
 
+import javabuckets.mods.rcm.skills.crafting.ModCraftingItems;
 import javabuckets.mods.rcm.skills.firemaking.ModFiremakingItems;
 import javabuckets.mods.rcm.skills.fishing.ModFishingItems;
+import javabuckets.mods.rcm.skills.fletching.ModFletchingItems;
+import javabuckets.mods.rcm.skills.herblore.ModHerbloreItems;
 import javabuckets.mods.rcm.skills.magic.ModMagicItems;
 import javabuckets.mods.rcm.skills.magic.ModMagicWeapons;
 import javabuckets.mods.rcm.skills.runecrafting.ModRunecraftingItems;
+import javabuckets.mods.rcm.skills.smithing.ModSmithingItems;
 import javabuckets.mods.rcm.skills.summoning.ModSummoningItems;
 import net.minecraft.item.Item;
 
@@ -41,8 +45,12 @@ public class BuyCommandUtil
 		else if (item == ModMagicItems.bloodRune) return 60;
 		
 		// Tools
-		else if (item == ModFishingItems.fishingNet) return 25;
-		else if (item == ModFiremakingItems.tinderbox) return 10;
+		else if (item == ModFishingItems.fishingNet) return 20;
+		else if (item == ModFiremakingItems.tinderbox) return 5;
+		else if (item == ModHerbloreItems.pestle_mortar) return 15;
+		else if (item == ModSmithingItems.hammer) return 7;
+		else if (item == ModFletchingItems.knife) return 7;
+		else if (item == ModCraftingItems.chisel) return 7;
 		
 		// Summoning
 		else if (item == ModSummoningItems.emptyPouch) return 1;

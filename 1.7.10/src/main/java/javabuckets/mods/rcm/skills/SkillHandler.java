@@ -23,6 +23,9 @@ public class SkillHandler
 
 	// If this is the first time the game is run (per session)
 	private boolean hasRunned = false;
+	
+	private int[] lvlsEarnedSession = new int[26];
+	private double[] xpEarnedSession = new double[26];
 
 	/**
 	 * Update method including player and world param's
@@ -257,6 +260,7 @@ public class SkillHandler
 		HUDSkills.addXPToDisplay(skill, xp);
 
 		LogHelper.info(xp + " xp gained in " + skill + "!");
+		addXPToSessionSkill(skill, xp);
 	}
 	
 	public void addXPToSkillBugged(String skill, double xp)
@@ -270,6 +274,7 @@ public class SkillHandler
 		HUDSkills.addXPToDisplay(skill, xp*2);
 
 		LogHelper.info(xp*2 + " xp gained in " + skill + "!");
+		addXPToSessionSkill(skill, xp);
 	}
 
 
@@ -286,6 +291,29 @@ public class SkillHandler
 
 		LogHelper.info(xp + " xp gained in " + skill + "!");
 		LogHelper.info(xp / 3 + " xp gained in " + SkillReference.cons + "!");
+		addXPToSessionSkill(skill, xp+xp/3);
+	}
+	
+	public void addXPToSessionSkill(String skill, double xp)
+	{
+		for (int i = 0; i < 26; i++)
+		{
+			if (skill.equalsIgnoreCase(SkillReference.skill[i]))
+			{
+				this.xpEarnedSession[i]+=xp;
+			}
+		}
+	}
+	
+	public void addLevelToSessionSkill(String skill)
+	{
+		for (int i = 0; i < 26; i++)
+		{
+			if (skill.equalsIgnoreCase(SkillReference.skill[i]))
+			{
+				this.lvlsEarnedSession[i]++;
+			}
+		}
 	}
 
 	/**
@@ -295,7 +323,7 @@ public class SkillHandler
 	{
 		LogHelper.info("You leveled up in " + skill + "! You are now level " + level + "!");
 		Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("You leveled up in " + skill + "! You are now level " + level + "!"));
-		
+		addLevelToSessionSkill(skill);
 	}
 
 	/**
@@ -351,6 +379,54 @@ public class SkillHandler
 	public void decreasePrayerLvl()
 	{
 		this.skillsBoost[12]--;
+	}
+	
+	public double getXpEarnedSession() 
+	{
+		double xpEarnedSession = 0;
+		
+		for (int i = 0; i < 26; i++)
+		{
+			xpEarnedSession+=this.xpEarnedSession[i];
+		}
+		
+		return xpEarnedSession;
+	}
+	
+	public int getLvlsEarnedSession() 
+	{
+		int lvlsEarnedSession = 0;
+		
+		for (int i = 0; i < 26; i++)
+		{
+			lvlsEarnedSession+=this.lvlsEarnedSession[i];
+		}
+		
+		return lvlsEarnedSession;
+	}
+	
+	public double getXpEarnedSessionInSkill(String skill)
+	{
+		for (int i = 0; i < 26; i++)
+		{
+			if (skill.equalsIgnoreCase(SkillReference.skill[i]))
+			{
+				return this.xpEarnedSession[i];
+			}
+		}
+		return 0;
+	}
+	
+	public int getLvlsEarnedSessionInSkill(String skill)
+	{
+		for (int i = 0; i < 26; i++)
+		{
+			if (skill.equalsIgnoreCase(SkillReference.skill[i]))
+			{
+				return this.lvlsEarnedSession[i];
+			}
+		}
+		return 0;
 	}
 
 	/**

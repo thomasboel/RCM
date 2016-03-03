@@ -7,6 +7,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import javabuckets.mods.rcm.blocks.tileentities.TileEntityFire;
 import javabuckets.mods.rcm.main.RCM;
+import javabuckets.mods.rcm.utility.GuiHandlerReference;
 import javabuckets.mods.rcm.utility.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
@@ -130,7 +131,7 @@ public class BlockFire extends BlockContainer
 	{
 		if (!p_149727_1_.isRemote)
 		{ 
-			FMLNetworkHandler.openGui(p_149727_5_, RCM.instance, 2, p_149727_1_, p_149727_2_, p_149727_3_, p_149727_4_);
+			FMLNetworkHandler.openGui(p_149727_5_, RCM.instance, GuiHandlerReference.fireGuiID, p_149727_1_, p_149727_2_, p_149727_3_, p_149727_4_);
 		}
 		
 		return true;
